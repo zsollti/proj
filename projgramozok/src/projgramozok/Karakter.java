@@ -14,7 +14,9 @@ public abstract class Karakter {
 	}
 	public void lep(Irany i) 
 	{
-		
+		Tabla szomszedTabla = tabla.getszomszed(i);
+		tabla.lelep(this);
+		szomszedTabla.ralep(this);
 	}
 	
 	

@@ -5,7 +5,9 @@ public class Lyuk extends Tabla{
 	@Override
 	public void ralep(Karakter k)
 	{
-		
+//		karakterek[karakterek.length] = k;
+//		karakterek[karakterek.length].beleesik();
+		//palya.vizsgal(karakterek);?????
 	}
 	
 	

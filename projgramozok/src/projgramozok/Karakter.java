@@ -22,13 +22,15 @@ public abstract class Karakter {
 	
 	public void korkezd()
 	{
-		
+		if(this.tabla.getatfordult()) {
+			//palya.gameover(this);?????
+		}
 	}
 	
 	
 	public void addTargy(Targy t)
 	{
-		
+		this.targyak.add(t);
 	}
 	
 	
@@ -52,6 +54,7 @@ public abstract class Karakter {
 	
 	public void beleesik()
 	{
+		
 		
 	}
 	

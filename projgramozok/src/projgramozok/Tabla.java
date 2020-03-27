@@ -6,72 +6,86 @@ public class Tabla {
 	protected int homennyiseg;
 	protected boolean iglu;
 	protected boolean atfordul;
-	protected ArrayList<Karakter> karakterek;
+	protected Karakter[] karakterek;
 	protected Targy targy;
 	protected Tabla[] szomszed;
 	
 	
 	public Tabla() {
-		karakterek = new ArrayList<Karakter>();
+		karakterek = new Karakter[2];
+		homennyiseg = 3;
+		iglu = false;
+		atfordul = false;
+		szomszed = new Tabla[4];
 	}
-	
-	public ArrayList<Karakter> getkarakterek()
+	public Tabla(Tabla t) {
+		karakterek = new Karakter[2];
+		homennyiseg = 3;
+		iglu = false;
+		atfordul = false;
+		szomszed = new Tabla[3];
+		szomszed[0] = t;
+	}
+	public Karakter[] getkarakterek()
 	{
+		System.out.println("\t-->getkarakterek()");
+		System.out.println("\tKarakter<--");
 		return karakterek;
 	}
 	
 	
 	public Tabla getszomszed(Irany i)
 	{
+		System.out.println("\t-->getszomszed(i)");
+		System.out.println("\tTabla<--");
 		return szomszed[0];
+		
 	}
 	
 	public void setiglu() {
+		System.out.println("\t-->setiglu()");
 		iglu = true;
+		System.out.println("\tvoid<--");
 	}
 	
 	public void ralep(Karakter k)
 	{
-		this.karakterek.add(k);
+		System.out.println("\t-->ralep(k)");
+		this.karakterek[0] = k;
+		System.out.println("\tvoid<--");
 	}
 	
 	
 	public void lelep(Karakter k) 
 	{
-		this.karakterek.remove(k);
-		
+		System.out.println("\t-->lelep(k)");
+		this.karakterek = null;
+		System.out.println("\tvoid<--");
 	}
 	
 	
 	public void addhomennyiseg(int i)
 	{
-		if(i < 0) {
-			if(this.homennyiseg + i < 0)
-				this.homennyiseg = 0;
-			else this.homennyiseg += i;
+		System.out.println("\t-->addhomennyiseg(i)");
+		System.out.println("\tvoid<--");
+		if(i>0 && !iglu) {
+			this.karakterek[0].addhopont(-1);
 		}
-		
-		else {
-			if(this.homennyiseg + i > 5)
-				this.homennyiseg = 5;
-			else 
-				this.homennyiseg += i;
-			
-			if(!iglu) {
-				
-			}
-		}
-		
 	}
 	
 	
 	public void targykias(Karakter k)
 	{
-		
+		System.out.println("-->targykias(k)");
+		Lapat lapat = new Lapat();
+		k.addTargy(lapat);
+		System.out.println("void<--");
 	}
 	
 	
 	public int getbirokepesseg() {
+		System.out.println("\t-->getbirokepesseg()");
+		System.out.println("\tint<--");
 		return 7;
 	}
 	

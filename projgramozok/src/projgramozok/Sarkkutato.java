@@ -2,23 +2,24 @@ package projgramozok;
 
 public class Sarkkutato extends Karakter{
 
+	
+	
+	public Sarkkutato(Tabla t) {
+		super(t);
+		
+	}
+
 	@Override
 	public void kepesseg() {
-		//irany?????
-		Tabla szomszed = this.tabla.getszomszed(Irany.Bal);
-		int birokepesseg = szomszed.getbirokepesseg();
+		System.out.println("-->kepesseg()");
+		this.tabla.getszomszed(Irany.Bal).getbirokepesseg();
+		System.out.println("void<--");
 	}
 
 	@Override
 	public void addhopont(int i) {
-		if(this.hopont + i > 4)
-			return;
-		
-		this.hopont = this.hopont + i;
-		
-		//if(this.hopont <= 0 )
-		//	palya.gameover(this);?????
-		
+		System.out.println("\t-->addhopont(i)");
+		System.out.println("\tvoid<--");
 	}
 
 }

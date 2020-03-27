@@ -9,28 +9,36 @@ public abstract class Karakter {
 	protected ArrayList<Targy> targyak;
 	
 	
-	public Karakter() {
-		targyak = new ArrayList<Targy>();
+	public Karakter(Tabla t) {
+		this.targyak = new ArrayList<Targy>();
+		targyak.add(new Buvarruha());
+		this.hopont = 4;
+		this.munka = 5;
+		this.tabla = t;
 	}
+	
 	public void lep(Irany i) 
 	{
+		System.out.println("-->lep(i)");
 		Tabla szomszedTabla = tabla.getszomszed(i);
 		tabla.lelep(this);
 		szomszedTabla.ralep(this);
+		System.out.println("void<--");
 	}
 	
 	
 	public void korkezd()
 	{
-		if(this.tabla.getatfordult()) {
-			//palya.gameover(this);?????
-		}
+		
 	}
 	
 	
 	public void addTargy(Targy t)
 	{
+		System.out.println("\t-->addTargy(t)");
 		this.targyak.add(t);
+		System.out.println("\tvoid<--");
+		
 	}
 	
 	
@@ -48,13 +56,17 @@ public abstract class Karakter {
 	
 	public Tabla getTabla() 
 	{
+		System.out.println("\t-->getTabla()");
+		System.out.println("\tTabla<--");
 		return tabla;
 	}
 	
 	
 	public void beleesik()
 	{
-		
+		System.out.println("-->beleesik()");
+		targyak.get(0).hasznal(this);
+		System.out.println("void<--");
 		
 	}
 	

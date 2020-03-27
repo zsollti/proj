@@ -7,11 +7,16 @@ public class Palya {
 	protected Karakter[] karakterek;
 	
 	
+	//A Pálya osztály konstruktora
+	//Jelenleg a pálya 1 táblából áll amin 1 eszkimó van
 	
-	public Palya(int jatekosok) {
+	public Palya(int jatekosok) {  
 		this.jatekosok = jatekosok;
-		tablak = new Tabla[20][20];
-		karakterek = new Karakter[jatekosok];
+		tablak = new Tabla[0][0];
+		tablak[0][0] = new Tabla();
+		karakterek = new Karakter[1];
+		karakterek[0] = new Eszkimo(tablak[0][0]);
+		tablak[0][0].ralep(karakterek[0]);
 		
 	}
 	
@@ -27,6 +32,9 @@ public class Palya {
 	
 	public void hovihar()
 	{
+		System.out.println("-->hovihar()");
+		tablak[0][0].addhomennyiseg(1);
+		System.out.println("void<--");
 		
 	}
 	

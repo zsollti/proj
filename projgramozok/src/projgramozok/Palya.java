@@ -12,7 +12,7 @@ public class Palya {
 	
 	public Palya(int jatekosok) {  
 		this.jatekosok = jatekosok;
-		tablak = new Tabla[0][0];
+		tablak = new Tabla[1][1];
 		tablak[0][0] = new Tabla();
 		karakterek = new Karakter[1];
 		karakterek[0] = new Eszkimo(tablak[0][0]);

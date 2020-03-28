@@ -26,6 +26,14 @@ public abstract class Karakter {
 		System.out.println("void<--");
 	}
 	
+	public void lep(Tabla t) 
+	{
+		System.out.println("-->lep(i)");
+		tabla.lelep(this);
+		t.ralep(this);
+		System.out.println("void<--");
+	}
+	
 	
 	public void korkezd()
 	{

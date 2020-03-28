@@ -7,7 +7,7 @@ public class Kotel extends Targy{
 		System.out.println("-->hasznal(k)");
 		Karakter uj = k.getTabla().getszomszed(Irany.Bal).getkarakterek()[0];
 		System.out.println("ssssssssssssssss");
-		uj.lep(Irany.Bal);
+		uj.lep(k.tabla);
 		System.out.println("void<--");
 		
 	}

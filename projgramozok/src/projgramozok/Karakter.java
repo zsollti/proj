@@ -20,6 +20,7 @@ public abstract class Karakter {
 		this.tabla = t;
 	}
 	
+	
 	public void lep(Irany i) 
 	{
 		System.out.println("-->lep(i)");
@@ -40,7 +41,11 @@ public abstract class Karakter {
 	
 	public void korkezd()
 	{
-		
+		System.out.println("\t-->korkezd()");
+		if(this.tabla.getatfordult())
+			palya.gameover(this);
+		this.endturn();
+		System.out.println("\tvoid<--");
 	}
 	
 	
@@ -58,7 +63,9 @@ public abstract class Karakter {
 	
 	public void endturn()
 	{
+		System.out.println("\t\t-->endtrun()");
 		
+		System.out.println("\t\tvoid<--");
 	}
 	
 	

@@ -28,6 +28,8 @@ public class Main {
 			switch(s) {
 				case "1":	//Játékos körei egyás után
 					System.out.println("1.: Játékos körei egymás után\n");
+					Palya palya1 = new Palya(1);
+					palya1.start(1);
 					break;
 					
 				case "2":	//Hóvihar
@@ -38,7 +40,7 @@ public class Main {
 					
 				case "3":	//Lépés
 					System.out.println("3.: Lépés\n");
-					System.out.println("A játékost elbírja a tábla amire lép? (Igen-> i, Nem-> n");
+					System.out.println("A játékost elbírja a tábla amire lép? (Igen-> i, Nem-> n)");
 					if(sc.next()=="n") {
 						Lyuk lyuk3 = new Lyuk();
 						Tabla tabla3_1 = new Tabla(lyuk3);

@@ -22,12 +22,16 @@ public class Palya {
 	
 	public void gameover(Karakter k)
 	{
+		System.out.println("-->gameover(k)");
 		
+		System.out.println("void<--");
 	}
 	
 	
 	public void start(int jatekosok) {
-		
+		System.out.println("-->start(j)");
+		karakterek[0].korkezd();
+		System.out.println("void<..");
 	}
 	
 	public void hovihar()

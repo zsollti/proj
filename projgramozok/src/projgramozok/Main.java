@@ -41,8 +41,10 @@ public class Main {
 				case "3":	//Lépés
 					System.out.println("3.: Lépés\n");
 					System.out.println("A játékost elbírja a tábla amire lép? (Igen-> i, Nem-> n)");
-					if(sc.next()=="n") {
-						Lyuk lyuk3 = new Lyuk();
+					
+					if(sc.next().equals("n")) {
+						Tabla idelep = new Tabla();
+						Lyuk lyuk3 = new Lyuk(idelep);
 						Tabla tabla3_1 = new Tabla(lyuk3);
 						Eszkimo eszkimo3 = new Eszkimo(tabla3_1);
 						eszkimo3.lep(Irany.Bal);

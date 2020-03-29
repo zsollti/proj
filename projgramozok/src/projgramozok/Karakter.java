@@ -78,6 +78,11 @@ public abstract class Karakter {
 		System.out.println("\tTabla<--");
 		return tabla;
 	}
+	public void setTabla(Tabla erre) {
+		System.out.println("\t-->setTabla()");
+		System.out.println("\tvoid<--");
+		this.tabla = erre;
+	}
 	
 	
 	public void beleesik()

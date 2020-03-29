@@ -55,6 +55,7 @@ public class Tabla {
 	{
 		System.out.println("\t-->ralep(k)");
 		this.karakterek[0] = k;
+		k.setTabla(this);
 		System.out.println("\tvoid<--");
 	}
 	

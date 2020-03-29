@@ -3,6 +3,9 @@ package projgramozok;
 import java.util.ArrayList;
 
 public class Tabla {
+	
+	static Palya palya;				//Ahhoz, hogy tudja a pálya függvényeit hívogatni
+	
 	protected int homennyiseg;
 	protected boolean iglu;
 	protected boolean atfordul;

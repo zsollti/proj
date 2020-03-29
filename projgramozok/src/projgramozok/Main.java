@@ -104,9 +104,9 @@ public class Main {
 					
 				case "10":	//Búvárruha használata
 					System.out.println("10.: Búvárruha használata\n");
-					Buvarruha buvarruha10 = new Buvarruha();
 					Tabla tabla10 = new Tabla();
-					Eszkimo eszkimo10 = new Eszkimo(tabla10);
+					Tabla tabla10_2 = new Tabla(tabla10);
+					Eszkimo eszkimo10 = new Eszkimo(tabla10_2);
 					eszkimo10.beleesik();
 					break;
 				

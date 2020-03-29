@@ -3,6 +3,9 @@ package projgramozok;
 import java.util.ArrayList;
 
 public abstract class Karakter {
+	
+	static Palya palya;				//Ahhoz, hogy tudja a pálya függvényeit hívogatni
+	
 	protected int hopont;
 	protected int munka;
 	protected Tabla tabla;

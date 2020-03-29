@@ -2,9 +2,9 @@ package projgramozok;
 
 
 public class Palya {
-	protected int jatekosok;
-	protected Tabla[][] tablak;
-	protected Karakter[] karakterek;
+	private int jatekosok;
+	private Tabla[][] tablak;
+	private Karakter[] karakterek;    //Mindhárom protected volt, de inkább private kéne, nem?
 	
 	
 	//A Pálya osztály konstruktora

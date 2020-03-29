@@ -14,10 +14,9 @@ public class Palya {
 		this.jatekosok = jatekosok;
 		tablak = new Tabla[1][1];
 		tablak[0][0] = new Tabla();
-		karakterek = new Karakter[1];
+		karakterek = new Karakter[jatekosok];
 		karakterek[0] = new Eszkimo(tablak[0][0]);
 		tablak[0][0].ralep(karakterek[0]);
-		
 	}
 	
 	public void gameover(Karakter k)
@@ -29,8 +28,15 @@ public class Palya {
 	
 	
 	public void start(int jatekosok) {
+		karakterek[1] = new Eszkimo(tablak[0][0]);
+		tablak[0][0].ralep(karakterek[1]);
+		int kor=0;
 		System.out.println("-->start(j)");
-		karakterek[0].korkezd();
+		for(int i = 0; i < jatekosok; i++) {
+			karakterek[i].korkezd();
+			if(i == (jatekosok-1)) {i = 0; kor++;}
+			if(kor > 2) {gameover(null); i = 2;}
+		}
 		System.out.println("void<..");
 	}
 	

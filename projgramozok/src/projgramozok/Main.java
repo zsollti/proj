@@ -27,9 +27,9 @@ public class Main {
 			
 			switch(s) {
 				case "1":	//Játékos körei egyás után
-					System.out.println("1.: Játékos körei egymás után\n");
-					Palya palya1 = new Palya(1);
-					palya1.start(1);
+					System.out.println("1.: Játékosok körei egymás után két körön keresztül, majd game over\n");
+					Palya palya1 = new Palya(2);
+					palya1.start(2);
 					break;
 					
 				case "2":	//Hóvihar

@@ -94,6 +94,8 @@ public class Tabla {
 	
 	public boolean getatfordult()
 	{
+		System.out.println("\t\tgetatfordult()");
+		System.out.println("\t\tboolean<--");
 		return atfordul;
 	}
 	

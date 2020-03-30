@@ -2,6 +2,8 @@ package projgramozok;
 
 import java.util.ArrayList;
 
+
+//Absztrakt osztály a karakterek hazsnálatához
 public abstract class Karakter {
 	
 	static Palya palya;				//Ahhoz, hogy tudja a pálya függvényeit hívogatni
@@ -11,7 +13,7 @@ public abstract class Karakter {
 	protected Tabla tabla;
 	protected ArrayList<Targy> targyak;
 	
-	
+	//Konstruktor
 	public Karakter(Tabla t) {
 		this.targyak = new ArrayList<Targy>();
 		targyak.add(new Buvarruha());
@@ -20,7 +22,7 @@ public abstract class Karakter {
 		this.tabla = t;
 	}
 	
-	
+	//Adott irányba lépteti a karaktert.
 	public void lep(Irany i) 
 	{
 		System.out.println("-->lep(i)");
@@ -30,6 +32,7 @@ public abstract class Karakter {
 		System.out.println("void<--");
 	}
 	
+	//Adott táblára lépteti a karaktert.
 	public void lep(Tabla t) 
 	{
 		System.out.println("-->lep(i)");
@@ -38,7 +41,7 @@ public abstract class Karakter {
 		System.out.println("void<--");
 	}
 	
-	
+	//Elkezdi a karakter körét.
 	public void korkezd()
 	{
 		System.out.println("\t-->korkezd()");
@@ -48,7 +51,7 @@ public abstract class Karakter {
 		System.out.println("\tvoid<--");
 	}
 	
-	
+	//Tárgyat ad a karakterhez.
 	public void addTargy(Targy t)
 	{
 		System.out.println("\t-->addTargy(t)");
@@ -60,7 +63,7 @@ public abstract class Karakter {
 	
 	public abstract void kepesseg();
 	
-	
+	//A karakter befejezi a körét.
 	public void endturn()
 	{
 		System.out.println("\t\t-->endtrun()");
@@ -71,20 +74,22 @@ public abstract class Karakter {
 	
 	public abstract void addhopont(int i);
 	
-	
+	//Visszaadja a táblát amin a karakter elhelyezkedik.
 	public Tabla getTabla() 
 	{
 		System.out.println("\t-->getTabla()");
 		System.out.println("\tTabla<--");
 		return tabla;
 	}
+	
+	//Beállítja a karakter tábláját.
 	public void setTabla(Tabla erre) {
 		System.out.println("\t-->setTabla()");
 		System.out.println("\tvoid<--");
 		this.tabla = erre;
 	}
 	
-	
+	//A karakter beleesik a vízbe.
 	public void beleesik()
 	{
 		System.out.println("-->beleesik()");

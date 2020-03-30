@@ -1,10 +1,13 @@
 package projgramozok;
 
+
+//Instabil táblák egvalósítása.
 public class Instabil_tabla extends Tabla{
 	
 	private int birokepesseg;
 	
-	
+	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
+	//Ha többen vannak rajta mint amennyit elbír akkor a tábla átfordul.
 	@Override
 	public void ralep(Karakter k)
 	{
@@ -15,7 +18,7 @@ public class Instabil_tabla extends Tabla{
 		//palya.vizsgal(karakterek);?????
 	}
 	
-	
+	//Megadja a tábla karakter bíró képességét.
 	@Override
 	public int getbirokepesseg()
 	{

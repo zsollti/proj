@@ -1,7 +1,11 @@
 package projgramozok;
 
+
+//A lapát megvalósítása
 public class Lapat extends Targy{
 
+	
+	//A lapát használata, egyszeri hazsnálattal 2 havat lapátol el.
 	@Override
 	public void hasznal(Karakter k) {
 		System.out.println("-->hasznal(k)");

@@ -4,7 +4,7 @@ package projgramozok;
 public class Palya {
 	private int jatekosok;
 	private Tabla[][] tablak;
-	private Karakter[] karakterek;    //Mindhárom protected volt, de inkább private kéne, nem?
+	private Karakter[] karakterek;    
 	
 	
 	//A Pálya osztály konstruktora

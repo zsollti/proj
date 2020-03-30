@@ -1,7 +1,6 @@
 package projgramozok;
 
-import java.util.ArrayList;
-
+//A tábákat megvalósító osztály.
 public class Tabla {
 	
 	static Palya palya;				//Ahhoz, hogy tudja a pálya függvényeit hívogatni
@@ -13,7 +12,7 @@ public class Tabla {
 	protected Targy targy;
 	protected Tabla[] szomszed;
 	
-	
+	//Konstruktor
 	public Tabla() {
 		karakterek = new Karakter[2];
 		homennyiseg = 3;
@@ -21,6 +20,8 @@ public class Tabla {
 		atfordul = false;
 		szomszed = new Tabla[4];
 	}
+	
+	//Paraméteres konstruktor
 	public Tabla(Tabla t) {
 		karakterek = new Karakter[2];
 		homennyiseg = 3;
@@ -29,6 +30,8 @@ public class Tabla {
 		szomszed = new Tabla[3];
 		szomszed[0] = t;
 	}
+	
+	//A tábla karaktereivel tér vissza.
 	public Karakter[] getkarakterek()
 	{
 		System.out.println("\t-->getkarakterek()");
@@ -36,7 +39,7 @@ public class Tabla {
 		return karakterek;
 	}
 	
-	
+	//A tábla adott irányba elhelyezkedõ szomszédjával tér vissza.
 	public Tabla getszomszed(Irany i)
 	{
 		System.out.println("\t-->getszomszed(i)");
@@ -45,12 +48,15 @@ public class Tabla {
 		
 	}
 	
+	//Iglut helyez a táblára
 	public void setiglu() {
 		System.out.println("\t-->setiglu()");
 		iglu = true;
 		System.out.println("\tvoid<--");
 	}
 	
+	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
+	//Ezen a táblán az összes karakter elfér.
 	public void ralep(Karakter k)
 	{
 		System.out.println("\t-->ralep(k)");
@@ -59,7 +65,7 @@ public class Tabla {
 		System.out.println("\tvoid<--");
 	}
 	
-	
+	//Eltávolítja a paraméerként kapott karaktert a sajátkai közül.
 	public void lelep(Karakter k) 
 	{
 		System.out.println("\t-->lelep(k)");
@@ -67,7 +73,8 @@ public class Tabla {
 		System.out.println("\tvoid<--");
 	}
 	
-	
+	//A táblán levõ hó mennyiségét változtatja.
+	//Max 5 min 0 lehet rajta.
 	public void addhomennyiseg(int i)
 	{
 		System.out.println("\t-->addhomennyiseg(i)");
@@ -77,7 +84,7 @@ public class Tabla {
 		}
 	}
 	
-	
+	//A paraméterként kapott karakternek adja a befagyott tárgyját.
 	public void targykias(Karakter k)
 	{
 		System.out.println("-->targykias(k)");
@@ -86,13 +93,14 @@ public class Tabla {
 		System.out.println("void<--");
 	}
 	
-	
+	//Megadja a tábla karakterbíró képességét (Tábla esetén mindig minden karaktert elbír).
 	public int getbirokepesseg() {
 		System.out.println("\t-->getbirokepesseg()");
 		System.out.println("\tint<--");
 		return 7;
 	}
 	
+	//Megadja, a tábla átfordult állapotát.
 	public boolean getatfordult()
 	{
 		System.out.println("\t\tgetatfordult()");

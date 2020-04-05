@@ -9,13 +9,13 @@ public class Instabil_tabla extends Tabla{
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
 	//Ha többen vannak rajta mint amennyit elbír akkor a tábla átfordul.
 	@Override
-	public void ralep(Karakter k)
+	public void ralep(Szereplo k)
 	{
-		this.karakterek[this.karakterek.length] = k;
-		if(this.karakterek.length > birokepesseg)
-			for(int i = 0; i < this.karakterek.length; i++)
-				this.karakterek[i].beleesik();
-		//palya.vizsgal(karakterek);?????
+		this.szereplok[this.szereplok.length] = k;
+		if(this.szereplok.length > birokepesseg)
+			for(int i = 0; i < this.szereplok.length; i++)
+				this.szereplok[i].beleesik();
+		//palya.vizsgal(szereplok);?????
 	}
 	
 	//Megadja a tábla karakter bíró képességét.

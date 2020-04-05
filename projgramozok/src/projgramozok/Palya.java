@@ -4,7 +4,7 @@ package projgramozok;
 public class Palya {
 	private int jatekosok;
 	private Tabla[][] tablak;
-	private Karakter[] karakterek;    
+	private Szereplo[] szereplok;    
 	
 	
 	//A Pálya osztály konstruktora
@@ -14,12 +14,12 @@ public class Palya {
 		this.jatekosok = jatekosok;
 		tablak = new Tabla[1][1];
 		tablak[0][0] = new Tabla();
-		karakterek = new Karakter[jatekosok];
-		karakterek[0] = new Eszkimo(tablak[0][0]);
-		tablak[0][0].ralep(karakterek[0]);
+		szereplok = new Szereplo[jatekosok];
+		szereplok[0] = new Eszkimo(tablak[0][0]);
+		tablak[0][0].ralep(szereplok[0]);
 	}
 	
-	public void gameover(Karakter k)
+	public void gameover(Szereplo k)
 	{
 		System.out.println("-->gameover(k)");
 		
@@ -28,12 +28,12 @@ public class Palya {
 	
 	
 	public void start(int jatekosok) {
-		karakterek[1] = new Eszkimo(tablak[0][0]);
-		tablak[0][0].ralep(karakterek[1]);
+		szereplok[1] = new Eszkimo(tablak[0][0]);
+		tablak[0][0].ralep(szereplok[1]);
 		int kor=0;
 		System.out.println("-->start(j)");
 		for(int i = 0; i < jatekosok; i++) {
-			karakterek[i].korkezd();
+			szereplok[i].korkezd();
 			if(i == (jatekosok-1)) {i = 0; kor++;}
 			if(kor > 2) {gameover(null); i = 2;}
 		}

@@ -1,9 +1,13 @@
 package projgramozok;
 
 
-//Absztrakt osztály, a Pisztoly, Jelzofeny és Patron osztályok megvalósításához
+public class Alkatresz extends Targy{
 
-public abstract class Alkatresz extends Targy{
+	@Override
+	public void hasznal(Karakter k) {
+		
+		
+	}
 
 
 }

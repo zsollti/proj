@@ -14,7 +14,7 @@ public class Eszkimo extends Karakter{
 	@Override
 	public void kepesseg() {
 		System.out.println("-->kepesseg()");
-		this.tabla.setiglu();
+		this.tabla.setMenedek(new Iglu());
 		System.out.println("void<--");
 	}
 

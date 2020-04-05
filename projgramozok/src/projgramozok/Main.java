@@ -47,13 +47,13 @@ public class Main {
 						Lyuk lyuk3 = new Lyuk(idelep);
 						Tabla tabla3_1 = new Tabla(lyuk3);
 						Eszkimo eszkimo3 = new Eszkimo(tabla3_1);
-						eszkimo3.lep(Irany.Bal);
+						eszkimo3.lep(lyuk3);
 					}
 					else {
 						Tabla tabla3_2 = new Tabla();
 						Tabla tabla3_3 = new Tabla(tabla3_2);
 						Eszkimo eszkimo3 = new Eszkimo(tabla3_3);
-						eszkimo3.lep(Irany.Bal);
+						eszkimo3.lep(tabla3_2);
 					}
 					break;
 					

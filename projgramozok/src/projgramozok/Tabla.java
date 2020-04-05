@@ -4,39 +4,37 @@ package projgramozok;
 public class Tabla {
 	
 	static Palya palya;				//Ahhoz, hogy tudja a pálya függvényeit hívogatni
-	
+	protected Menedek menedek;
 	protected int homennyiseg;
-	protected boolean iglu;
 	protected boolean atfordul;
-	protected Karakter[] karakterek;
+	protected Szereplo[] szereplok;
 	protected Targy targy;
 	protected Tabla[] szomszed;
 	
 	//Konstruktor
 	public Tabla() {
-		karakterek = new Karakter[2];
+		szereplok = new Szereplo[2];
 		homennyiseg = 3;
-		iglu = false;
+		menedek = null;
 		atfordul = false;
 		szomszed = new Tabla[4];
 	}
 	
 	//Paraméteres konstruktor
 	public Tabla(Tabla t) {
-		karakterek = new Karakter[2];
+		szereplok = new Szereplo[2];
 		homennyiseg = 3;
-		iglu = false;
 		atfordul = false;
 		szomszed = new Tabla[3];
 		szomszed[0] = t;
 	}
 	
 	//A tábla karaktereivel tér vissza.
-	public Karakter[] getkarakterek()
+	public Szereplo[] getkarakterek()
 	{
 		System.out.println("\t-->getkarakterek()");
 		System.out.println("\tKarakter<--");
-		return karakterek;
+		return szereplok;
 	}
 	
 	//A tábla adott irányba elhelyezkedõ szomszédjával tér vissza.
@@ -49,27 +47,27 @@ public class Tabla {
 	}
 	
 	//Iglut helyez a táblára
-	public void setiglu() {
+	public void setMenedek(Menedek m) {
 		System.out.println("\t-->setiglu()");
-		iglu = true;
+		
 		System.out.println("\tvoid<--");
 	}
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
 	//Ezen a táblán az összes karakter elfér.
-	public void ralep(Karakter k)
+	public void ralep(Szereplo k)
 	{
 		System.out.println("\t-->ralep(k)");
-		this.karakterek[0] = k;
+		this.szereplok[0] = k;
 		k.setTabla(this);
 		System.out.println("\tvoid<--");
 	}
 	
 	//Eltávolítja a paraméerként kapott karaktert a sajátkai közül.
-	public void lelep(Karakter k) 
+	public void lelep(Szereplo k) 
 	{
 		System.out.println("\t-->lelep(k)");
-		this.karakterek = null;
+		this.szereplok = null;
 		System.out.println("\tvoid<--");
 	}
 	
@@ -79,8 +77,8 @@ public class Tabla {
 	{
 		System.out.println("\t-->addhomennyiseg(i)");
 		System.out.println("\tvoid<--");
-		if(i>0 && !iglu) {
-			this.karakterek[0].addhopont(-1);
+		if(i>0 ) {
+			this.szereplok[0].addhopont(-1);
 		}
 	}
 	

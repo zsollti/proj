@@ -17,7 +17,6 @@ public abstract class Karakter extends Szereplo{
 	public Karakter(Tabla t) {
 		super(t);
 		this.targyak = new ArrayList<Targy>();
-		targyak.add(new Buvarruha());
 		this.hopont = 4;
 		this.munka = 5;
 	}
@@ -57,7 +56,9 @@ public abstract class Karakter extends Szereplo{
 		
 	}
 	
-	
+	public void munkavegzes() {
+		munka--;
+	}
 	
 	
 	

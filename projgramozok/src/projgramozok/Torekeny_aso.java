@@ -8,6 +8,7 @@ public class Torekeny_aso extends Lapat{
 	}
 	@Override
 	public void hasznal(Karakter k) {
+		super.hasznal(k);
 		hasznalat--;
 	}
 }

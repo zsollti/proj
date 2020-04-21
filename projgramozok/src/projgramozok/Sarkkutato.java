@@ -15,7 +15,8 @@ public class Sarkkutato extends Karakter{
 	@Override
 	public void kepesseg() {
 		System.out.println("-->kepesseg()");
-		this.tabla.getszomszed(Irany.Bal).getbirokepesseg();
+		int birokepesseg = this.tabla.getszomszed(Irany.Bal).getbirokepesseg();
+		System.out.println(birokepesseg);
 		System.out.println("void<--");
 	}
 
@@ -25,6 +26,11 @@ public class Sarkkutato extends Karakter{
 	public void addhopont(int i) {
 		System.out.println("\t-->addhopont(i)");
 		System.out.println("\tvoid<--");
+		
+		hopont += i;
+		
+		if(hopont > 4)hopont = 5;
+		else if(hopont < 1)palya.gameover(this);
 	}
 
 }

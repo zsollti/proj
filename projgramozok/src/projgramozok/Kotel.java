@@ -8,7 +8,10 @@ public class Kotel extends Targy{
 	@Override
 	public void hasznal(Karakter k) {
 		System.out.println("-->hasznal(k)");
-		k.getTabla().getszomszed(Irany.Bal).getkarakterek()[0].lep(k.tabla);
+		for(Szereplo sz : k.getTabla().getszomszed(Irany.Bal).getkarakterek()) {
+			sz.lep(k.getTabla());
+		}
+		
 		System.out.println("void<--");
 		
 	}

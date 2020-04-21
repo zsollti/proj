@@ -1,16 +1,19 @@
 package projgramozok;
 
+import java.util.ArrayList;
+import java.util.Random;
 
 //Lyuk megvalósítása
 public class Lyuk extends Tabla{
 	
 	//Konstruktor
 	public Lyuk(Tabla t) {
-		szereplok = new Szereplo[2];
-		homennyiseg = 3;
+		szereplok = new ArrayList<Szereplo>();
+		Random n = new Random();
+		homennyiseg = n.nextInt(5);
 		atfordul = false;
-		szomszed = new Tabla[3];
-		szomszed[0] = t;
+		szomszed = new ArrayList<Tabla>();
+		szomszed.add(t);
 	}
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
@@ -19,10 +22,13 @@ public class Lyuk extends Tabla{
 	public void ralep(Szereplo k)
 	{
 		System.out.println("\t-->ralep(k)");
-		this.szereplok[0] = k; 
+		
+		szereplok.add(k);
 		k.setTabla(this);
-			k.beleesik();
-			System.out.println("\tvoid<--");
+		atfordul = true;
+		k.beleesik();
+
+		System.out.println("\tvoid<--");
 	}
 	
 	//Megadja a tábla karakterbíró képességét (Lyuk esetén ez mindig 0).

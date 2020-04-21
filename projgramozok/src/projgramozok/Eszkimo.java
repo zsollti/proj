@@ -15,6 +15,7 @@ public class Eszkimo extends Karakter{
 	public void kepesseg() {
 		System.out.println("-->kepesseg()");
 		this.tabla.setMenedek(new Iglu(this.tabla));
+		this.munkavegzes();
 		System.out.println("void<--");
 	}
 
@@ -24,6 +25,11 @@ public class Eszkimo extends Karakter{
 	public void addhopont(int i) {
 		System.out.println("\t-->addhopont(i)");
 		System.out.println("\tvoid<--");
+		
+		hopont += i;
+		
+		if(hopont > 5)hopont = 5;
+		else if(hopont < 1)palya.gameover(this);
 		
 	}
 

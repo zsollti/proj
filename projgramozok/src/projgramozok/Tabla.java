@@ -1,5 +1,9 @@
 package projgramozok;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 //A tábákat megvalósító osztály.
 public class Tabla {
 	
@@ -7,30 +11,34 @@ public class Tabla {
 	protected Menedek menedek;
 	protected int homennyiseg;
 	protected boolean atfordul;
-	protected Szereplo[] szereplok;
+	protected List<Szereplo> szereplok;
 	protected Targy targy;
-	protected Tabla[] szomszed;
+	protected List<Tabla> szomszed;
 	
 	//Konstruktor
 	public Tabla() {
-		szereplok = new Szereplo[2];
-		homennyiseg = 3;
+		szereplok = new ArrayList<Szereplo>();
+		Random n = new Random();
+		homennyiseg = n.nextInt(5);
 		menedek = null;
 		atfordul = false;
-		szomszed = new Tabla[4];
+		szomszed = new ArrayList<Tabla>();
 	}
 	
 	//Paraméteres konstruktor
 	public Tabla(Tabla t) {
-		szereplok = new Szereplo[2];
-		homennyiseg = 3;
+		szereplok = new ArrayList<Szereplo>();
+		Random n = new Random();
+		homennyiseg = n.nextInt(5);
+		menedek = null;
 		atfordul = false;
-		szomszed = new Tabla[3];
-		szomszed[0] = t;
+		szomszed = new ArrayList<Tabla>();
+		szomszed.add(t);
+		
 	}
 	
 	//A tábla karaktereivel tér vissza.
-	public Szereplo[] getkarakterek()
+	public List<Szereplo> getkarakterek()
 	{
 		System.out.println("\t-->getkarakterek()");
 		System.out.println("\tKarakter<--");
@@ -42,7 +50,7 @@ public class Tabla {
 	{
 		System.out.println("\t-->getszomszed(i)");
 		System.out.println("\tTabla<--");
-		return szomszed[0];
+		return szomszed.get(0);
 		
 	}
 	
@@ -58,16 +66,20 @@ public class Tabla {
 	public void ralep(Szereplo k)
 	{
 		System.out.println("\t-->ralep(k)");
-		this.szereplok[0] = k;
+		this.szereplok.add(k);
 		k.setTabla(this);
 		System.out.println("\tvoid<--");
+		
 	}
 	
 	//Eltávolítja a paraméerként kapott karaktert a sajátkai közül.
 	public void lelep(Szereplo k) 
 	{
 		System.out.println("\t-->lelep(k)");
-		this.szereplok = null;
+		this.szereplok.remove(k);
+		if(szereplok.size() == 0) {
+			atfordul = false;
+		}
 		System.out.println("\tvoid<--");
 	}
 	
@@ -77,17 +89,25 @@ public class Tabla {
 	{
 		System.out.println("\t-->addhomennyiseg(i)");
 		System.out.println("\tvoid<--");
-		if(i>0 ) {
-			this.szereplok[0].addhopont(-1);
+		
+		homennyiseg += i;
+		if(i > 0 && menedek != null) {
+			for(Szereplo sz: szereplok) {
+				sz.addhopont(-1);
+			}
 		}
+		if(homennyiseg > 5)homennyiseg = 5;
+		else if(homennyiseg < 0)homennyiseg = 0;
 	}
 	
 	//A paraméterként kapott karakternek adja a befagyott tárgyját.
 	public void targykias(Karakter k)
 	{
 		System.out.println("-->targykias(k)");
-		Lapat lapat = new Lapat();
-		k.addTargy(lapat);
+		if(targy != null) {
+			k.addTargy(targy);
+			targy = null;
+		}
 		System.out.println("void<--");
 	}
 	

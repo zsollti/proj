@@ -9,6 +9,7 @@ public class Elelem extends Targy{
 	public void hasznal(Karakter k) {
 		System.out.println("-->hasznal(k)");
 		k.addhopont(1);
+		k.munkavegzes();
 		System.out.println("void<--");
 	
 	}

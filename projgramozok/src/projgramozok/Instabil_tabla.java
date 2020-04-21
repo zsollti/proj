@@ -11,10 +11,15 @@ public class Instabil_tabla extends Tabla{
 	@Override
 	public void ralep(Szereplo k)
 	{
-		this.szereplok[this.szereplok.length] = k;
-		if(this.szereplok.length > birokepesseg)
-			for(int i = 0; i < this.szereplok.length; i++)
-				this.szereplok[i].beleesik();
+		szereplok.add(k);
+		k.setTabla(this);
+		if(szereplok.size() > birokepesseg) {
+			atfordul = true;
+			for(Szereplo sz : szereplok) {
+				sz.beleesik();
+			}
+		}
+		
 		//palya.vizsgal(szereplok);?????
 	}
 	

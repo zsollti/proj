@@ -58,7 +58,7 @@ public abstract class Karakter extends Szereplo{
 	 *
 	 */
 	@Override
-	public void utkozik(Karakter k) {
+	public void utkozik(Szereplo sz) {
 		//üres
 	}
 
@@ -93,6 +93,7 @@ public abstract class Karakter extends Szereplo{
 		//!!!!!!!!!!!!
 		//targyak.get(0).hasznal(this);
 		//!!!!!!!!!!!!
+		endTurn();
 		System.out.println("void<--");
 		
 	}

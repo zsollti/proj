@@ -10,17 +10,14 @@ public class Kotel extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		System.out.println("-->hasznal(k)");
 		int warningunused; //magamnek emlékeztetõ, ne vedd ki, amíg nincs kijavítva
 		//!!!!!!!!!!!
 		//szomszed.get(0)-t javítani!
-		List<Szereplo> rajta = k.getTabla().szomszed.get(0).getkarakterek();
+		List<Szereplo> rajta = k.getTabla().szomszed.get(0).getSzereplok();
 		while(!rajta.isEmpty()) {
 			rajta.get(0).lep(k.getTabla());
 		}
 		k.munkavegzes();
-		
-		System.out.println("void<--");
-		
+		System.out.println("Kotel");
 	}
 }

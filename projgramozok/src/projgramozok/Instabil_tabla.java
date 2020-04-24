@@ -13,12 +13,14 @@ public class Instabil_tabla extends Tabla{
 	{
 		szereplok.add(k);
 		k.setTabla(this);
-		if(szereplok.size() > birokepesseg) {
+		if(atfordul) k.beleesik();
+		else if(szereplok.size() > birokepesseg) {
 			atfordul = true;
 			for(Szereplo sz : szereplok) {
 				sz.beleesik();
 			}
 		}
+		szereplok.get(0).utkozik(k);
 	}
 	
 	//Eltávolítja a paraméterként kapott karaktert a sajátjai közül.

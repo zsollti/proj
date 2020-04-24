@@ -8,6 +8,7 @@ public class Alkatresz extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		//üres
+		//az még kellene, hogy ha az összes alkatrész egy helyen van
+		if(k.tabla.palya.vizsgal(k)) k.tabla.palya.gameover(null);
 	}
 }

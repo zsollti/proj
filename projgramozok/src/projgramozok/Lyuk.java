@@ -11,7 +11,7 @@ public class Lyuk extends Tabla{
 		szereplok = new ArrayList<Szereplo>();
 		Random n = new Random();
 		homennyiseg = n.nextInt(5);
-		atfordul = false;
+		atfordul = true;
 		szomszed = new ArrayList<Tabla>();
 		szomszed.add(t);
 	}
@@ -19,22 +19,16 @@ public class Lyuk extends Tabla{
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
 	//Ha többen vannak rajta mint amennyit elbír akkor a tábla átfordul.
 	@Override
-	public void ralep(Szereplo k)
-	{
-		System.out.println("\t-->ralep(k)");
-		
+	public void ralep(Szereplo k){
 		szereplok.add(k);
 		k.setTabla(this);
-		atfordul = true;
 		k.beleesik();
-
-		System.out.println("\tvoid<--");
+		szereplok.get(0).utkozik(k);
 	}
 	
 	//Megadja a tábla karakterbíró képességét (Lyuk esetén ez mindig 0).
 	@Override
-	public int getbirokepesseg()
-	{
+	public int getbirokepesseg(){
 		return 0;
 	}
 }

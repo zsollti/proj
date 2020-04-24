@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-//A tábákat megvalósító osztály. Yay
+//A táblákat megvalósító osztály.
 public class Tabla {
 	
 	static Palya palya;				//Ahhoz, hogy tudja a pálya függvényeit hívogatni

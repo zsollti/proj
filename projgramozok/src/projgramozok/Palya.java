@@ -1,11 +1,13 @@
 package projgramozok;
 
 import java.util.List;
+import java.util.Random;
 
 public class Palya {
+	private boolean gover = false;
 	private int jatekosok;
 	private List<Tabla> tablak;
-	private Szereplo[] szereplok;    
+	private List<Szereplo> szereplok;    
 	
 	
 	//A Pálya osztály konstruktora
@@ -15,38 +17,39 @@ public class Palya {
 		
 	}
 	
-	public static void gameover(Szereplo k)
-	{
-		System.out.println("-->gameover(k)");
-		
-		System.out.println("void<--");
+	public void gameover(Szereplo k){
+		if(k == null) System.out.println("Victory!!!!!");
+		else {
+			int i = szereplok.indexOf(k);
+			System.out.println("A " + i + ". játékos meghalt");
+		}
+		gover = true;
 	}
 	
 	
 	public void start() {
-		szereplok[1] = new Eszkimo(tablak[0][0]);
-		tablak[0][0].ralep(szereplok[1]);
-		int kor=0;
-		System.out.println("-->start(j)");
-		for(int i = 0; i < jatekosok; i++) {
-			szereplok[i].korkezd();
-			if(i == (jatekosok-1)) {i = 0; kor++;}
-			if(kor > 2) {gameover(null); i = 2;}
+		while(!gover) {
+			int r = new Random().nextInt(3);
+			if(r == 1) hovihar();
+			for(int i = 0; i < jatekosok; i++) {
+				szereplok.get(i).korkezd();
+				if(gover) break;
+			}
 		}
-		System.out.println("void<..");
+	}
+
+	public void hovihar(){
+		for(Tabla t: tablak) {
+			int r = new Random().nextInt(3);
+			if(r == 1) t.addhomennyiseg(1);
+		}
 	}
 	
-	public void hovihar()
-	{
-		System.out.println("-->hovihar()");
-		tablak[0][0].addhomennyiseg(1);
-		System.out.println("void<--");
-		
-	}
-	
-	public void vizsgal(Karakter[] karakterek)
-	{
-		
+	public boolean vizsgal(Karakter k){
+		 if(k.getTabla().getSzereplok().size() == jatekosok) {
+			 return true;
+		 }
+		 return false;
 	}
 	
 }

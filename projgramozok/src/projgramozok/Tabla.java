@@ -25,71 +25,45 @@ public class Tabla {
 		szomszed = new ArrayList<Tabla>();
 	}
 	
-	//Paraméteres konstruktor
-	public Tabla(Tabla t) {
-		szereplok = new ArrayList<Szereplo>();
-		Random n = new Random();
-		homennyiseg = n.nextInt(5);
-		menedek = null;
-		atfordul = false;
-		szomszed = new ArrayList<Tabla>();
-		szomszed.add(t);
-		
-	}
-	
 	//A tábla karaktereivel tér vissza.
-	public List<Szereplo> getkarakterek()
-	{
-		System.out.println("\t-->getkarakterek()");
-		System.out.println("\tKarakter<--");
+	public List<Szereplo> getSzereplok(){
 		return szereplok;
 	}
 	
-	//A tábla adott irányba elhelyezkedõ szomszédjával tér vissza.
-	public Tabla getszomszed(Irany i)
-	{
-		System.out.println("\t-->getszomszed(i)");
-		System.out.println("\tTabla<--");
-		return szomszed.get(0);
-		
+	//A két tábla szomszédja-e egymásnak
+	public boolean szomszede(Tabla sz){
+		for(Tabla szo: szomszed) {
+			if(szo.equals(sz)) return true;
+		}
+		return false;
 	}
 	
 	//Iglut helyez a táblára
 	public void setMenedek(Menedek m) {
-		System.out.println("\t-->setiglu()");
-		
-		System.out.println("\tvoid<--");
+		if(menedek != null) {
+			menedek.destroy();
+		}
+		if(menedek == null) {
+			menedek = m;
+		}
 	}
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
 	//Ezen a táblán az összes karakter elfér.
-	public void ralep(Szereplo k)
-	{
-		System.out.println("\t-->ralep(k)");
+	public void ralep(Szereplo k){
 		this.szereplok.add(k);
+		szereplok.get(0).utkozik(k);
 		k.setTabla(this);
-		System.out.println("\tvoid<--");
-		
 	}
 	
-	//Eltávolítja a paraméerként kapott karaktert a sajátkai közül.
-	public void lelep(Szereplo k) 
-	{
-		System.out.println("\t-->lelep(k)");
+	//Eltávolítja a paraméterként kapott karaktert a sajátjai közül.
+	public void lelep(Szereplo k) {
 		this.szereplok.remove(k);
-		if(szereplok.size() == 0) {
-			atfordul = false;
-		}
-		System.out.println("\tvoid<--");
 	}
 	
 	//A táblán levõ hó mennyiségét változtatja.
 	//Max 5 min 0 lehet rajta.
-	public void addhomennyiseg(int i)
-	{
-		System.out.println("\t-->addhomennyiseg(i)");
-		System.out.println("\tvoid<--");
-		
+	public void addhomennyiseg(int i){
 		homennyiseg += i;
 		if(i > 0 && menedek != null) {
 			for(Szereplo sz: szereplok) {
@@ -101,43 +75,20 @@ public class Tabla {
 	}
 	
 	//A paraméterként kapott karakternek adja a befagyott tárgyját.
-	public void targykias(Karakter k)
-	{
-		System.out.println("-->targykias(k)");
+	public void targykias(Karakter k){
 		if(targy != null) {
 			k.addTargy(targy);
 			targy = null;
 		}
-		System.out.println("void<--");
 	}
 	
 	//Megadja a tábla karakterbíró képességét (Tábla esetén mindig minden karaktert elbír).
 	public int getbirokepesseg() {
-		System.out.println("\t-->getbirokepesseg()");
-		System.out.println("\tint<--");
-		return 7;
+		return -1;
 	}
 	
 	//Megadja, a tábla átfordult állapotát.
-	public boolean getatfordult()
-	{
-		System.out.println("\t\tgetatfordult()");
-		System.out.println("\t\tboolean<--");
+	public boolean getatfordult(){
 		return atfordul;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

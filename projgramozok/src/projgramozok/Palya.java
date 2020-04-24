@@ -1,9 +1,10 @@
 package projgramozok;
 
+import java.util.List;
 
 public class Palya {
 	private int jatekosok;
-	private Tabla[][] tablak;
+	private List<Tabla> tablak;
 	private Szereplo[] szereplok;    
 	
 	
@@ -11,12 +12,7 @@ public class Palya {
 	//Jelenleg a pálya 1 táblából áll amin 1 eszkimó van
 	
 	public Palya(int jatekosok) {  
-		this.jatekosok = jatekosok;
-		tablak = new Tabla[1][1];
-		tablak[0][0] = new Tabla();
-		szereplok = new Szereplo[jatekosok];
-		szereplok[0] = new Eszkimo(tablak[0][0]);
-		tablak[0][0].ralep(szereplok[0]);
+		
 	}
 	
 	public void gameover(Szereplo k)

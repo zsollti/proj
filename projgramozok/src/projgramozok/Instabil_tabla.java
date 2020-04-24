@@ -19,9 +19,15 @@ public class Instabil_tabla extends Tabla{
 				sz.beleesik();
 			}
 		}
-		
-		//palya.vizsgal(szereplok);?????
 	}
+	
+	//Eltávolítja a paraméterként kapott karaktert a sajátjai közül.
+		public void lelep(Szereplo k) {
+			this.szereplok.remove(k);
+			if(szereplok.size() == 0) {
+				atfordul = false;
+			}
+		}
 	
 	//Megadja a tábla karakter bíró képességét.
 	@Override

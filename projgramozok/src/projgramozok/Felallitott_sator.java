@@ -8,8 +8,7 @@ public class Felallitott_sator extends Menedek{
 	
 	@Override
 	public void destroy() {
-		
-		
+		tabla.menedek = null;
 	}
 
 }

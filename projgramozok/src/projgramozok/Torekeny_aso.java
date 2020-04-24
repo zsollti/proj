@@ -12,7 +12,8 @@ public class Torekeny_aso extends Lapat{
 	@Override
 	public void hasznal(Karakter k) {
 		if(hasznalat <= 0) {
-			return; //destroy kéne?
+			k.targyak.remove(this);
+			return;
 		}
 		super.hasznal(k);
 		k.munkavegzes();

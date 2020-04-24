@@ -9,7 +9,8 @@ public class Sator extends Targy{
 	public void hasznal(Karakter k) {
 		k.getTabla().setMenedek(new Felallitott_sator(k.getTabla()));
 		k.munkavegzes();
-		//inventoryból kihúzni
+		k.targyak.remove(this);
+		System.out.println("Sator");
 	}
 
 }

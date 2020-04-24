@@ -21,12 +21,13 @@ public class Medve extends Szereplo{
 	}
 	
 	/**ha elkap valakit, az meghal
-	 *@param k a karakter, akit elkapott
+	 *@param sz a karakter, akit elkapott
 	 */
 	@Override
-	public void utkozik(Karakter k) {
-		if (k != null) {
-			Palya.gameover(k);
+	public void utkozik(Szereplo sz) {
+		//õ az egyetlen medve
+		if (sz != null && sz != this) {
+			Palya.gameover(sz);
 		}
 	}
 	
@@ -44,6 +45,7 @@ public class Medve extends Szereplo{
 	public void korkezd() {
 		int i = random.nextInt(tabla.szomszed.size()-1);
 		lep(tabla.szomszed.get(i));
+		tabla.setMenedek(null); //elpusztítja, ha tudja
 		endTurn();
 	}
 }

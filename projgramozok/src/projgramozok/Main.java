@@ -29,7 +29,7 @@ public class Main {
 				case "1":	//Játékos körei egyás után
 					System.out.println("1.: Játékosok körei egymás után két körön keresztül, majd game over\n");
 					Palya palya1 = new Palya(2);
-					palya1.start(2);
+					palya1.start();
 					break;
 					
 				case "2":	//Hóvihar

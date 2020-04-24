@@ -1,7 +1,7 @@
 package projgramozok;
 
 public abstract class Szereplo {
-	static Palya palya;	//Ahhoz, hogy tudja a pálya függvényeit hívogatni
+	//static Palya palya;	//Ahhoz, hogy tudja a pálya függvényeit hívogatni
 	protected Tabla tabla;
 	
 	public Szereplo(Tabla t) {
@@ -9,38 +9,34 @@ public abstract class Szereplo {
 	}
 	public abstract void addhopont(int i);
 	public abstract void beleesik();
+	public abstract void utkozik(Karakter k);
 	
-		//Adott táblára lépteti a karaktert.
-		public void lep(Tabla t) 
-		{
-			System.out.println("-->lep(i)");
-			tabla.lelep(this);
-			t.ralep(this);
-			System.out.println("void<--");
-		}
+	/**Adott táblára lépteti a karaktert.
+	 * @param t A tábla, amire lépni fog
+	 */
+	public abstract void lep(Tabla t);
 		
-		//Elkezdi a karakter körét.
-		public void korkezd()
-		{
-			System.out.println("\t-->korkezd()");
-			if(this.tabla.getatfordult())
-				palya.gameover(this);
-			this.endturn();
-			System.out.println("\tvoid<--");
-		}
+	/**Elkezdi a szereplõ körét.
+	 * 
+	 */
+	public abstract void korkezd();
 		
-		//A karakter befejezi a körét.
-		public void endturn()
-		{
-			System.out.println("\t\t-->endtrun()");
-			
-			System.out.println("\t\tvoid<--");
-		}
+	/**A szereplõ befejezi a körét.
+	 * 
+	 */
+	public void endTurn()
+	{
+		System.out.println("\t\t-->endtrun()");
+		//a pályának szólni kéne. Majd ha látszik, hogy néz ki a main loop, elég akkor.
+		System.out.println("\t\tvoid<--");
+	}
 		
-		//Beállítja a karakter tábláját.
-		public void setTabla(Tabla erre) {
-			System.out.println("\t-->setTabla()");
-			System.out.println("\tvoid<--");
-			this.tabla = erre;
-		}
+	/**Beállítja a szereplõ tábláját
+	 * @param erre a szerplõ új táblája
+	 */
+	public void setTabla(Tabla erre) {
+		System.out.println("\t-->setTabla()");
+		System.out.println("\tvoid<--");
+		this.tabla = erre;
+	}
 }

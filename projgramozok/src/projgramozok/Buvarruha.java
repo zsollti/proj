@@ -4,12 +4,14 @@ package projgramozok;
 //A búvárruha megvalósítása
 public class Buvarruha extends Targy{
 
-	//A búvárruha használata, a paraméterként kapott karaktert eg másik táblára lépteti.
+	/**A búvárruha használata
+	 *@param k  ezt egy másik táblára lépteti 
+	 */
 	@Override
 	public void hasznal(Karakter k) {
-		System.out.println("\t-->hasznal(k)");
-		//k.lep(Irany.Bal);
-		System.out.println("\tvoid<--");
+		//System.out.println("\t-->hasznal(k)");
+		k.lep(k.getTabla().szomszed.get(0)); //az elsõ szomszéd
+		//System.out.println("\tvoid<--");
 		
 	}
 

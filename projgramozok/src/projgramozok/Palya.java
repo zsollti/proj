@@ -19,7 +19,7 @@ public class Palya {
 		tablak[0][0].ralep(szereplok[0]);
 	}
 	
-	public void gameover(Szereplo k)
+	public static void gameover(Szereplo k)
 	{
 		System.out.println("-->gameover(k)");
 		
@@ -27,7 +27,7 @@ public class Palya {
 	}
 	
 	
-	public void start(int jatekosok) {
+	public void start() {
 		szereplok[1] = new Eszkimo(tablak[0][0]);
 		tablak[0][0].ralep(szereplok[1]);
 		int kor=0;

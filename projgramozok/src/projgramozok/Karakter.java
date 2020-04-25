@@ -1,6 +1,7 @@
 package projgramozok;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 //import java.util.HashMap;
 
 
@@ -30,7 +31,7 @@ public abstract class Karakter extends Szereplo{
 	 *
 	 */
 	@Override
-	public void korkezd() {
+	public void korkezd(Scanner sc) {
 		//System.out.println("\t-->korkezd()");
 		if(this.tabla.getatfordult())
 			Palya.gameover(this);

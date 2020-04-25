@@ -20,7 +20,7 @@ public class Palya {
 	//A Pálya osztály konstruktora
 	//Jelenleg a pálya 1 táblából áll amin 1 eszkimó van
 	
-	public Palya(String p, int jatekosok) {  
+	public Palya(int jatekosok, String p) {  
 		//táblák és hó
 		BufferedReader br = null;
 		try {
@@ -110,12 +110,12 @@ public class Palya {
 	}
 	
 	
-	public void start() {
+	public void start(Scanner sc) {
 		while(!gover) {
 			int r = new Random().nextInt(3);
 			if(r == 1) hovihar();
 			for(int i = 0; i < jatekosok; i++) {
-				szereplok.get(i).korkezd();
+				szereplok.get(i).korkezd(sc);
 				if(gover) break;
 			}
 		}

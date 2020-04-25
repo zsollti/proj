@@ -1,6 +1,7 @@
 package projgramozok;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Medve extends Szereplo{
 
@@ -42,7 +43,7 @@ public class Medve extends Szereplo{
 	 *
 	 */
 	@Override
-	public void korkezd() {
+	public void korkezd(Scanner sc) {
 		int i = random.nextInt(tabla.szomszed.size()-1);
 		lep(tabla.szomszed.get(i));
 		tabla.setMenedek(null); //elpusztítja, ha tudja

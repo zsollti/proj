@@ -1,5 +1,7 @@
 package projgramozok;
 
+import java.util.Scanner;
+
 public abstract class Szereplo {
 	//static Palya palya;	//Ahhoz, hogy tudja a pálya függvényeit hívogatni
 	protected Tabla tabla;
@@ -19,7 +21,7 @@ public abstract class Szereplo {
 	/**Elkezdi a szereplõ körét.
 	 * 
 	 */
-	public abstract void korkezd();
+	public abstract void korkezd(Scanner sc);
 		
 	/**A szereplõ befejezi a körét.
 	 * 

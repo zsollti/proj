@@ -46,9 +46,11 @@ public abstract class Karakter extends Szereplo{
 	 */
 	@Override
 	public void lep(Tabla t) {
+		if(tabla.szomszede(t)) {  //csak ha szomszédosak, akkor léphet át a másik táblára
 		tabla.lelep(this);
 		t.ralep(this);
 		munkavegzes();
+		}
 		//ezt elvileg a tábla hívja majd, nem kell ide
 		/*for (Szereplo sz : t.getkarakterek()) {
 			sz.utkozik(this);

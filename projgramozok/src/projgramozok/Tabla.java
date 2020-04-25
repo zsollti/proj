@@ -16,8 +16,7 @@ public class Tabla {
 	protected List<Tabla> szomszed;
 	
 	//Konstruktor
-	public Tabla(Palya p) {
-		palya = p;
+	public Tabla() {
 		szereplok = new ArrayList<Szereplo>();
 		Random n = new Random();
 		homennyiseg = n.nextInt(5);
@@ -54,6 +53,7 @@ public class Tabla {
 	//Ezen a táblán az összes karakter elfér.
 	public void ralep(Szereplo k){
 		this.szereplok.add(k);
+		if(szereplok.size() > 0)
 		szereplok.get(0).utkozik(k);
 		k.setTabla(this);
 	}
@@ -78,7 +78,7 @@ public class Tabla {
 	
 	//A paraméterként kapott karakternek adja a befagyott tárgyját.
 	public void targykias(Karakter k){
-		if(targy != null) {
+		if(targy != null && homennyiseg == 0) {
 			k.addTargy(targy);
 			targy = null;
 		}

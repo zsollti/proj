@@ -9,8 +9,7 @@ public class Instabil_tabla extends Tabla{
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
 	//Ha többen vannak rajta mint amennyit elbír akkor a tábla átfordul.
-	public Instabil_tabla(Palya p) {
-		super(p);
+	public Instabil_tabla() {
 		birokepesseg = new Random().nextInt(5) +1;
 	}
 	

@@ -7,8 +7,7 @@ import java.util.Random;
 public class Lyuk extends Tabla{
 	
 	//Konstruktor
-	public Lyuk(Palya p) {
-		super(p);
+	public Lyuk() {
 	}
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.

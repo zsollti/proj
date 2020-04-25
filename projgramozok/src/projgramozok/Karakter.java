@@ -1,5 +1,8 @@
 package projgramozok;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 //import java.util.HashMap;
@@ -32,13 +35,49 @@ public abstract class Karakter extends Szereplo{
 	 */
 	@Override
 	public void korkezd(Scanner sc) {
-		//System.out.println("\t-->korkezd()");
-		if(this.tabla.getatfordult())
-			Palya.gameover(this);
-			
+		if(tabla.getatfordult()) Palya.gameover(this);
 		munka = 4;
+		while(munka > 0) {
+			System.out.println("Valaszd ki a kivant cselekvest.\n");
+			System.out.println("lep [tábla indexe/ szama]");
+			System.out.println("targykias");
+			System.out.println("targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak indexevel");
+			System.out.println("kepesseg");
+			System.out.println("hoasas - kezzel");
+			System.out.println("endTurn - kor befejezese");
+			String s = sc.nextLine();
+			String[] ss = s.split(" ");
+			switch(ss[0]) {
+				case "lep":
+					int i = Integer.parseInt(ss[1]);
+					lep(Palya.gettabla(i));
+					break;
+				case "targykias":
+					tabla.targykias(this);
+					break;
+				case "targyhasznal":
+					System.out.println("Valaszd ki a kivant targyat [targy indexe].\n");
+					for(int n = 0; n < targyak.size(); n++) {
+						System.out.println(n + ". " + targyak.get(n).getName());
+						s = sc.nextLine();
+						targyak.get(Integer.parseInt(s)).hasznal(this);
+					}
+					break;
+				case "kepesseg":
+					kepesseg();
+					break;
+				case "hoasas":
+					tabla.addhomennyiseg(-1);
+					break;
+				case "endTurn":
+					munka = 0;
+					break;
+				default:
+					System.out.println("Rossz bemenet. Adjon meg újat");
+					break;
+		}
+	}
 		//this.endturn(); //??
-		//System.out.println("\tvoid<--");
 	}
 	
 	/**Karakter lépése

@@ -20,4 +20,7 @@ public class Kotel extends Targy{
 		k.munkavegzes();
 		System.out.println("Kotel");
 	}
+	public  String getName() {
+		return "Kotel";
+	}
 }

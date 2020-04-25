@@ -1,5 +1,6 @@
 package projgramozok;
 
+import java.io.BufferedReader;
 import java.util.Scanner;
 
 public abstract class Szereplo {
@@ -22,7 +23,7 @@ public abstract class Szereplo {
 	 * 
 	 */
 	public abstract void korkezd(Scanner sc);
-		
+	
 	/**A szereplõ befejezi a körét.
 	 * 
 	 */

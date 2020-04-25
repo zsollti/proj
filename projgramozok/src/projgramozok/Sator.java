@@ -12,5 +12,7 @@ public class Sator extends Targy{
 		k.targyak.remove(this);
 		System.out.println("Sator");
 	}
-
+	public  String getName() {
+		return "Sator";
+	}
 }

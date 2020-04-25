@@ -14,4 +14,7 @@ public class Elelem extends Targy{
 		k.munkavegzes();
 		//System.out.println("void<--");
 	}
+	public  String getName() {
+		return "Elelem";
+	}
 }

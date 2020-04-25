@@ -19,4 +19,7 @@ public class Torekeny_aso extends Lapat{
 		k.munkavegzes();
 		hasznalat--;
 	}
+	public  String getName() {
+		return "Torekeny aso";
+	}
 }

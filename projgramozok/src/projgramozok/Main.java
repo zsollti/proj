@@ -1,5 +1,9 @@
 package projgramozok;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -34,7 +38,18 @@ public class Main {
 					}
 					break;
 				case "testBeolvas":
-					
+				try {
+					Scanner fr = new Scanner(new FileReader(ss[1]));
+					String ts = fr.nextLine();
+					String[] tss = ts.split(" ");
+					p = new Palya(tss[1]);
+					p.start(fr);
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+					break;
 				case "kilep":
 					sc.close();
 					System.exit(0);

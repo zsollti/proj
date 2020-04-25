@@ -11,4 +11,7 @@ public class Alkatresz extends Targy{
 		//az még kellene, hogy ha az összes alkatrész egy helyen van
 		if(Palya.vizsgal(k)) Palya.gameover(null);
 	}
+	public  String getName() {
+		return "Alkatresz";
+	}
 }

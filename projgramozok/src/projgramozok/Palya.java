@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Palya {
 	private static boolean gover = false;
 	private static int jatekosok;
-	private List<Tabla> tablak;
+	private static List<Tabla> tablak;
 	private static List<Szereplo> szereplok;
 	Scanner sc;
 	
@@ -111,13 +111,16 @@ public class Palya {
 	
 	
 	public void start(Scanner sc) {
+		int i = 0;
 		while(!gover) {
 			int r = new Random().nextInt(3);
 			if(r == 1) hovihar();
-			for(int i = 0; i < jatekosok; i++) {
+			while(i < szereplok.size()) {
 				szereplok.get(i).korkezd(sc);
 				if(gover) break;
+				i++;
 			}
+			i = 0;
 		}
 	}
 
@@ -133,6 +136,10 @@ public class Palya {
 			 return true;
 		 }
 		 return false;
+	}
+	
+	public static Tabla gettabla(int i){
+		return tablak.get(i);
 	}
 	
 }

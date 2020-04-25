@@ -13,5 +13,7 @@ public class Lapat extends Targy{
 		k.munkavegzes();
 		System.out.println("void<--");
 	}
-
+	public  String getName() {
+		return "Lapat";
+	}
 }

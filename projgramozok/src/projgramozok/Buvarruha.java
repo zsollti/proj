@@ -14,5 +14,7 @@ public class Buvarruha extends Targy{
 		//System.out.println("\tvoid<--");
 		
 	}
-
+	public  String getName() {
+		return "Buvarruha";
+	}
 }

@@ -7,13 +7,8 @@ import java.util.Random;
 public class Lyuk extends Tabla{
 	
 	//Konstruktor
-	public Lyuk(Tabla t) {
-		szereplok = new ArrayList<Szereplo>();
-		Random n = new Random();
-		homennyiseg = n.nextInt(5);
-		atfordul = true;
-		szomszed = new ArrayList<Tabla>();
-		szomszed.add(t);
+	public Lyuk(Palya p) {
+		super(p);
 	}
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.

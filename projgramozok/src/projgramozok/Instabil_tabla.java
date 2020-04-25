@@ -1,5 +1,6 @@
 package projgramozok;
 
+import java.util.Random;
 
 //Instabil táblák egvalósítása.
 public class Instabil_tabla extends Tabla{
@@ -8,6 +9,11 @@ public class Instabil_tabla extends Tabla{
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
 	//Ha többen vannak rajta mint amennyit elbír akkor a tábla átfordul.
+	public Instabil_tabla(Palya p) {
+		super(p);
+		birokepesseg = new Random().nextInt(5) +1;
+	}
+	
 	@Override
 	public void ralep(Szereplo k)
 	{

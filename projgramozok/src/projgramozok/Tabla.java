@@ -16,11 +16,13 @@ public class Tabla {
 	protected List<Tabla> szomszed;
 	
 	//Konstruktor
-	public Tabla() {
+	public Tabla(Palya p) {
+		palya = p;
 		szereplok = new ArrayList<Szereplo>();
 		Random n = new Random();
 		homennyiseg = n.nextInt(5);
 		menedek = null;
+		targy = null;
 		atfordul = false;
 		szomszed = new ArrayList<Tabla>();
 	}

@@ -17,11 +17,11 @@ public class Palya {
 	Scanner sc;
 	
 	
-	//A P·lya oszt·ly konstruktora
-	//Jelenleg a p·lya 1 t·bl·bÛl ·ll amin 1 eszkimÛ van
+	//A P√°lya oszt√°ly konstruktora
+	//Jelenleg a p√°lya 1 t√°bl√°b√≥l √°ll amin 1 eszkim√≥ van
 	
 	public Palya(int jatekosok, String p) {  
-		//t·bl·k Ès hÛ
+		//t√°bl√°k √©s h√≥
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(p));
@@ -47,7 +47,7 @@ public class Palya {
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("Nem lÈtezik a f·jl.");
+			System.out.println("Nem l√©tezik a f√°jl.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -61,7 +61,7 @@ public class Palya {
 		sc = new Scanner(System.in);
 		szereplok = new ArrayList<Szereplo>();
 		for(int i = 0; i < jatekosok; i++) {
-			System.out.println("EszkimÛ(1) vagy sarkkutatÛ(2) akarsz lenni?");
+			System.out.println("Eszkim√≥(1) vagy sarkkutat√≥(2) akarsz lenni?");
 			int ered = sc.nextInt();
 			while(ered != 1 && ered != 2) {
 				ered = sc.nextInt();
@@ -74,7 +74,7 @@ public class Palya {
 			r = new Random().nextInt(tablak.size());
 		}
 		szereplok.add(new Medve(tablak.get(r)));
-		//t·rgyak
+		//t√°rgyak
 		List<Targy> targyak = new ArrayList<Targy>();
 		for(int i = 0; i < 3; i++) {
 			targyak.add(new Alkatresz());
@@ -96,7 +96,169 @@ public class Palya {
 		}
 	}
 	
-	public Palya(String mentett) {
+	public Palya(String filename) {
+		int ho = 0;
+		boolean fordult = false;
+		BufferedReader br = null;
+		
+		try {
+			br = new BufferedReader(new FileReader(filename));
+			String line;
+			
+			int row = 0;
+			while ((line = br.readLine()) != null && line.charAt(0) != ' ') {
+				
+				String[] dolgok = line.split(",");
+				String[] tul = dolgok[1].split(" ");
+				
+				for(int k = 1; k < tul.length; k++) {
+					if(k == 1) {
+						ho = Integer.parseInt(tul[k]);
+					}
+					else if(k == 2) {
+						if(Integer.parseInt(tul[k]) == 0)fordult = false;
+						else fordult = true;
+					}
+				}
+				
+				for(int i = 0; i < dolgok.length; i++) {
+									
+					switch(i) {
+					
+						case 0:
+							if(dolgok[i].charAt(0) == 't') {
+								tablak.add(new Tabla(ho, fordult));
+							}
+							else if(dolgok[i].charAt(0) == 'i') {
+								tablak.add(new Instabil_tabla(ho, fordult));
+							}
+							else {
+								tablak.add(new Lyuk(ho, fordult));
+							}
+							break;
+							
+						case 1:
+								if(tul[0].charAt(0) == 'i') {
+									tablak.get(row).setMenedek(new Iglu(tablak.get(row)));
+								}
+								else if(tul[0].charAt(0) == 's') {
+									tablak.get(row).setMenedek(new Felallitott_sator(tablak.get(row)));
+								}
+								
+								switch(tul[3]) {
+								
+									case "alkatresz":
+										tablak.get(row).targy = new Alkatresz();
+										break;
+										
+						        	case "elelem":
+						        		tablak.get(row).targy = new Elelem();
+						        		break;
+						        		
+						        	case "sator":
+						        		tablak.get(row).targy = new Sator();
+						        		break;
+						        		
+						        	case "lapat":
+						        		tablak.get(row).targy = new Lapat();
+						        		break;
+						        		
+						        	case "kotel":
+						        		tablak.get(row).targy = new Kotel();
+						        		break;
+						        		
+						        	case "torekeny_aso":
+						        		tablak.get(row).targy = new Torekeny_aso();
+						        		break;
+						        		
+						        	case "buvarruha":
+						        		tablak.get(row).targy = new Buvarruha();
+						        		break;
+						        	default:
+						        		tablak.get(row).targy = null;
+						        		break;
+						        	}
+						break;
+						
+						case 2:
+							String[] k = dolgok[2].split(";");
+							for(int a = 0; a < k.length; a++) {
+								
+								String[] karaktertul = k[a].split(" ");
+								for(int b = 0; b < karaktertul.length; b++) {
+									if(b == 0) {
+										if(karaktertul[b].charAt(0) == 'e')szereplok.add(new Eszkimo(tablak.get(row)));
+										else if(karaktertul[b].charAt(0) == 's')szereplok.add(new Sarkkutato(tablak.get(row)));
+										else if(karaktertul[b].charAt(0) == 'm') {
+											szereplok.add(new Medve(tablak.get(row)));
+											break;
+										}
+									}
+									else{
+										switch(karaktertul[b]) {
+										
+										case "alkatresz":
+											szereplok.get(a).addTargy(new Alkatresz());
+											break;
+											
+							        	case "elelem":
+							        		szereplok.get(a).addTargy(new Elelem());
+							        		break;
+							        		
+							        	case "sator":
+							        		szereplok.get(a).addTargy(new Sator());
+							        		break;
+							        		
+							        	case "lapat":
+							        		szereplok.get(a).addTargy(new Lapat());
+							        		break;
+							        		
+							        	case "kotel":
+							        		szereplok.get(a).addTargy(new Kotel());
+							        		break;
+							        		
+							        	case "torekeny_aso":
+							        		szereplok.get(a).addTargy(new Torekeny_aso());
+							        		break;
+							        		
+							        	case "buvarruha":
+							        		szereplok.get(a).addTargy(new Buvarruha());
+							        		break;
+							        	default: break;
+							        	}	
+									}
+								}
+							}
+				}
+				row++;
+			}
+			br.close();
+			
+		}
+			row = 0;
+			while ((line = br.readLine()) != null) {
+				for(int i = 0; i < line.length(); i++) {
+					if(line.charAt(i) == '1') {
+						tablak.get(row).szomszed.add(tablak.get(i));
+					}
+				}
+				row ++;
+			}
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("Nem l√©tezik a f√°jl.");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (br != null)
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		}
+		
+		
 		
 	}
 	
@@ -104,7 +266,7 @@ public class Palya {
 		if(k == null) System.out.println("Victory!!!!!");
 		else {
 			int i = szereplok.indexOf(k);
-			System.out.println("A " + i + ". j·tÈkos meghalt");
+			System.out.println("A " + i + ". j√°t√©kos meghalt");
 		}
 		gover = true;
 	}
@@ -115,6 +277,9 @@ public class Palya {
 		while(!gover) {
 			int r = new Random().nextInt(3);
 			if(r == 1) hovihar();
+			for(Tabla t : tablak) {
+				t.setMenedek(null);
+			}
 			while(i < szereplok.size()) {
 				szereplok.get(i).korkezd(sc);
 				if(gover) break;

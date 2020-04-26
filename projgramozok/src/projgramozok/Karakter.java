@@ -73,7 +73,9 @@ public abstract class Karakter extends Szereplo{
 						Kiiro.Kiir("Nem megfelelo bemenet - nincs ilyen tárgy. Próbáld újra!\n");
 						s = sc.nextLine();
 					}
-					targyak.get(s).get(0).hasznal(this); //alkatrész???
+					if(targyak.get(s).get(0) != null) {
+						targyak.get(s).get(0).hasznal(this);
+					}
 					break;
 				case "kepesseg":
 					kepesseg();

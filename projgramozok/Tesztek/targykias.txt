@@ -2,5 +2,5 @@ jatekBeltolt targyas.txt
 random
 targyhasznal
 Lapat
-tagykias
+targykias
 kilep

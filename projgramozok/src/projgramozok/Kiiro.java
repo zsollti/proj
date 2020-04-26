@@ -27,7 +27,7 @@ public class Kiiro {
 		try {
 			file = new FileWriter(s);
 		} catch (IOException e) {
-			System.out.println("a fájl nem található");
+			System.out.println("a fájl nem található (kiiró)");
 		}
 	}
 }

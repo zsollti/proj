@@ -1,5 +1,5 @@
 jatekBeltolt targyas.txt
 random
 targyhasznal
-torekeny_aso
+Torekeny_aso
 kilep

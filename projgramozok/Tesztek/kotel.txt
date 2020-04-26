@@ -4,5 +4,5 @@ endTurn
 lep 1    	
 lep 1		 
 targyhasznal
-kotel
+Kotel
 kilep

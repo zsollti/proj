@@ -1,5 +1,5 @@
 jatekBetolt targyas.txt
 random
 targyhasznal
-elelem
+Elelem
 kilep

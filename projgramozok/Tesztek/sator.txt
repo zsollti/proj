@@ -1,5 +1,5 @@
 jatekBeltolt targyas.txt
 random
 targyhasznal
-sator
+Sator
 kilep

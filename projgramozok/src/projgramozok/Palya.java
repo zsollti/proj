@@ -12,8 +12,8 @@ import java.util.Scanner;
 public class Palya {
 	private static boolean gover = false;
 	private static int jatekosok;
-	private static List<Tabla> tablak;
-	private static List<Szereplo> szereplok;
+	private static List<Tabla> tablak = new ArrayList<Tabla>();
+	private static List<Szereplo> szereplok = new ArrayList<Szereplo>();
 	Scanner sc;
 	static boolean random = true;
 	
@@ -46,7 +46,7 @@ public class Palya {
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("Nem lÃ©tezik a fÃ¡jl.");
+			System.out.println("Nem létezik a fájl.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -105,7 +105,7 @@ public class Palya {
 			String line;
 			
 			int row = 0;
-			while ((line = br.readLine()) != null && line.charAt(0) != ' ') {
+			while ((line = br.readLine()) != null && line.charAt(0) != 'p') {
 				
 				String[] dolgok = line.split(",");
 				String[] tul = dolgok[1].split(" ");
@@ -229,11 +229,10 @@ public class Palya {
 									}
 								}
 							}
-				}
-				row++;
+				}		
 			}
-			br.close();
-			
+				row++;
+					
 		}
 			row = 0;
 			while ((line = br.readLine()) != null) {
@@ -244,12 +243,15 @@ public class Palya {
 				}
 				row ++;
 			}
+			br.close();
 			
 		} catch (FileNotFoundException e) {
 			System.out.println("Nem létezik a fájl.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}catch(NumberFormatException n) {
+			System.out.println("Nem jó a formátum");
+		}catch(NullPointerException nu) {
 			System.out.println("Nem jó a formátum");
 		}
 		finally {

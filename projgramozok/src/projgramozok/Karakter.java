@@ -26,7 +26,7 @@ public abstract class Karakter extends Szereplo{
 	public Karakter(Tabla t) {
 		super(t);
 		this.targyak = new ArrayList<Targy>();
-		this.addhopont(5);
+		this.addhopont(5); //abstract fv hívás????
 		this.munka = 4;
 	}
 	

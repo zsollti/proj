@@ -42,6 +42,7 @@ public class Main {
 				try {
 					String string = "Tesztek/"+ss[1];
 					Scanner fr = new Scanner(new FileReader(string));
+					Kiiro.setFile(string + "_kimenet"); //test kiírása fáljba
 					String ts = fr.nextLine();
 					String[] tss = ts.split(" ");
 					p = new Palya(tss[1]);

@@ -1,6 +1,8 @@
 package projgramozok;
 
 import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public abstract class Szereplo {
@@ -15,6 +17,7 @@ public abstract class Szereplo {
 	public abstract void addTargy(Targy t);
 	public abstract void setMunka(int i);
 	public abstract void setHopont(int i);
+	public abstract HashMap<String, ArrayList<Targy>> getInventory();
 	
 	/**Adott táblára lépteti a karaktert.
 	 * @param t A tábla, amire lépni fog

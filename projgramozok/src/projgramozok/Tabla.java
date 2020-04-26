@@ -28,7 +28,6 @@ public class Tabla {
 	
 	public Tabla(int ho, boolean atfordult) {
 		szereplok = new ArrayList<Szereplo>();
-		Random n = new Random();
 		homennyiseg = ho;
 		menedek = null;
 		targy = null;
@@ -64,7 +63,9 @@ public class Tabla {
 	public void ralep(Szereplo k){
 		this.szereplok.add(k);
 		if(szereplok.size() > 0)
-		szereplok.get(0).utkozik(k);
+		for (Szereplo sz : szereplok) {
+			sz.utkozik(k);
+		}
 		k.setTabla(this);
 	}
 	

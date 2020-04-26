@@ -19,7 +19,7 @@ public class Eszkimo extends Karakter{
 	public void kepesseg() {
 		this.tabla.setMenedek(new Iglu(this.tabla));
 		this.munkavegzes();
-		System.out.println("Iglu felépítve");
+		Kiiro.Kiir("Iglu felépítve");
 	}
 
 	/**Az eszkimó hõpontját növeli max 5-ig, vagy csökkenti.
@@ -31,16 +31,18 @@ public class Eszkimo extends Karakter{
 		hopont += i;
 		if(hopont > 5)hopont = 5;
 		else if(hopont < 1)Palya.gameover(this);
-		System.out.println(hopont);
+		Kiiro.Kiir(hopont);
 	}
 
 	@Override
 	public void setMunka(int i) {
+		if (i > 4) i=4;
 		munka = i;
 	}
 
 	@Override
 	public void setHopont(int i) {
+		if (i>5) i = 5;
 		hopont = i;
 	}
 

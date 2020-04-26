@@ -19,7 +19,7 @@ public class Sarkkutato extends Karakter{
 	public void kepesseg() {
 		int birokepesseg = tabla.szomszed.get(0).getbirokepesseg();
 		munkavegzes();
-		System.out.println(birokepesseg);
+		Kiiro.Kiir(birokepesseg);
 	}
 
 	/**A sarkkutató hõpontját növeli max 4-ig, vagy csökkenti.
@@ -31,16 +31,18 @@ public class Sarkkutato extends Karakter{
 		hopont += i;
 		if(hopont > 4) hopont = 4;
 		else if(hopont < 1)Palya.gameover(this);
-		System.out.println(hopont);
+		Kiiro.Kiir(hopont);
 	}
 
 	@Override
 	public void setMunka(int i) {
+		if (i > 4) i=4;
 		munka = i;
 	}
 
 	@Override
 	public void setHopont(int i) {
+		if (i > 4) i=4;
 		hopont = i;
 	}
 

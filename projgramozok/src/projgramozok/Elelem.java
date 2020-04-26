@@ -9,10 +9,10 @@ public class Elelem extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		//System.out.println("-->hasznal(k)");
 		k.addhopont(1);
 		k.munkavegzes();
-		//System.out.println("void<--");
+		k.targyak.get(getName()).remove(this);
+		Kiiro.Kiir(getName());
 	}
 	public  String getName() {
 		return "Elelem";

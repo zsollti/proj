@@ -17,11 +17,11 @@ public class Main {
 
 		
 		while(true) {
-			System.out.println("Válaszd ki a futtatni kívánt cselekvést.\n");
-			System.out.println("jatekBetolt [fajlnév]: Mentett játék betöltése");
-			System.out.println("jatekBetolt: Új játék kezdése");
-			System.out.println("testBeolvas [fájlnnév]: Teszteset beolvasása fájlból és futtatása");
-			System.out.println("kilep: Teszteset beolvasása fájlból és futtatása");
+			Kiiro.Kiir("Válaszd ki a futtatni kívánt cselekvést.\n");
+			Kiiro.Kiir("jatekBetolt [fajlnév]: Mentett játék betöltése");
+			Kiiro.Kiir("jatekBetolt: Új játék kezdése");
+			Kiiro.Kiir("testBeolvas [fájlnnév]: Teszteset beolvasása fájlból és futtatása");
+			Kiiro.Kiir("kilep: Teszteset beolvasása fájlból és futtatása");
 			
 			s = sc.nextLine();
 			String[] ss = s.split(" ");
@@ -32,7 +32,7 @@ public class Main {
 						p = new Palya(ss[1]);
 						p.start(sc);
 					} else {
-						System.out.println("Hány játékos legyen?");
+						Kiiro.Kiir("Hány játékos legyen?");
 						int n = sc.nextInt();
 						p = new Palya(n, "uj.txt");
 						p.start(sc);
@@ -47,7 +47,7 @@ public class Main {
 					p = new Palya(tss[1]);
 					p.start(fr);
 				} catch (FileNotFoundException e) {
-					System.out.println("A fajl nem talalhato");
+					Kiiro.Kiir("A fajl nem talalhato");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -57,7 +57,7 @@ public class Main {
 					System.exit(0);
 					break;
 				default:  
-					System.out.println("Rossz bemenet. Adjon meg újat");
+					Kiiro.Kiir("Rossz bemenet. Adjon meg újat");
 				break;
 				
 			}

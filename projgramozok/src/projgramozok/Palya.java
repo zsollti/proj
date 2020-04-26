@@ -12,8 +12,8 @@ import java.util.Scanner;
 public class Palya {
 	static boolean gover = false;
 	private static int jatekosok;
-	private static List<Tabla> tablak = new ArrayList<Tabla>();
-	private static List<Szereplo> szereplok = new ArrayList<Szereplo>();
+	static List<Tabla> tablak = new ArrayList<Tabla>();
+	static List<Szereplo> szereplok = new ArrayList<Szereplo>();
 	Scanner sc;
 	static boolean random = true;
 	
@@ -47,7 +47,7 @@ public class Palya {
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("Nem létezik a fájl.");
+			Kiiro.Kiir("Nem létezik a fájl.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -61,7 +61,7 @@ public class Palya {
 		sc = new Scanner(System.in);
 		szereplok = new ArrayList<Szereplo>();
 		for(int i = 0; i < jatekosok; i++) {
-			System.out.println("Eszkimó(1) vagy sarkkutató(2) akarsz lenni?");
+			Kiiro.Kiir("Eszkimó(1) vagy sarkkutató(2) akarsz lenni?");
 			int ered = sc.nextInt();
 			while(ered != 1 && ered != 2) {
 				ered = sc.nextInt();
@@ -254,15 +254,15 @@ public class Palya {
 			br.close();
 			
 		} catch (FileNotFoundException e) {
-			System.out.println("Nem létezik a fájl.");
+			Kiiro.Kiir("Nem létezik a fájl.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}catch(NumberFormatException n) {
-			System.out.println("Nem jó a formátum");
+			Kiiro.Kiir("Nem jó a formátum");
 		}catch(NullPointerException nu) {
-			System.out.println("Nem jó a formátum");
+			Kiiro.Kiir("Nem jó a formátum");
 		}catch(ArrayIndexOutOfBoundsException ae) {
-			System.out.println("Nem jó a formátum");
+			Kiiro.Kiir("Nem jó a formátum");
 		}
 		finally {
 			if (br != null)
@@ -278,10 +278,10 @@ public class Palya {
 	}
 	
 	public static void gameover(Szereplo k){
-		if(k == null) System.out.println("Victory!!!!!");
+		if(k == null) Kiiro.Kiir("Victory!!!!!");
 		else {
 			int i = szereplok.indexOf(k);
-			System.out.println("A " + i + ". játékos meghalt");
+			Kiiro.Kiir("A " + i + ". játékos meghalt");
 		}
 		gover = true;
 	}
@@ -289,7 +289,7 @@ public class Palya {
 	
 	public void start(Scanner sc) {
 		int i = 0;
-		System.out.println("random: hóvihar és medve randomságának kikapcsolása");
+		Kiiro.Kiir("random: hóvihar és medve randomságának kikapcsolása");
 		String s = sc.nextLine();
 		if(s.equals("random")) random = false;
 		while(!gover) {

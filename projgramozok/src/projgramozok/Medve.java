@@ -1,5 +1,8 @@
 package projgramozok;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -36,9 +39,16 @@ public class Medve extends Szereplo{
 	
 	@Override
 	public void lep(Tabla t) {
+		Tabla regi = tabla;
+		List<Szereplo> rajta = t.getSzereplok();
+		for (Szereplo sz : rajta) { //minden rajta lévõvel ütközik
+			utkozik(sz);
+		}
 		tabla.lelep(this);
 		t.ralep(this);
-		//umlben az van, hogy a tabla hívja a destroyt meg mindent, de azt csak a maci csinálja, ezért szerintem ide kéne.
+		Kiiro.Kiir(Palya.szereplok.indexOf(this) + "lep" + 
+				Palya.tablak.indexOf(regi) + "-rõl" +
+				Palya.tablak.indexOf(tabla) + "-re");
 	}
 	
 	/**Kiválaszt egy random táblát, majd arra lép.
@@ -61,5 +71,11 @@ public class Medve extends Szereplo{
 	@Override
 	public void setHopont(int i) {
 		//üres
+	}
+
+	@Override
+	public HashMap<String, ArrayList<Targy>> getInventory() {
+		// üres
+		return null;
 	}
 }

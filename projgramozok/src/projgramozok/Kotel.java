@@ -1,6 +1,7 @@
 package projgramozok;
 
 import java.util.List;
+import java.util.Scanner;
 
 //A kötél megvalósítása
 public class Kotel extends Targy{
@@ -10,15 +11,23 @@ public class Kotel extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		int warningunused; //magamnek emlékeztetõ, ne vedd ki, amíg nincs kijavítva
-		//!!!!!!!!!!!
-		//szomszed.get(0)-t javítani!
-		List<Szereplo> rajta = k.getTabla().szomszed.get(0).getSzereplok();
+		Scanner sc = new Scanner(System.in);
+		Kiiro.Kiir("Melyik szomszéból szeretnéd kihúzni õket?");
+		for(Tabla t : k.tabla.szomszed) {
+			Kiiro.Kiir(k.getTabla().szomszed.indexOf(t));
+		}
+		int n = sc.nextInt();
+		while (n > k.tabla.szomszed.size() | n < 0) {
+			Kiiro.Kiir("Helytelen input!");
+			n = sc.nextInt();
+		}
+		List<Szereplo> rajta = k.getTabla().szomszed.get(n).getSzereplok();
 		while(!rajta.isEmpty()) {
 			rajta.get(0).lep(k.getTabla());
 		}
+		sc.close();
 		k.munkavegzes();
-		System.out.println("Kotel");
+		Kiiro.Kiir(getName());
 	}
 	public  String getName() {
 		return "Kotel";

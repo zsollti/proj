@@ -11,13 +11,14 @@ public class Torekeny_aso extends Lapat{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		if(hasznalat <= 0) {
-			k.targyak.remove(this);
-			return;
-		}
 		super.hasznal(k);
 		k.munkavegzes();
 		hasznalat--;
+		if(hasznalat <= 0) {
+			k.targyak.get(getName()).remove(this);
+			Kiiro.Kiir(getName() + "eltört!");
+			return;
+		}
 	}
 	public  String getName() {
 		return "Torekeny aso";

@@ -34,6 +34,7 @@ public abstract class Szereplo {
 	 */
 	public void endTurn()
 	{
+		this.setMunka(0);
 		Kiiro.Kiir("Kör átadása");
 	}
 		

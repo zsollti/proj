@@ -90,7 +90,7 @@ public abstract class Karakter extends Szereplo{
 					tabla.addhomennyiseg(-1);
 					break;
 				case "endTurn":
-					endTurn();
+					munka = 0;
 					break;
 				case "kilep":
 					Palya.gover = true;

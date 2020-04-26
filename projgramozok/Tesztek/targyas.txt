@@ -18,7 +18,7 @@ t,n 1 0 kotel
 i 1,n 0 0 null
 t,n 0 0 null
 i 1,n 0 0 null
-tltitltltitltitititi
+p
 01011000000000100000
 10000111010000000000
 00000000001011000110

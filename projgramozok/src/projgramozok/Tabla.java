@@ -93,9 +93,9 @@ public class Tabla {
 	//A paraméterként kapott karakternek adja a befagyott tárgyját.
 	public void targykias(Karakter k){
 		if(targy != null && homennyiseg == 0) {
+			Kiiro.Kiir("A targy kiasasa megtortent. " + targy.getName());
 			k.addTargy(targy);
 			targy = null;
-			Kiiro.Kiir("A targy kiasasa megtortent.");
 		}
 		else Kiiro.Kiir("Nincs is itt látható tárgy.");
 	}

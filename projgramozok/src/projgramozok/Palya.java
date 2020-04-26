@@ -14,7 +14,7 @@ public class Palya {
 	private static int jatekosok;
 	static List<Tabla> tablak = new ArrayList<Tabla>();
 	static List<Szereplo> szereplok = new ArrayList<Szereplo>();
-	Scanner sc;
+	static Scanner sc = null;
 	static boolean random = true;
 	
 	private void reset() {
@@ -22,6 +22,7 @@ public class Palya {
 		tablak = new ArrayList<Tabla>();
 		szereplok = new ArrayList<Szereplo>();
 		random = true;
+		sc = null;
 	}
 	
 	//A Pálya osztály konstruktora
@@ -299,6 +300,7 @@ public class Palya {
 	
 	
 	public void start(Scanner sc) {
+		Palya.sc = sc;
 		int i = 0;
 		Kiiro.Kiir("random: hóvihar és medve randomságának kikapcsolása");
 		String s = sc.nextLine();

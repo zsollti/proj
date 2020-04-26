@@ -15,7 +15,7 @@ public class Palya {
 	private static List<Tabla> tablak;
 	private static List<Szereplo> szereplok;
 	Scanner sc;
-	
+	static boolean random = true;
 	
 	//A Pálya osztály konstruktora
 	//Jelenleg a pálya 1 táblából áll amin 1 eszkimó van
@@ -29,11 +29,11 @@ public class Palya {
 			line = br.readLine();
 			for(int i = 0; i < line.length(); i++) {
 				if(line.charAt(i) == 't') {
-					tablak.add(new Tabla(this));
+					tablak.add(new Tabla());
 				} else if(line.charAt(i) == 'i') {
-					tablak.add(new Instabil_tabla(this));
+					tablak.add(new Instabil_tabla());
 				} else if(line.charAt(i) == 'l') {
-					tablak.add(new Lyuk(this));
+					tablak.add(new Lyuk());
 				}
 			}
 			int row = 0;
@@ -274,8 +274,12 @@ public class Palya {
 	
 	public void start(Scanner sc) {
 		int i = 0;
+		System.out.println("random: h�vihar �s medve randoms�g�nak kikapcsol�sa");
+		String s = sc.nextLine();
+		if(s.equals("random")) random = false;
 		while(!gover) {
 			int r = new Random().nextInt(3);
+			if(!random) r = 1;
 			if(r == 1) hovihar();
 			for(Tabla t : tablak) {
 				t.setMenedek(null);
@@ -290,9 +294,16 @@ public class Palya {
 	}
 
 	public void hovihar(){
-		for(Tabla t: tablak) {
-			int r = new Random().nextInt(3);
-			if(r == 1) t.addhomennyiseg(1);
+		if(random) {
+			for(Tabla t: tablak) {
+				int r = new Random().nextInt(3);
+				if(r == 1) t.addhomennyiseg(1);
+			}
+		}
+		else {
+			for(Tabla t : tablak) {
+				if(tablak.indexOf(t) % 2 == 1) t.addhomennyiseg(1);
+			}
 		}
 	}
 	

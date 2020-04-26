@@ -45,6 +45,7 @@ public class Medve extends Szereplo{
 	@Override
 	public void korkezd(Scanner sc) {
 		int i = random.nextInt(tabla.szomszed.size());
+		if(!Palya.random) i = 0;
 		lep(tabla.szomszed.get(i));
 		tabla.setMenedek(null); //elpusztítja, ha tudja
 		endTurn();

@@ -14,6 +14,7 @@ public class Main {
 		
 		String s = "";
 		Scanner sc = new Scanner(System.in);
+
 		
 		while(true) {
 			System.out.println("Válaszd ki a futtatni kívánt cselekvést.\n");
@@ -39,13 +40,14 @@ public class Main {
 					break;
 				case "testBeolvas":
 				try {
-					Scanner fr = new Scanner(new FileReader(ss[1]));
+					String string = "Tesztek/"+ss[1];
+					Scanner fr = new Scanner(new FileReader(string));
 					String ts = fr.nextLine();
 					String[] tss = ts.split(" ");
 					p = new Palya(tss[1]);
 					p.start(fr);
 				} catch (FileNotFoundException e) {
-					e.printStackTrace();
+					System.out.println("A fajl nem talalhato");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

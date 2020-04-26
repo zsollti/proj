@@ -9,8 +9,10 @@ public class Buvarruha extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		k.lep(k.getTabla().szomszed.get(0));
-		Kiiro.Kiir(getName());
+		if(k.getTabla().getatfordult() == true){
+			k.lep(k.getTabla().szomszed.get(0));
+			Kiiro.Kiir(getName());
+		}
 	}
 	public  String getName() {
 		return "Buvarruha";

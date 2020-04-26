@@ -14,6 +14,7 @@ public class Main {
 		
 		String s = "";
 		Scanner sc = new Scanner(System.in);
+		Scanner fr = null;
 
 		
 		while(true) {
@@ -41,7 +42,7 @@ public class Main {
 				case "testBeolvas":
 				try {
 					String string = "Tesztek/"+ss[1];
-					Scanner fr = new Scanner(new FileReader(string));
+					fr = new Scanner(new FileReader(string));
 					Kiiro.setFile(string + "_kimenet.txt"); //test kiírása fáljba
 					String ts = fr.nextLine();
 					String[] tss = ts.split(" ");
@@ -53,6 +54,9 @@ public class Main {
 				} catch (IOException e) {
 					e.printStackTrace();
 					break;
+				}finally {
+					if(fr != null)
+					fr.close();
 				}
 					break;
 				case "kilep":

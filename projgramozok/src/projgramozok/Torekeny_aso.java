@@ -12,7 +12,6 @@ public class Torekeny_aso extends Lapat{
 	@Override
 	public void hasznal(Karakter k) {
 		super.hasznal(k);
-		k.munkavegzes();
 		hasznalat--;
 		if(hasznalat <= 0) {
 			k.targyak.get(getName()).remove(this);

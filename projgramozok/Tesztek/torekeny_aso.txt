@@ -1,4 +1,4 @@
-jatekBeltolt targyas.txt
+jatekBetolt targyas.txt
 random
 targyhasznal
 Torekeny aso

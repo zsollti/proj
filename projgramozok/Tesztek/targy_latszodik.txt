@@ -1,4 +1,4 @@
 jatekBeltolt targyas.txt
 random
-tagykias
+targykias
 kilep

@@ -1,5 +1,5 @@
 jatekBetolt palya.txt
 random
-lep 7
+lep 9
 kepesseg
 kilep

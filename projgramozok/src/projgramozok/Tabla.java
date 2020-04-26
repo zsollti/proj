@@ -53,8 +53,9 @@ public class Tabla {
 		}
 		if(menedek == null) {
 			menedek = m;
-			Kiiro.Kiir("A menedék felépült");
 		}
+		if (menedek != null && m != null) Kiiro.Kiir("A menedék felépült");
+
 	}
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.

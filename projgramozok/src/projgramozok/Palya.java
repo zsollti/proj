@@ -17,9 +17,17 @@ public class Palya {
 	Scanner sc;
 	static boolean random = true;
 	
+	private void reset() {
+		gover = false;
+		tablak = new ArrayList<Tabla>();
+		szereplok = new ArrayList<Szereplo>();
+		random = true;
+	}
+	
 	//A Pálya osztály konstruktora
 	
-	public Palya(int jatekosok, String p) {  
+	public Palya(int jatekosok, String p) { 
+		reset();
 		//táblák és hó
 		BufferedReader br = null;
 		try {
@@ -97,6 +105,7 @@ public class Palya {
 	}
 	
 	public Palya(String filename) {
+		reset();
 		int ho = 0;
 		boolean fordult = false;
 		BufferedReader br = null;

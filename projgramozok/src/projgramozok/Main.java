@@ -21,7 +21,7 @@ public class Main {
 			Kiiro.Kiir("jatekBetolt [fajlnév]: Mentett játék betöltése");
 			Kiiro.Kiir("jatekBetolt: Új játék kezdése");
 			Kiiro.Kiir("testBeolvas [fájlnnév]: Teszteset beolvasása fájlból és futtatása");
-			Kiiro.Kiir("kilep: Teszteset beolvasása fájlból és futtatása");
+			Kiiro.Kiir("kilep: Kilépés");
 			
 			s = sc.nextLine();
 			String[] ss = s.split(" ");
@@ -42,7 +42,7 @@ public class Main {
 				try {
 					String string = "Tesztek/"+ss[1];
 					Scanner fr = new Scanner(new FileReader(string));
-					Kiiro.setFile(string + "_kimenet"); //test kiírása fáljba
+					Kiiro.setFile(string + "_kimenet.txt"); //test kiírása fáljba
 					String ts = fr.nextLine();
 					String[] tss = ts.split(" ");
 					p = new Palya(tss[1]);

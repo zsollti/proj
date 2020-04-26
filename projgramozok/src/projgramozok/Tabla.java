@@ -26,6 +26,16 @@ public class Tabla {
 		szomszed = new ArrayList<Tabla>();
 	}
 	
+	public Tabla(int ho, boolean atfordult) {
+		szereplok = new ArrayList<Szereplo>();
+		Random n = new Random();
+		homennyiseg = ho;
+		menedek = null;
+		targy = null;
+		atfordul = atfordult;
+		szomszed = new ArrayList<Tabla>();
+	}
+	
 	//A tábla karaktereivel tér vissza.
 	public List<Szereplo> getSzereplok(){
 		return szereplok;

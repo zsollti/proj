@@ -10,7 +10,13 @@ public class Instabil_tabla extends Tabla{
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
 	//Ha többen vannak rajta mint amennyit elbír akkor a tábla átfordul.
 	public Instabil_tabla() {
+		super();
 		birokepesseg = new Random().nextInt(5) +1;
+	}
+	
+	public Instabil_tabla(int ho, boolean fordult, int bir) {
+		super(ho, fordult);
+		birokepesseg = bir;
 	}
 	
 	@Override

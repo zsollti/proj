@@ -17,11 +17,10 @@ public class Palya {
 	Scanner sc;
 	static boolean random = true;
 	
-	//A P√°lya oszt√°ly konstruktora
-	//Jelenleg a p√°lya 1 t√°bl√°b√≥l √°ll amin 1 eszkim√≥ van
+	//A P·lya oszt·ly konstruktora
 	
 	public Palya(int jatekosok, String p) {  
-		//t√°bl√°k √©s h√≥
+		//t·bl·k Ès hÛ
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(p));
@@ -61,7 +60,7 @@ public class Palya {
 		sc = new Scanner(System.in);
 		szereplok = new ArrayList<Szereplo>();
 		for(int i = 0; i < jatekosok; i++) {
-			System.out.println("Eszkim√≥(1) vagy sarkkutat√≥(2) akarsz lenni?");
+			System.out.println("EszkimÛ(1) vagy sarkkutatÛ(2) akarsz lenni?");
 			int ered = sc.nextInt();
 			while(ered != 1 && ered != 2) {
 				ered = sc.nextInt();
@@ -130,7 +129,8 @@ public class Palya {
 								tablak.add(new Tabla(ho, fordult));
 							}
 							else if(dolgok[i].charAt(0) == 'i') {
-								tablak.add(new Instabil_tabla(ho, fordult));
+								int bir = Integer.parseInt(dolgok[i].substring(2));
+								tablak.add(new Instabil_tabla(ho, fordult, bir));
 							}
 							else {
 								tablak.add(new Lyuk(ho, fordult));
@@ -246,10 +246,13 @@ public class Palya {
 			}
 			
 		} catch (FileNotFoundException e) {
-			System.out.println("Nem l√©tezik a f√°jl.");
+			System.out.println("Nem lÈtezik a f·jl.");
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
+		}catch(NumberFormatException n) {
+			System.out.println("Nem jÛ a form·tum");
+		}
+		finally {
 			if (br != null)
 				try {
 					br.close();

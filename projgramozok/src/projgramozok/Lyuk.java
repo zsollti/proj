@@ -10,6 +10,10 @@ public class Lyuk extends Tabla{
 	public Lyuk() {
 	}
 	
+	public Lyuk(int ho, boolean atfordult) {
+		super(ho, atfordult);
+	}
+	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
 	//Ha többen vannak rajta mint amennyit elbír akkor a tábla átfordul.
 	@Override

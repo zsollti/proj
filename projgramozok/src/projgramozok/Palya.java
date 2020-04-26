@@ -306,10 +306,13 @@ public class Palya {
 		while(!gover) {
 			int r = new Random().nextInt(3);
 			if(!random) r = 1;
-			if(r == 1) hovihar();
-			for(Tabla t : tablak) {
-				t.setMenedek(null);
+			if(r == 1) {
+				hovihar();
+				for(Tabla t : tablak) {
+					t.setMenedek(null);
+				}
 			}
+			
 			while(i < szereplok.size()) {
 				szereplok.get(i).korkezd(sc);
 				if(gover) break;

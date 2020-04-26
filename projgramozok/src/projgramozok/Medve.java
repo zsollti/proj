@@ -21,6 +21,8 @@ public class Medve extends Szereplo{
 		//üres
 	}
 	
+	public void addTargy(Targy t) {}
+	
 	/**ha elkap valakit, az meghal
 	 *@param sz a karakter, akit elkapott
 	 */

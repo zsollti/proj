@@ -13,6 +13,7 @@ public abstract class Szereplo {
 	public abstract void addhopont(int i);
 	public abstract void beleesik();
 	public abstract void utkozik(Szereplo sz);
+	public abstract void addTargy(Targy t);
 	
 	/**Adott táblára lépteti a karaktert.
 	 * @param t A tábla, amire lépni fog

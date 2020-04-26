@@ -53,6 +53,7 @@ public class Tabla {
 		}
 		if(menedek == null) {
 			menedek = m;
+			Kiiro.Kiir("A menedék felépült");
 		}
 	}
 	
@@ -75,6 +76,7 @@ public class Tabla {
 	//A táblán levõ hó mennyiségét változtatja.
 	//Max 5 min 0 lehet rajta.
 	public void addhomennyiseg(int i){
+		Kiiro.Kiir("A régi hómennyiség: " + this.homennyiseg);
 		homennyiseg += i;
 		if(i > 0 && menedek != null) {
 			for(Szereplo sz: szereplok) {
@@ -83,6 +85,8 @@ public class Tabla {
 		}
 		if(homennyiseg > 5)homennyiseg = 5;
 		else if(homennyiseg < 0)homennyiseg = 0;
+		Kiiro.Kiir("Az új hómennyiség: " + this.homennyiseg);
+
 	}
 	
 	//A paraméterként kapott karakternek adja a befagyott tárgyját.

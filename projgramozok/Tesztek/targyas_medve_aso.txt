@@ -1,4 +1,4 @@
-t,n 2 0 elelem,e 5 4 elelem alkatresz alkatresz alkatresz sator buvarruha kotel lapat torekeny_aso;s 4 4 null;s 1 4 null
+t,n 5 0 elelem,e 5 4 elelem alkatresz alkatresz alkatresz sator buvarruha kotel lapat torekeny_aso;s 4 4 null;s 1 4 null
 l,n 0 0 null
 t,i 4 0 buvarruha
 i 1,n 0 0 null

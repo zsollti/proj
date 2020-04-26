@@ -2,7 +2,7 @@ t,n 2 0 elelem,e 5 4 elelem alkatresz alkatresz alkatresz sator buvarruha kotel 
 l,n 0 0 null
 t,i 4 0 buvarruha
 i 1,n 0 0 null
-t,n 0 0 null,m
+t,n 0 0 null
 l,n 0 0 null
 t,s 0 0 null
 l,n 0 0 null

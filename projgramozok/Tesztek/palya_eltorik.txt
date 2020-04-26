@@ -3,4 +3,5 @@ random
 endTurn
 lep 9
 endTurn
+lep 9
 kilep

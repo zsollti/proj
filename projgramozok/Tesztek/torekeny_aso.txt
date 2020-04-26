@@ -1,5 +1,9 @@
-jatekBetolt targyas.txt
+jatekBetolt targyas_medve_aso.txt
 random
+targyhasznal
+Torekeny aso
+targyhasznal
+Torekeny aso
 targyhasznal
 Torekeny aso
 kilep

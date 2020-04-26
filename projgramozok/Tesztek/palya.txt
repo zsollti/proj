@@ -3,15 +3,15 @@ l,n 0 0 null
 t,n 0 0 lapat
 l,n 0 0 null
 i 1,n 0 0 alkatresz
-i 1,n 0 0 null,s 4 4 null
+i 1,n 0 0 null,s null
 l,n 0 0 null
 t,n 0 0 alkatresz
 t,n 0 0 null,m
-t,n 0 0 null,s 4 4 null
-i 1,n 0 0 null,e 5 4 null
+t,n 0 0 null,s null
+i 1,n 0 0 null,e null
 l,n 0 0 null
 l,n 0 0 null
-tltliiltttill
+p
 0111100000000
 1010010000000
 1101011100000

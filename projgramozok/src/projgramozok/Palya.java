@@ -74,7 +74,7 @@ public class Palya {
 			r = new Random().nextInt(tablak.size());
 		}
 		szereplok.add(new Medve(tablak.get(r)));
-		//t√°rgyak
+		//t·rgyak
 		List<Targy> targyak = new ArrayList<Targy>();
 		for(int i = 0; i < 3; i++) {
 			targyak.add(new Alkatresz());
@@ -196,7 +196,13 @@ public class Palya {
 											break;
 										}
 									}
-									else{
+									else if(b == 1) {
+										szereplok.get(row).setHopont(Integer.parseInt(karaktertul[b].substring(0)));
+									}
+									else if(b == 2) {
+										szereplok.get(row).setMunka(Integer.parseInt(karaktertul[b].substring(0)));
+									}
+									else if(b == 3){
 										switch(karaktertul[b]) {
 										
 										case "alkatresz":
@@ -255,6 +261,8 @@ public class Palya {
 			System.out.println("Nem jÛ a form·tum");
 		}catch(NullPointerException nu) {
 			System.out.println("Nem jÛ a form·tum");
+		}catch(ArrayIndexOutOfBoundsException ae) {
+			System.out.println("Nem jÛ a form·tum");
 		}
 		finally {
 			if (br != null)
@@ -273,7 +281,7 @@ public class Palya {
 		if(k == null) System.out.println("Victory!!!!!");
 		else {
 			int i = szereplok.indexOf(k);
-			System.out.println("A " + i + ". j√°t√©kos meghalt");
+			System.out.println("A " + i + ". j·tÈkos meghalt");
 		}
 		gover = true;
 	}

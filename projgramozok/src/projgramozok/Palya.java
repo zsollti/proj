@@ -23,7 +23,8 @@ public class Palya {
 		//táblák és hó
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader(p));
+			String s = "Tesztek/"+p;
+			br = new BufferedReader(new FileReader(s));
 			String line;
 			line = br.readLine();
 			for(int i = 0; i < line.length(); i++) {
@@ -99,9 +100,10 @@ public class Palya {
 		int ho = 0;
 		boolean fordult = false;
 		BufferedReader br = null;
+		String pl = "Tesztek/"+filename;
 		
 		try {
-			br = new BufferedReader(new FileReader(filename));
+			br = new BufferedReader(new FileReader(pl));
 			String line;
 			
 			int row = 0;

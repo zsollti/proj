@@ -5,4 +5,5 @@ lep 1
 lep 1		 
 targyhasznal
 Kotel
+0
 kilep

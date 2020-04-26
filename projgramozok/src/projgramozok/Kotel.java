@@ -25,7 +25,7 @@ public class Kotel extends Targy{
 		while(!rajta.isEmpty()) {
 			rajta.get(0).lep(k.getTabla());
 		}
-		sc.close();
+	//	sc.close();
 		k.munkavegzes();
 		Kiiro.Kiir(getName());
 	}

@@ -1,4 +1,5 @@
 jatekBetolt targyas.txt
 random
+endTurn
 lep 1
 kilep

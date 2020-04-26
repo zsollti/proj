@@ -37,17 +37,10 @@ public abstract class Karakter extends Szereplo{
 	public void korkezd(Scanner sc) {
 		if(tabla.getatfordult()) Palya.gameover(this);
 		munka = 4;
-		while(munka > 0) {
 			int ij = (Palya.szereplok.indexOf(this) + 1);
+			
+		while(munka > 0) {
 			Kiiro.Kiir("A soron levõ játékos: " + ij);
-			Kiiro.Kiir("Valaszd ki a kivant cselekvest.\n");
-			Kiiro.Kiir("lep [tábla indexe/ szama]");
-			Kiiro.Kiir("targykias");
-			Kiiro.Kiir("targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak indexevel");
-			Kiiro.Kiir("kepesseg");
-			Kiiro.Kiir("hoasas - kezzel");
-			Kiiro.Kiir("endTurn - kor befejezese");
-			Kiiro.Kiir("kilep - jatek befejezese");
 			String s = sc.nextLine();
 			String[] ss = s.split(" ");
 			switch(ss[0]) {

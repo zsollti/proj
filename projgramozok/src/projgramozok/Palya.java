@@ -305,6 +305,14 @@ public class Palya {
 		Kiiro.Kiir("random: hóvihar és medve randomságának kikapcsolása");
 		String s = sc.nextLine();
 		if(s.equals("random")) random = false;
+		Kiiro.Kiir("Valaszd ki a kivant cselekvest.\n");
+		Kiiro.Kiir("lep [tábla indexe/ szama]");
+		Kiiro.Kiir("targykias");
+		Kiiro.Kiir("targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel");
+		Kiiro.Kiir("kepesseg");
+		Kiiro.Kiir("hoasas - kezzel");
+		Kiiro.Kiir("endTurn - kor befejezese");
+		Kiiro.Kiir("kilep - jatek befejezese");
 		while(!gover) {
 			int r = new Random().nextInt(3);
 			if(!random) r = 1;

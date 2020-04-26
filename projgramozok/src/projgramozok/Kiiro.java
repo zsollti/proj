@@ -9,7 +9,7 @@ public class Kiiro {
 	
 	public static void Kiir(String s) {
 		if(Konzolra) {
-			System.out.println(s + "\n");
+			System.out.println(s);
 		}
 		if(file != null) {
 			try {

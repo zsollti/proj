@@ -92,7 +92,9 @@ public class Tabla {
 		if(targy != null && homennyiseg == 0) {
 			k.addTargy(targy);
 			targy = null;
+			Kiiro.Kiir("A targy kiasasa megtortent.");
 		}
+		else Kiiro.Kiir("Nincs is itt látható tárgy.");
 	}
 	
 	//Megadja a tábla karakterbíró képességét (Tábla esetén mindig minden karaktert elbír).

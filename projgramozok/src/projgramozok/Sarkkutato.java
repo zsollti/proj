@@ -19,7 +19,7 @@ public class Sarkkutato extends Karakter{
 	public void kepesseg() {
 		int birokepesseg = tabla.szomszed.get(0).getbirokepesseg();
 		munkavegzes();
-		Kiiro.Kiir(birokepesseg);
+		Kiiro.Kiir("A szomszédos tábla bíróképessége:" + birokepesseg);
 	}
 
 	/**A sarkkutató hõpontját növeli max 4-ig, vagy csökkenti.

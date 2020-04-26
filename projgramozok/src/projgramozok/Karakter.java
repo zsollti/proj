@@ -38,6 +38,8 @@ public abstract class Karakter extends Szereplo{
 		if(tabla.getatfordult()) Palya.gameover(this);
 		munka = 4;
 		while(munka > 0) {
+			int ij = (Palya.szereplok.indexOf(this) + 1);
+			Kiiro.Kiir("A soron levõ játékos: " + ij);
 			Kiiro.Kiir("Valaszd ki a kivant cselekvest.\n");
 			Kiiro.Kiir("lep [tábla indexe/ szama]");
 			Kiiro.Kiir("targykias");
@@ -81,7 +83,13 @@ public abstract class Karakter extends Szereplo{
 					kepesseg();
 					break;
 				case "hoasas":
+					if(tabla.homennyiseg == 0) {
+						Kiiro.Kiir("Nincs hó!");
+						break;
+					}
+					int ho = tabla.homennyiseg;
 					tabla.addhomennyiseg(-1);
+					Kiiro.Kiir("A tábla régi és új hómennyisége: " + ho + tabla.homennyiseg);
 					break;
 				case "endTurn":
 					endTurn();
@@ -95,6 +103,8 @@ public abstract class Karakter extends Szereplo{
 					break;
 			}
 		}
+		Kiiro.Kiir("Nem végezhetsz több munkát");
+		endTurn();
 	}
 	
 	/**Karakter lépése
@@ -107,10 +117,12 @@ public abstract class Karakter extends Szereplo{
 			tabla.lelep(this);
 			t.ralep(this);
 			munkavegzes();
-			Kiiro.Kiir(Palya.szereplok.indexOf(this) + "lep" + 
-			Palya.tablak.indexOf(regi) + "-rõl" +
+			int jat = Palya.szereplok.indexOf(this) + 1;
+			Kiiro.Kiir(jat + ". jatekos lep " + 
+			Palya.tablak.indexOf(regi) + "-rõl " +
 			Palya.tablak.indexOf(tabla) + "-re");
 		}
+		else Kiiro.Kiir("A tábla nem szomszédos!");
 	}
 	
 	/**

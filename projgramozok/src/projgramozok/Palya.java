@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Palya {
-	private static boolean gover = false;
+	static boolean gover = false;
 	private static int jatekosok;
 	private static List<Tabla> tablak = new ArrayList<Tabla>();
 	private static List<Szereplo> szereplok = new ArrayList<Szereplo>();

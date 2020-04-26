@@ -26,7 +26,6 @@ public abstract class Karakter extends Szereplo{
 	public Karakter(Tabla t) {
 		super(t);
 		this.targyak = new ArrayList<Targy>();
-		this.addhopont(5); //abstract fv hívás????
 		this.munka = 4;
 	}
 	
@@ -45,12 +44,15 @@ public abstract class Karakter extends Szereplo{
 			System.out.println("kepesseg");
 			System.out.println("hoasas - kezzel");
 			System.out.println("endTurn - kor befejezese");
+			System.out.println("kilep - jatek befejezese");
 			String s = sc.nextLine();
 			String[] ss = s.split(" ");
 			switch(ss[0]) {
 				case "lep":
-					int i = Integer.parseInt(ss[1]);
-					lep(Palya.gettabla(i));
+					if(ss.length == 2) {
+						int i = Integer.parseInt(ss[1]);
+						lep(Palya.gettabla(i));
+					} else System.out.println("Nem megfelelo bemenet");
 					break;
 				case "targykias":
 					tabla.targykias(this);
@@ -59,9 +61,15 @@ public abstract class Karakter extends Szereplo{
 					System.out.println("Valaszd ki a kivant targyat [targy indexe].\n");
 					for(int n = 0; n < targyak.size(); n++) {
 						System.out.println(n + ". " + targyak.get(n).getName());
-						s = sc.nextLine();
-						targyak.get(Integer.parseInt(s)).hasznal(this);
 					}
+					s = sc.nextLine();
+					int n = Integer.parseInt(s);
+					while(n > targyak.size() || n < 1) {
+						System.out.println("Nem megfelelo bemenet - tul nagy szam");
+						s = sc.nextLine();
+						n = Integer.parseInt(s);
+					}
+					targyak.get(n-1).hasznal(this);
 					break;
 				case "kepesseg":
 					kepesseg();
@@ -71,6 +79,9 @@ public abstract class Karakter extends Szereplo{
 					break;
 				case "endTurn":
 					munka = 0;
+					break;
+				case "kilep":
+					Palya.gover = true;
 					break;
 				default:
 					System.out.println("Rossz bemenet. Adjon meg újat");

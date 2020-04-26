@@ -21,7 +21,8 @@ public class Lyuk extends Tabla{
 		szereplok.add(k);
 		k.setTabla(this);
 		k.beleesik();
-		szereplok.get(0).utkozik(k);
+		if(szereplok.size() > 0)
+		  szereplok.get(0).utkozik(k);
 	}
 	
 	//Megadja a tábla karakterbíró képességét (Lyuk esetén ez mindig 0).

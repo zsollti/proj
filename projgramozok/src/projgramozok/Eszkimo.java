@@ -1,7 +1,7 @@
 package projgramozok;
 
 
-//Az eszkkimók megvalósítása
+//Az eszkimók megvalósítása
 public class Eszkimo extends Karakter{
 
 	/**
@@ -27,11 +27,12 @@ public class Eszkimo extends Karakter{
 	 *@param i mennyivel nõjön a hõpontja (lehet negatív)
 	 */
 	@Override
-	public void addhopont(int i) {		
+	public void addhopont(int i) {	
+		Kiiro.Kiir("A régi hõpont: " + hopont);
 		hopont += i;
 		if(hopont > 5)hopont = 5;
 		else if(hopont < 1)Palya.gameover(this);
-		Kiiro.Kiir(hopont);
+		Kiiro.Kiir("Az aktuális hõpont: " + hopont);
 	}
 
 	@Override

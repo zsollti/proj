@@ -143,7 +143,7 @@ public abstract class Karakter extends Szereplo{
 			targyak.put(name, new ArrayList<Targy>());
 			targyak.get(name).add(t);
 		}
-		Kiiro.Kiir(name + "get");
+		Kiiro.Kiir(name + " get");
 	}
 	
 	/**

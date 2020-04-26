@@ -1,2 +1,3 @@
-jatekBetolt
+jatekBetolt targyas.txt
+random
 kilep

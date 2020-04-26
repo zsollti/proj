@@ -52,4 +52,14 @@ public class Medve extends Szereplo{
 		tabla.setMenedek(null); //elpusztítja, ha tudja
 		endTurn();
 	}
+
+	@Override
+	public void setMunka(int i) {
+		//üres
+	}
+
+	@Override
+	public void setHopont(int i) {
+		//üres
+	}
 }

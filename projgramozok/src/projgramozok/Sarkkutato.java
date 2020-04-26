@@ -8,7 +8,8 @@ public class Sarkkutato extends Karakter{
 	 * @param t a kezdõtábla
 	 */
 	public Sarkkutato(Tabla t) {
-		super(t);		
+		super(t);
+		hopont = 4;
 	}
 
 	/**Sarkkutató képessége, lekérdezi egy szomszédos tábla karakterbíró képességét.
@@ -31,6 +32,16 @@ public class Sarkkutato extends Karakter{
 		if(hopont > 4) hopont = 4;
 		else if(hopont < 1)Palya.gameover(this);
 		System.out.println(hopont);
+	}
+
+	@Override
+	public void setMunka(int i) {
+		munka = i;
+	}
+
+	@Override
+	public void setHopont(int i) {
+		hopont = i;
 	}
 
 }

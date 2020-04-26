@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.util.Scanner;
 
 public abstract class Szereplo {
-	//static Palya palya;	//Ahhoz, hogy tudja a pálya függvényeit hívogatni
 	protected Tabla tabla;
 	
 	public Szereplo(Tabla t) {
@@ -14,6 +13,8 @@ public abstract class Szereplo {
 	public abstract void beleesik();
 	public abstract void utkozik(Szereplo sz);
 	public abstract void addTargy(Targy t);
+	public abstract void setMunka(int i);
+	public abstract void setHopont(int i);
 	
 	/**Adott táblára lépteti a karaktert.
 	 * @param t A tábla, amire lépni fog
@@ -30,17 +31,13 @@ public abstract class Szereplo {
 	 */
 	public void endTurn()
 	{
-		System.out.println("\t\t-->endtrun()");
-		//a pályának szólni kéne. Majd ha látszik, hogy néz ki a main loop, elég akkor.
-		System.out.println("\t\tvoid<--");
+		Kiiro.Kiir("Kör átadása");
 	}
 		
 	/**Beállítja a szereplõ tábláját
 	 * @param erre a szerplõ új táblája
 	 */
 	public void setTabla(Tabla erre) {
-		System.out.println("\t-->setTabla()");
-		System.out.println("\tvoid<--");
 		this.tabla = erre;
 	}
 }

@@ -9,6 +9,7 @@ public class Eszkimo extends Karakter{
 	 */
 	public Eszkimo(Tabla t) {
 		super(t);		
+		hopont = 5;
 	}
 	
 	/**Eszkimó képesség, iglut épít a táblára amin áll.
@@ -31,6 +32,16 @@ public class Eszkimo extends Karakter{
 		if(hopont > 5)hopont = 5;
 		else if(hopont < 1)Palya.gameover(this);
 		System.out.println(hopont);
+	}
+
+	@Override
+	public void setMunka(int i) {
+		munka = i;
+	}
+
+	@Override
+	public void setHopont(int i) {
+		hopont = i;
 	}
 
 }

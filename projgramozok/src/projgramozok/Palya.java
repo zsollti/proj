@@ -197,12 +197,12 @@ public class Palya {
 										}
 									}
 									else if(b == 1) {
-										szereplok.get(row).setHopont(Integer.parseInt(karaktertul[b].substring(0)));
+										szereplok.get(szereplok.size() - 1).setHopont(Integer.parseInt(karaktertul[b].substring(0)));
 									}
 									else if(b == 2) {
-										szereplok.get(row).setMunka(Integer.parseInt(karaktertul[b].substring(0)));
+										szereplok.get(szereplok.size() - 1).setMunka(Integer.parseInt(karaktertul[b].substring(0)));
 									}
-									else if(b == 3){
+									else{
 										switch(karaktertul[b]) {
 										
 										case "alkatresz":
@@ -262,6 +262,8 @@ public class Palya {
 		}catch(NullPointerException nu) {
 			Kiiro.Kiir("Nem jó a formátum");
 		}catch(ArrayIndexOutOfBoundsException ae) {
+			Kiiro.Kiir("Nem jó a formátum");
+		}catch(IndexOutOfBoundsException i) {
 			Kiiro.Kiir("Nem jó a formátum");
 		}
 		finally {

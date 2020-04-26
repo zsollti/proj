@@ -14,7 +14,7 @@ public class Alkatresz extends Targy{
 		if(Palya.vizsgal(k)) {
 			db = 0;
 			for (Szereplo sz : Palya.szereplok) {
-				db += sz.getInventory().get(getName()).size();
+				db += sz.getInventory().get(getName()).size(); //medvének null, de ha ott a medve úgyse használhatják
 			}
 			if (db == 3) Palya.gameover(null);
 		}

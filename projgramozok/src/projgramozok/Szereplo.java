@@ -10,6 +10,7 @@ public abstract class Szereplo {
 	
 	public Szereplo(Tabla t) {
 		this.tabla = t;
+		t.szereplok.add(this);
 	}
 	public abstract void addhopont(int i);
 	public abstract void beleesik();

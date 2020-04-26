@@ -160,10 +160,10 @@ public abstract class Karakter extends Szereplo{
 	public void beleesik()
 	{
 		munka = 0;
+		Kiiro.Kiir("Beleesett a vizbe.");
 		if (targyak.get("Buvarruha") != null) {
 			targyak.get("Buvarruha").get(0).hasznal(this);
 		}
-		Kiiro.Kiir("Beleesett a vizbe.");
 	}
 	
 	/**Csökkenti a karakter munkáját eggyel.

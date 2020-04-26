@@ -49,8 +49,10 @@ public class Main {
 					p.start(fr);
 				} catch (FileNotFoundException e) {
 					Kiiro.Kiir("A fajl nem talalhato");
+					break;
 				} catch (IOException e) {
 					e.printStackTrace();
+					break;
 				}
 					break;
 				case "kilep":

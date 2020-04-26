@@ -6,8 +6,6 @@ import java.util.Random;
 
 //A táblákat megvalósító osztály.
 public class Tabla {
-	
-	static Palya palya;				//Ahhoz, hogy tudja a pálya függvényeit hívogatni
 	protected Menedek menedek;
 	protected int homennyiseg;
 	protected boolean atfordul;

@@ -1,5 +1,6 @@
 package projgramozok;
 
+import java.util.ArrayList;
 
 public class Alkatresz extends Targy{
 
@@ -14,7 +15,10 @@ public class Alkatresz extends Targy{
 		if(Palya.vizsgal(k)) {
 			db = 0;
 			for (Szereplo sz : Palya.szereplok) {
-				db += sz.getInventory().get(getName()).size(); //medvének null, de ha ott a medve úgyse használhatják
+				ArrayList<Targy> l = sz.getInventory().get(getName());
+				if (l != null) {
+					db += sz.getInventory().get(getName()).size();
+				}
 			}
 			if (db == 3) Palya.gameover(null);
 		}

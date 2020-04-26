@@ -1,0 +1,8 @@
+jatekBetolt targyas.txt
+random
+endTurn  	 
+lep 1    	
+lep 1		 
+targyhasznal
+kotel
+kilep

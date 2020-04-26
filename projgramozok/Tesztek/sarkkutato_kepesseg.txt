@@ -1,0 +1,5 @@
+jatekBetolt targyas.txt
+random
+endTurn
+kepesseg 1
+kilep

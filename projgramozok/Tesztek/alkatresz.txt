@@ -1,0 +1,5 @@
+jatekBetolt targyas.txt
+random
+targyhasznal
+alkatresz
+kilep

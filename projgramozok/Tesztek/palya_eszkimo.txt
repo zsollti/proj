@@ -1,0 +1,5 @@
+jatekBetolt palya.txt
+random
+lep 7
+kepesseg
+kilep

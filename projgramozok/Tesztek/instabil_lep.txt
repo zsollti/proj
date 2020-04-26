@@ -1,0 +1,6 @@
+jatekBetolt
+random
+lep 3
+endTurn
+lep 3
+kilep

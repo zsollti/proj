@@ -1,0 +1,27 @@
+t,n 0 0 alkatresz
+l,n 0 0 null
+t,n 0 0 lapat
+l,n 0 0 null
+i 1,n 0 0 alkatresz
+i 1,n 0 0 null,s 4 4 null
+l,n 0 0 null
+t,n 0 0 alkatresz
+t,n 0 0 null,m
+t,n 0 0 null,s 4 4 null
+i 1,n 0 0 null,e 5 4 null
+l,n 0 0 null
+l,n 0 0 null
+tltliiltttill
+0111100000000
+1010010000000
+1101011100000
+1010100110000
+1001000010000
+0110001001000
+0010010101100
+0011001010110
+0001100100010
+0000011000101
+0000001101011
+0000000110100
+0000000001100

@@ -11,6 +11,7 @@ public class Kotel extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
+		Kiiro.Kiir(getName());
 		Scanner sc = new Scanner(System.in);
 		Kiiro.Kiir("Melyik szomszéból szeretnéd kihúzni õket?");
 		for(Tabla t : k.tabla.szomszed) {
@@ -27,7 +28,6 @@ public class Kotel extends Targy{
 		}
 	//	sc.close();
 		k.munkavegzes();
-		Kiiro.Kiir(getName());
 	}
 	public  String getName() {
 		return "Kotel";

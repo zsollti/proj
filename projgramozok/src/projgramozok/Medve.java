@@ -33,6 +33,7 @@ public class Medve extends Szereplo{
 	public void utkozik(Szereplo sz) {
 		//õ az egyetlen medve
 		if (sz != null && sz != this) {
+			Kiiro.Kiir("Medve általi halál");
 			Palya.gameover(sz);
 		}
 	}

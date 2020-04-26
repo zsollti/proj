@@ -87,9 +87,7 @@ public abstract class Karakter extends Szereplo{
 						Kiiro.Kiir("Nincs hó!");
 						break;
 					}
-					int ho = tabla.homennyiseg;
 					tabla.addhomennyiseg(-1);
-					Kiiro.Kiir("A tábla régi és új hómennyisége: " + ho + tabla.homennyiseg);
 					break;
 				case "endTurn":
 					endTurn();

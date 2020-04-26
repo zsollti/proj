@@ -308,11 +308,10 @@ public class Palya {
 			if(!random) r = 1;
 			if(r == 1) {
 				hovihar();
-				for(Tabla t : tablak) {
-					t.setMenedek(null);
-				}
 			}
-			
+			for(Tabla t : tablak) {
+				t.setMenedek(null);
+			}
 			while(i < szereplok.size()) {
 				szereplok.get(i).korkezd(sc);
 				if(gover) break;

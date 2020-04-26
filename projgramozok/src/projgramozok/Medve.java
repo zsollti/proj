@@ -46,8 +46,8 @@ public class Medve extends Szereplo{
 		}
 		tabla.lelep(this);
 		t.ralep(this);
-		Kiiro.Kiir(Palya.szereplok.indexOf(this) + "lep" + 
-				Palya.tablak.indexOf(regi) + "-rõl" +
+		Kiiro.Kiir( "medve lep " + 
+				Palya.tablak.indexOf(regi) + "-rõl " +
 				Palya.tablak.indexOf(tabla) + "-re");
 	}
 	

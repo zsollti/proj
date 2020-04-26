@@ -165,7 +165,7 @@ public abstract class Karakter extends Szereplo{
 		if (targyak.get("Buvarruha") != null) {
 			targyak.get("Buvarruha").get(0).hasznal(this);
 		}
-		endTurn();
+		Kiiro.Kiir("Beleesett a vizbe.");
 	}
 	
 	/**Csökkenti a karakter munkáját eggyel.

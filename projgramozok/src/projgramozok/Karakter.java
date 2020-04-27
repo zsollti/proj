@@ -35,7 +35,10 @@ public abstract class Karakter extends Szereplo{
 	 */
 	@Override
 	public void korkezd(Scanner sc) {
-		if(tabla.getatfordult()) Palya.gameover(this);
+		if(tabla.getatfordult()) {
+			Palya.gameover(this);
+			return;
+		}
 		munka = 4;
 			int ij = (Palya.szereplok.indexOf(this) + 1);
 			
@@ -94,6 +97,7 @@ public abstract class Karakter extends Szereplo{
 					break;
 			}
 		}
+		if(Palya.gover) return;
 		Kiiro.Kiir("Nem végezhetsz több munkát");
 		endTurn();
 	}

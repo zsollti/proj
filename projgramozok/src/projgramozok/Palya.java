@@ -27,8 +27,9 @@ public class Palya {
 	
 	//A Pálya osztály konstruktora
 	
-	public Palya(int jatekosok, String p) { 
+	public Palya(int jatekosszam, String p) { 
 		reset();
+		jatekosok = jatekosszam;
 		//táblák és hó
 		BufferedReader br = null;
 		try {
@@ -299,7 +300,7 @@ public class Palya {
 	public static void gameover(Szereplo k){
 		if(k == null) Kiiro.Kiir("Victory!!!!!");
 		else {
-			int i = szereplok.indexOf(k);
+			int i = szereplok.indexOf(k) + 1;
 			Kiiro.Kiir("A " + i + ". játékos meghalt");
 		}
 		gover = true;

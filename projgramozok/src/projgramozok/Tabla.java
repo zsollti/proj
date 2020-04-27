@@ -62,10 +62,7 @@ public class Tabla {
 	//Ezen a táblán az összes karakter elfér.
 	public void ralep(Szereplo k){
 		this.szereplok.add(k);
-		if(szereplok.size() > 0)
-		for (Szereplo sz : szereplok) {
-			sz.utkozik(k);
-		} //szereplok.get(0).utkozik(k); elég nem?
+		szereplok.get(0).utkozik(k);
 		k.setTabla(this);
 	}
 	

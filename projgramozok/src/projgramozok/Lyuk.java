@@ -11,7 +11,7 @@ public class Lyuk extends Tabla{
 	}
 	
 	public Lyuk(int ho, boolean atfordult) {
-		super(ho, atfordult);
+		super(ho, true);
 	}
 	
 	//Paraméterként kapott karaktert eltárolja a sajátjai közt.

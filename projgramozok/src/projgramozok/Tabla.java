@@ -76,7 +76,7 @@ public class Tabla {
 	public void addhomennyiseg(int i){
 		Kiiro.Kiir("A régi hómennyiség: " + this.homennyiseg);
 		homennyiseg += i;
-		if(i > 0 && menedek != null) {
+		if(i > 0 && menedek == null) {
 			for(Szereplo sz: szereplok) {
 				sz.addhopont(-1);
 			}

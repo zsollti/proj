@@ -31,8 +31,11 @@ public class Eszkimo extends Karakter{
 		Kiiro.Kiir("A régi hõpont: " + hopont);
 		hopont += i;
 		if(hopont > 5)hopont = 5;
-		else if(hopont < 1)Palya.gameover(this);
-		Kiiro.Kiir("Az aktuális hõpont: " + hopont);
+		if(hopont < 1) {
+			Palya.gameover(this);
+			Kiiro.Kiir("Megfagyott.");
+		}
+		else Kiiro.Kiir("Az aktuális hõpont: " + hopont);
 	}
 
 	@Override

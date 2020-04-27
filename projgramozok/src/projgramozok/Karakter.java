@@ -37,6 +37,7 @@ public abstract class Karakter extends Szereplo{
 	public void korkezd(Scanner sc) {
 		if(tabla.getatfordult()) {
 			Palya.gameover(this);
+			Kiiro.Kiir("Vizbe fulladt.");
 			return;
 		}
 		munka = 4;

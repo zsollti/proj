@@ -45,8 +45,11 @@ public class Sarkkutato extends Karakter{
 		Kiiro.Kiir("A régi hõpont: " + hopont);
 		hopont += i;
 		if(hopont > 4) hopont = 4;
-		else if(hopont < 1)Palya.gameover(this);
-		Kiiro.Kiir("Az aktuális hõpont: " + hopont);
+		if(hopont < 1) {
+			Palya.gameover(this);
+			Kiiro.Kiir("Megfagyott.");
+		}
+		else Kiiro.Kiir("Az aktuális hõpont: " + hopont);
 	}
 
 	@Override

@@ -1,8 +1,7 @@
 jatekBeltolt targyas.txt
 random
-lep 1
 endTurn
-lep 14
+lep 1
 endTurn
 lep 14
 endTurn

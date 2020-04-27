@@ -325,8 +325,8 @@ public class Palya {
 			int r = new Random().nextInt(3);
 			if(!random) r = 1;
 			if(r == 1) {
-				hovihar();
 				Kiiro.Kiir("hovihar");
+				hovihar();
 			}
 			for(Tabla t : tablak) {
 				t.setMenedek(null);
@@ -338,6 +338,7 @@ public class Palya {
 			}
 			i = 0;
 		}
+		Kiiro.Kiir("Jatek vege.");
 	}
 
 	public void hovihar(){

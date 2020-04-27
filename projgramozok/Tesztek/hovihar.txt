@@ -1,3 +1,10 @@
 jatekBetolt targyas.txt
 random
+lep 14
+endTurn
+lep 14
+endTurn
+lep 3
+endTurn
+endTurn
 kilep

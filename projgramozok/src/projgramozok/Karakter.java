@@ -1,27 +1,34 @@
 package projgramozok;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.HashMap;
 
 
-//Absztrakt osztály a karakterek hazsnálatához
-public abstract class Karakter extends Szereplo{
+/**
+ * Absztrakt osztály a karakterek hazsnálatához
+ */
+public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 		
 	protected int hopont;
 	protected int munka;
 	
 	protected HashMap<String, ArrayList<Targy>> targyak;
 	
+	/**
+	 *Absztrakt függvény, a karakterek képességéhez
+	 *Minden karakternek mások a képességei
+	 */
 	public abstract void kepesseg();
+	/**
+	 * Absztrakt függvény, a karakterek hõpontváltozásához
+	 * Mindegyik karakternek más a maximális hõpontja
+	 */
 	public abstract void addhopont(int i);
 	
 	/**
-	 * @param t A tábla, ahol kezdeni fog.
+	 * A karakter konstruktora: t a tábla, ahol kezdeni fog.
 	 */
 	public Karakter(Tabla t) {
 		super(t);
@@ -31,43 +38,46 @@ public abstract class Karakter extends Szereplo{
 	}
 	
 	/**
-	 *
+	 * A karakter/ játékos körének függvénye
 	 */
 	@Override
 	public void korkezd(Scanner sc) {
-		if(tabla.getatfordult()) {
+		if(tabla.getatfordult()) {	//Ha a karakter vízben kedi a körét megvullad
 			Palya.gameover(this);
 			Kiiro.Kiir("Vizbe fulladt.");
 			return;
 		}
-		munka = 4;
+		munka = 4;	//Minden játékos 4 "munkával" kezdi a körét
 			int ij = (Palya.szereplok.indexOf(this) + 1);
 			
-		while(munka > 0 && !Palya.gover) {
+		while(munka > 0 && !Palya.gover) {	//Addig megy a játékos köre, míg el nem fogy a munkája vagy  a köre közben valami miatt az vagy a játék véget nem ér
 			Kiiro.Kiir("A soron levõ játékos: " + ij);
 			String s = sc.nextLine();
 			String[] ss = s.split(" ");
 			switch(ss[0]) {
-				case "lep":
+				case "lep":	//szomszédos táblára való lépés
 					if(ss.length == 2) {
 						int i = Integer.parseInt(ss[1]);
 						lep(Palya.gettabla(i));
 					} else Kiiro.Kiir("Nem megfelelo bemenet");
 					break;
-				case "targykias":
+				case "targykias":	//tárgy kiásása a táblából
 					tabla.targykias(this);
 					break;
-				case "targyhasznal":
+				case "targyhasznal":	//tárgyaid listázása és ha a játékos szeretné használata
 					Set<String> items = targyak.keySet();
 					if(items.size() == 0) {
 						Kiiro.Kiir("nincsen semmilyen tárgyad!");
 						break;
 					}
-					Kiiro.Kiir("Valaszd ki a kivant targyat [targy neve].\n");
+					Kiiro.Kiir("Valaszd ki a kivant targyat [targy neve] vagy válassz másik tevékenységet - vissza.\n");
 					for (String sets : items) {
 						Kiiro.Kiir(sets);
 					}
 					s = sc.nextLine();
+					if(s.equals("vissza")) {
+						break;
+					}
 					while(!items.contains(s)) {
 						Kiiro.Kiir("Nem megfelelo bemenet - nincs ilyen tárgy. Próbáld újra!\n");
 						s = sc.nextLine();
@@ -76,20 +86,20 @@ public abstract class Karakter extends Szereplo{
 						targyak.get(s).get(0).hasznal(this);
 					}
 					break;
-				case "kepesseg":
+				case "kepesseg":	//Karakter képességének használata
 					kepesseg();
 					break;
-				case "hoasas":
+				case "hoasas":		//Hó eltakarítása a tábláról kézzel
 					if(tabla.homennyiseg == 0) {
 						Kiiro.Kiir("Nincs hó!");
 						break;
 					}
 					tabla.addhomennyiseg(-1);
 					break;
-				case "endTurn":
+				case "endTurn":		//Kör átadása
 					munka = 0;
 					break;
-				case "kilep":
+				case "kilep":		//Kilépés a játékból
 					Palya.gover = true;
 					munka = 0;
 					break;
@@ -98,13 +108,13 @@ public abstract class Karakter extends Szereplo{
 					break;
 			}
 		}
-		if(Palya.gover) return;
+		if(Palya.gover) return;		//Ha véget ért a játék return
 		Kiiro.Kiir("Nem végezhetsz több munkát");
 		endTurn();
 	}
 	
-	/**Karakter lépése
-	 *@param t a tábla, amire lépni fog
+	/**
+	 * Karakter lépése: t a tábla, amire lépni fog
 	 */
 	@Override
 	public void lep(Tabla t) {
@@ -122,15 +132,16 @@ public abstract class Karakter extends Szereplo{
 	}
 	
 	/**
-	 *
+	 * Ha a karakterrel találkozik egy másik szereplõ
+	 * Nem történik semmi - nem tudjuk milyen szereplõ találkozott vele
 	 */
 	@Override
 	public void utkozik(Szereplo sz) {
 		//üres
 	}
 
-	/**Tárgyat ad a karakterhez.
-	 * @param t a Tárgy amit a karakternek ad.
+	/**
+	 * Tárgyat ad a karakterhez: t a Tárgy amit a karakternek ad.
 	 */
 	public void addTargy(Targy t) {
 		String name = t.getName();
@@ -144,32 +155,35 @@ public abstract class Karakter extends Szereplo{
 	}
 	
 	/**
-	 * @return a tábla amin a karakter elhelyezkedik
+	 * Visszaadja a táblát amin a karakter elhelyezkedik
 	 */
 	public Tabla getTabla() 
 	{
 		return tabla;
 	}
 	
-	/**A karakter beleesik a vízbe.
-	 *
+	/**
+	 * A karakter beleesik a vízbe
 	 */
 	public void beleesik()
 	{
-		munka = 0;
+		munka = 0;	//véget ér a köre
 		Kiiro.Kiir("Beleesett a vizbe.");
 		if (targyak.get("Buvarruha") != null) {
 			targyak.get("Buvarruha").get(0).hasznal(this);
 		}
 	}
 	
-	/**Csökkenti a karakter munkáját eggyel.
-	 * 
+	/**
+	 * Csökkenti a karakter munkáját eggyel
 	 */
 	public void munkavegzes() {
 		munka--;
 	}
 	
+	/**
+	 * Visszaadja a karakternél lévõ tárgyakat
+	 */
 	@Override
 	public HashMap<String, ArrayList<Targy>> getInventory(){
 		return targyak;

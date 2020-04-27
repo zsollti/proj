@@ -13,11 +13,13 @@ public class Main {
 		Palya p;
 		
 		String s = "";
+		/**
+		 * Két beolvasó scanner, az egyik a konzolos, a másik fájlból történõ beolvasáshoz
+		 */
 		Scanner sc = new Scanner(System.in);
 		Scanner fr = null;
 
-		
-		while(true) {
+		while(true) {	//addig fut a program, míg ki nem lépünk, vagy esetleges hibát nem kapunk
 			Kiiro.Kiir("Válaszd ki a futtatni kívánt cselekvést.\n");
 			Kiiro.Kiir("jatekBetolt [fajlnév]: Mentett játék betöltése");
 			Kiiro.Kiir("jatekBetolt: Új játék kezdése");
@@ -28,22 +30,21 @@ public class Main {
 			String[] ss = s.split(" ");
 			
 			switch(ss[0]) {
-				case "jatekBetolt":
-					if(ss.length == 2) {
+				case "jatekBetolt":	//pálya betöltése
+					if(ss.length == 2) {	//meglévõ mentett játékállapot betöltése
 						p = new Palya(ss[1]);
 						p.start(sc);
-					} else {
+					} else {	//egy új játék betöltése a megadott játékosszámmal
 						Kiiro.Kiir("Hány játékos legyen?");
 						int n = sc.nextInt();
 						p = new Palya(n, "uj.txt");
 						p.start(sc);
 					}
 					break;
-				case "testBeolvas":
+				case "testBeolvas":	//teszt betöltése
 				try {
 					String string = "Tesztek/"+ss[1];
 					fr = new Scanner(new FileReader(string));
-					Kiiro.setFile(string + "_kimenet.txt"); //test kiírása fáljba
 					String ts = fr.nextLine();
 					String[] tss = ts.split(" ");
 					p = new Palya(tss[1]);
@@ -59,7 +60,7 @@ public class Main {
 					fr.close();
 				}
 					break;
-				case "kilep":
+				case "kilep":	//kilépés
 					sc.close();
 					System.exit(0);
 					break;

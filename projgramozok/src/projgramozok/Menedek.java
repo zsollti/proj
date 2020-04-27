@@ -1,5 +1,7 @@
 package projgramozok;
-
+/**Absztrakt menedék õsosztály. A táblán lehet egy darab.
+ *
+ */
 public abstract class Menedek {
 	protected Tabla tabla;
 	

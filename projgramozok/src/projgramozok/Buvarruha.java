@@ -1,15 +1,17 @@
 package projgramozok;
 
 
-//A búvárruha megvalósítása
+/**Búvárruha osztály. Vízbe esés esetén kimenti egy szomszédos mezõre a viselõjét.
+ *
+ */
 public class Buvarruha extends Targy{
 
 	/**A búvárruha használata
-	 *@param k  ezt egy másik táblára lépteti 
+	 *@param k  ezt a játékost egy másik táblára lépteti, õ a viselõje
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		if(k.getTabla().getatfordult() == true){ //nem felesleges? csak a beleesiknél hívódik meg
+		if(k.getTabla().getatfordult() == true){ 
 			k.lep(k.getTabla().szomszed.get(0));
 			Kiiro.Kiir(getName() + " hasznalva:");
 		}

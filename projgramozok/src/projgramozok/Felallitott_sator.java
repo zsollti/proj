@@ -1,6 +1,8 @@
 package projgramozok;
 
-//Felállított sátor osztály megvalósítása.
+/**Felállított sátor osztály, egy sátor használata során keletkezik, menedék egy táblán, ami egy körig marad ott.
+ *A medvétõl nem véd, hóvihartól egy körig igen.
+ */
 public class Felallitott_sator extends Menedek{
 
 	
@@ -8,7 +10,9 @@ public class Felallitott_sator extends Menedek{
 		super(t);
 	}
 	
-	//Lerombolja a sátrat
+	/**Sátor lerombolása, mivel az maximum egy körig marad.
+	 * 
+	 */
 	@Override
 	public void destroy() {
 		tabla.menedek = null;

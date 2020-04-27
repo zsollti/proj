@@ -3,16 +3,19 @@ package projgramozok;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**Alkatrész osztály, a játék megnyeréséhez kell, összesen három darab objektum van belõle
+ *
+ */
 public class Alkatresz extends Targy{
 
 	private static int db = 0;
 	
-	/**Alkatrész használata. Megnyeri a játékot, ha mindeki egy helyen van és mind a 3 alkatrész nálunk van.
-	 *
+	/**Alkatrész használata. Megnyeri a játékot, ha mindenki egy helyen van és mind a 3 alkatrész náluk van.
+	 *Egyébként kiírja, hogy mi hiányzik.
+	 *egy munkavégzésbe kerül
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		//az még kellene, hogy ha az összes alkatrész egy helyen van
 		if(Palya.vizsgal(k)) {
 			db = 0;
 			for (Szereplo sz : Palya.szereplok) {
@@ -24,10 +27,14 @@ public class Alkatresz extends Targy{
 					}
 				}
 			}
-			if (db == 3) Palya.gameover(null);
+			if (db == 3) {
+				k.munkavegzes();
+				Palya.gameover(null);
+			}
 			else Kiiro.Kiir("Nincs meg az osszes alkatresz");
 		} else Kiiro.Kiir("Nincs mindenki egyutt");
 	}
+
 	public  String getName() {
 		return "Alkatresz";
 	}

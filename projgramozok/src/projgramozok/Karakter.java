@@ -42,7 +42,7 @@ public abstract class Karakter extends Szereplo{
 		munka = 4;
 			int ij = (Palya.szereplok.indexOf(this) + 1);
 			
-		while(munka > 0) {
+		while(munka > 0 && !Palya.gover) {
 			Kiiro.Kiir("A soron levõ játékos: " + ij);
 			String s = sc.nextLine();
 			String[] ss = s.split(" ");

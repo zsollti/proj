@@ -14,11 +14,13 @@ public class Kotel extends Targy{
 		Kiiro.Kiir(getName());
 		Kiiro.Kiir("Melyik szomszéból szeretnéd kihúzni õket?");
 		for(Tabla t : k.tabla.szomszed) {
-			Kiiro.Kiir(k.getTabla().szomszed.indexOf(t)); 
+			Kiiro.Kiir(Palya.tablak.indexOf(t)); 
 		}
 		int n;
 		if (Palya.sc != null) {
-			n = Palya.sc.nextInt();
+			String nh = Palya.sc.nextLine();
+			n = Integer.parseInt(nh);
+			n = k.tabla.szomszed.indexOf(Palya.tablak.get(n));
 			while (n > k.tabla.szomszed.size() | n < 0) {
 				Kiiro.Kiir("Helytelen input!");
 				n = Palya.sc.nextInt();
@@ -33,12 +35,13 @@ public class Kotel extends Targy{
 			}
 			sc.close();
 		}
+		Kiiro.Kiir(getName() + " hasznalva: ");
 		List<Szereplo> rajta = k.getTabla().szomszed.get(n).getSzereplok();
 		while(!rajta.isEmpty()) {
 			rajta.get(0).lep(k.getTabla());
 		}
 		k.munkavegzes();
-		Kiiro.Kiir(getName() + " hasznalva: ");
+		
 	}
 	public  String getName() {
 		return "Kotel";

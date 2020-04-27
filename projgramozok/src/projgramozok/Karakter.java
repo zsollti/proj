@@ -23,12 +23,14 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	public abstract void kepesseg();
 	/**
 	 * Absztrakt függvény, a karakterek hõpontváltozásához
+	 * @param i a hozzáadandó hõpont
 	 * Mindegyik karakternek más a maximális hõpontja
 	 */
 	public abstract void addhopont(int i);
 	
 	/**
-	 * A karakter konstruktora: t a tábla, ahol kezdeni fog.
+	 * A karakter konstruktora
+	 * @param t a tábla, ahol kezdeni fog
 	 */
 	public Karakter(Tabla t) {
 		super(t);
@@ -39,6 +41,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	
 	/**
 	 * A karakter/ játékos körének függvénye
+	 * @param sc használatban lévõ scanner
 	 */
 	@Override
 	public void korkezd(Scanner sc) {
@@ -114,7 +117,8 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	}
 	
 	/**
-	 * Karakter lépése: t a tábla, amire lépni fog
+	 * Karakter lépése
+	 * @param t a tábla, amire lépni fog
 	 */
 	@Override
 	public void lep(Tabla t) {
@@ -133,6 +137,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	
 	/**
 	 * Ha a karakterrel találkozik egy másik szereplõ
+	 * @param sz a szereplõ, aki a akarakter táblájára lépett
 	 * Nem történik semmi - nem tudjuk milyen szereplõ találkozott vele
 	 */
 	@Override
@@ -141,7 +146,8 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	}
 
 	/**
-	 * Tárgyat ad a karakterhez: t a Tárgy amit a karakternek ad.
+	 * Tárgyat ad a karakterhez
+	 * @param t a Tárgy amit a karakternek ad.
 	 */
 	public void addTargy(Targy t) {
 		String name = t.getName();

@@ -33,8 +33,8 @@ public class Medve extends Szereplo{
 	public void utkozik(Szereplo sz) {
 		//õ az egyetlen medve
 		if (sz != null && sz != this) {
-			Kiiro.Kiir("Medve általi halál");
 			Palya.gameover(sz);
+			Kiiro.Kiir("Medve általi halál");
 		}
 	}
 	
@@ -44,7 +44,7 @@ public class Medve extends Szereplo{
 		tabla.lelep(this);
 		Kiiro.Kiir( "medve lep " + 
 				Palya.tablak.indexOf(regi) + "-rõl " +
-				Palya.tablak.indexOf(tabla) + "-re");
+				Palya.tablak.indexOf(t) + "-re");
 		t.ralep(this);
 		if(t.menedek != null)t.menedek.destroy();
 		if(t.menedek == null) utkozik(t.szereplok.get(0));
@@ -58,7 +58,7 @@ public class Medve extends Szereplo{
 		int i = random.nextInt(tabla.szomszed.size());
 		if(!Palya.random) i = 0;
 		lep(tabla.szomszed.get(i));
-		endTurn();
+		if(!Palya.gover) endTurn();
 	}
 
 	@Override

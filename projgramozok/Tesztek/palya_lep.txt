@@ -1,11 +1,12 @@
 jatekBetolt palya.txt
 random
-lep 8
+lep 2
 endTurn
-lep 9
-lep 7
+lep 5
 lep 2
 lep 0
+endTurn
+lep 7
 lep 2
 endTurn
 kilep

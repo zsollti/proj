@@ -12,7 +12,7 @@ public class Kotel extends Targy{
 	@Override
 	public void hasznal(Karakter k) {
 		Kiiro.Kiir(getName());
-		Kiiro.Kiir("Melyik szomszéból szeretnéd kihúzni õket?");
+		Kiiro.Kiir("Melyik szomszédból szeretnéd kihúzni õket?");
 		for(Tabla t : k.tabla.szomszed) {
 			Kiiro.Kiir(Palya.tablak.indexOf(t)); 
 		}

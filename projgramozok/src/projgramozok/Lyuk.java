@@ -20,7 +20,7 @@ public class Lyuk extends Tabla{
 	public void ralep(Szereplo k){
 		szereplok.add(k);
 		k.setTabla(this);
-		Kiiro.Kiir("Lyukra leptel!.");
+		Kiiro.Kiir("Lyukra leptel!");
 		k.beleesik();
 		if(szereplok.size() > 0)
 		  szereplok.get(0).utkozik(k);

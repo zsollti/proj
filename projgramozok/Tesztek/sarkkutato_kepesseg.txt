@@ -3,4 +3,8 @@ random
 endTurn
 kepesseg
 1
+kepesseg
+3
+kepesseg
+4
 kilep

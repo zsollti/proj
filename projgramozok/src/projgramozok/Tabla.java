@@ -94,7 +94,8 @@ public class Tabla {
 			k.addTargy(targy);
 			targy = null;
 		}
-		else Kiiro.Kiir("Nincs is itt látható tárgy.");
+		else if(homennyiseg != 0) Kiiro.Kiir("Nem látszik a hótól a tábla.");
+		else Kiiro.Kiir("Nincs is itt tárgy.");
 	}
 	
 	//Megadja a tábla karakterbíró képességét (Tábla esetén mindig minden karaktert elbír).

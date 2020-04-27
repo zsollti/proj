@@ -18,9 +18,19 @@ public class Sarkkutato extends Karakter{
 	 */
 	@Override
 	public void kepesseg() {
+		Kiiro.Kiir("Melyik szomszédos tábla bíróképességét szeretnéd megnézni?");
+		for(Tabla t : tabla.szomszed) {
+			Kiiro.Kiir(Palya.tablak.indexOf(t)); 
+		}
 		int n;
 		if (Palya.sc != null) {
-			n = Palya.sc.nextInt();
+			String nh = Palya.sc.nextLine();
+			n = Integer.parseInt(nh);
+			n = tabla.szomszed.indexOf(Palya.tablak.get(n));
+			while (n > tabla.szomszed.size() | n < 0) {
+				Kiiro.Kiir("Helytelen input!");
+				n = Palya.sc.nextInt();
+			}
 		}
 		else {
 			Scanner sc = new Scanner(System.in);
@@ -33,7 +43,8 @@ public class Sarkkutato extends Karakter{
 		}
 		int birokepesseg = tabla.szomszed.get(n).getbirokepesseg();
 		munkavegzes();
-		Kiiro.Kiir("A szomszédos tábla bíróképessége:" + birokepesseg);
+		if (birokepesseg >= 0)Kiiro.Kiir("A szomszédos tábla bíróképessége:" + birokepesseg);
+		else Kiiro.Kiir("A szomszédos tábla stabil");
 	}
 
 	/**A sarkkutató hõpontját növeli max 4-ig, vagy csökkenti.

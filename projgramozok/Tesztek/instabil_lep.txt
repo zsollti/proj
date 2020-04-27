@@ -1,5 +1,6 @@
 jatekBetolt targyas.txt
 random
+endTurn
 lep 3
 endTurn
 lep 3

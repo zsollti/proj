@@ -107,6 +107,7 @@ public class Palya {
 	
 	public Palya(String filename) {
 		reset();
+		jatekosok = 0;
 		int ho = 0;
 		boolean fordult = false;
 		BufferedReader br = null;
@@ -199,8 +200,14 @@ public class Palya {
 								String[] karaktertul = k[a].split(" ");
 								for(int b = 0; b < karaktertul.length; b++) {
 									if(b == 0) {
-										if(karaktertul[b].charAt(0) == 'e')szereplok.add(new Eszkimo(tablak.get(row)));
-										else if(karaktertul[b].charAt(0) == 's')szereplok.add(new Sarkkutato(tablak.get(row)));
+										if(karaktertul[b].charAt(0) == 'e') {
+											szereplok.add(new Eszkimo(tablak.get(row)));
+											jatekosok++;
+										}
+										else if(karaktertul[b].charAt(0) == 's') {
+											szereplok.add(new Sarkkutato(tablak.get(row)));
+											jatekosok++;
+										}
 										else if(karaktertul[b].charAt(0) == 'm') {
 											szereplok.add(new Medve(tablak.get(row)));
 											break;

@@ -31,7 +31,7 @@ public class Palya {
 	
 	/**A pálya konstruktora, amely új játékot kezd a paraméterként kapott pályán
 	 * @param jatekosszam a játékosok száma, amennyit létrehoz az új pályán
-	 * @param p a fájl neve, amelyben a pálya található
+	 * @param p a fájl neve, amelyben a pálya található.
 	 */
 	public Palya(int jatekosszam, String p) { 
 		reset();

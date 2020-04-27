@@ -1,5 +1,9 @@
 package projgramozok;
 
+
+/**Törékeny ásó osztály, a lapát leszármazottja. Õséhez hasonló, csak 3 használat után eltörik.
+ *
+ */
 public class Torekeny_aso extends Lapat{
 	private int hasznalat;
 	
@@ -8,6 +12,7 @@ public class Torekeny_aso extends Lapat{
 	}
 	/**Törékeny ásó használata
 	 *@param k Az õ tábláján fog csökkenni a hó
+	 *egy munkavégzésbe kerül
 	 */
 	@Override
 	public void hasznal(Karakter k) {

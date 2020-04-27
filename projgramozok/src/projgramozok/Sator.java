@@ -1,9 +1,13 @@
 package projgramozok;
 
+/**Sátor osztály, ebbõl lehet felállított sátor objektumot létrehozni.
+ *
+ */
 public class Sator extends Targy{
 
 	/**Sátor használata
-	 *@param k Az õ tábláján fog megépülni a sátor
+	 *@param k Az õ tábláján fog megépülni a felállított sátor
+	 *egy munkavégzésbe kerül
 	 */
 	@Override
 	public void hasznal(Karakter k) {

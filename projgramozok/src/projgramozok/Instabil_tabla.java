@@ -27,7 +27,7 @@ public class Instabil_tabla extends Tabla{
 		if(atfordul) k.beleesik();
 		else if(szereplok.size() > birokepesseg) {
 			atfordul = true;
-			Kiiro.Kiir("Beszakadt!");
+			Kiiro.Kiir("Atfordult!");
 			for(Szereplo sz : szereplok) {
 				sz.beleesik();
 			}

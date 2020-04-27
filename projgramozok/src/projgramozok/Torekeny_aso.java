@@ -15,7 +15,7 @@ public class Torekeny_aso extends Lapat{
 		hasznalat--;
 		if(hasznalat <= 0) {
 			k.targyak.get(getName()).remove(this);
-			Kiiro.Kiir(getName() + "eltört!");
+			Kiiro.Kiir(getName() + " eltört!");
 			return;
 		}
 	}

@@ -41,15 +41,13 @@ public class Medve extends Szereplo{
 	@Override
 	public void lep(Tabla t) {
 		Tabla regi = tabla;
-		List<Szereplo> rajta = t.getSzereplok();
-		for (Szereplo sz : rajta) { //minden rajta lévõvel ütközik
-			utkozik(sz);
-		}
 		tabla.lelep(this);
-		t.ralep(this);
 		Kiiro.Kiir( "medve lep " + 
 				Palya.tablak.indexOf(regi) + "-rõl " +
 				Palya.tablak.indexOf(tabla) + "-re");
+		t.ralep(this);
+		t.menedek.destroy();
+		if(t.menedek == null) utkozik(t.szereplok.get(0));
 	}
 	
 	/**Kiválaszt egy random táblát, majd arra lép.
@@ -60,7 +58,7 @@ public class Medve extends Szereplo{
 		int i = random.nextInt(tabla.szomszed.size());
 		if(!Palya.random) i = 0;
 		lep(tabla.szomszed.get(i));
-		tabla.setMenedek(null); //elpusztítja, ha tudja
+		tabla.setMenedek(null); //ez nem ide kell, hanem a lépbe van benn, mert ott tud megenni karaktert és nem elég a menedekre a destroy()?
 		endTurn();
 	}
 

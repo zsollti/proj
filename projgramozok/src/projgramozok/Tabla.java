@@ -65,7 +65,7 @@ public class Tabla {
 		if(szereplok.size() > 0)
 		for (Szereplo sz : szereplok) {
 			sz.utkozik(k);
-		}
+		} //szereplok.get(0).utkozik(k); elég nem?
 		k.setTabla(this);
 	}
 	

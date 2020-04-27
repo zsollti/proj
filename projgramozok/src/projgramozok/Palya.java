@@ -318,6 +318,7 @@ public class Palya {
 			if(!random) r = 1;
 			if(r == 1) {
 				hovihar();
+				Kiiro.Kiir("hovihar");
 			}
 			for(Tabla t : tablak) {
 				t.setMenedek(null);

@@ -15,9 +15,9 @@ public abstract class Szereplo {
 	public abstract void addhopont(int i);
 	public abstract void beleesik();
 	public abstract void utkozik(Szereplo sz);
-	public abstract void addTargy(Targy t);
-	public abstract void setMunka(int i);
-	public abstract void setHopont(int i);
+	public abstract void addTargy(Targy t); //karakterbe?
+	public abstract void setMunka(int i); //karakterbe?
+	public abstract void setHopont(int i); //karakterbe?
 	public abstract HashMap<String, ArrayList<Targy>> getInventory();
 	
 	/**Adott táblára lépteti a karaktert.

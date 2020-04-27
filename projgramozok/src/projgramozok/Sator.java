@@ -10,7 +10,7 @@ public class Sator extends Targy{
 		k.getTabla().setMenedek(new Felallitott_sator(k.getTabla()));
 		k.munkavegzes();
 		k.targyak.get(getName()).remove(this);
-		Kiiro.Kiir(getName() + "Felépítve");
+		Kiiro.Kiir(getName() + " felépítve");
 	}
 	public  String getName() {
 		return "Sator";

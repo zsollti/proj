@@ -41,11 +41,12 @@ public class Sarkkutato extends Karakter{
 	 *@param i mennyivel nõjön a hõpontja (lehet negatív)
 	 */
 	@Override
-	public void addhopont(int i) {		
+	public void addhopont(int i) {	
+		Kiiro.Kiir("A régi hõpont: " + hopont);
 		hopont += i;
 		if(hopont > 4) hopont = 4;
 		else if(hopont < 1)Palya.gameover(this);
-		Kiiro.Kiir(hopont);
+		Kiiro.Kiir("Az aktuális hõpont: " + hopont);
 	}
 
 	@Override

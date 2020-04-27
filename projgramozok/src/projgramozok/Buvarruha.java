@@ -9,9 +9,9 @@ public class Buvarruha extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		if(k.getTabla().getatfordult() == true){
+		if(k.getTabla().getatfordult() == true){ //nem felesleges? csak a beleesiknél hívódik meg
 			k.lep(k.getTabla().szomszed.get(0));
-			Kiiro.Kiir(getName());
+			Kiiro.Kiir(getName() + " hasznalva");
 		}
 	}
 	public  String getName() {

@@ -9,7 +9,7 @@ public class Elelem extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		Kiiro.Kiir(getName());
+		Kiiro.Kiir(getName() + " hasznalva");
 		k.addhopont(1);
 		k.munkavegzes();
 		k.targyak.get(getName()).remove(this);

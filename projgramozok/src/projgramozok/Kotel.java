@@ -38,6 +38,7 @@ public class Kotel extends Targy{
 			rajta.get(0).lep(k.getTabla());
 		}
 		k.munkavegzes();
+		Kiiro.Kiir(getName() + " hasznalva");
 	}
 	public  String getName() {
 		return "Kotel";

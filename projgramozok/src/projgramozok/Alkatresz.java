@@ -25,7 +25,8 @@ public class Alkatresz extends Targy{
 				}
 			}
 			if (db == 3) Palya.gameover(null);
-		}
+			else Kiiro.Kiir("Nincs meg az osszes alkatresz");
+		} else Kiiro.Kiir("Nincs mindenki egyutt");
 	}
 	public  String getName() {
 		return "Alkatresz";

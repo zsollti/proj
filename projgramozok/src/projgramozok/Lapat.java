@@ -8,7 +8,7 @@ public class Lapat extends Targy{
 	//A lapát használata, egyszeri hazsnálattal 2 havat lapátol el.
 	@Override
 	public void hasznal(Karakter k) {
-		Kiiro.Kiir(getName());
+		Kiiro.Kiir(getName() + " hasznalva");
 		k.getTabla().addhomennyiseg(-2);
 		k.munkavegzes();
 	}

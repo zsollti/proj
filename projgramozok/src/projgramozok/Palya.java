@@ -18,7 +18,7 @@ public class Palya {
 	static boolean random = true;		//randomság be van-e kapcsolva, true: be van kapcsolva
 	
 	/**Új pálya létrehozása esetén visszaállítja a statikus
-	 * változókat kezdõállapotba.
+	 * változókat kezdõállapotba
 	 */
 	private void reset() {
 		gover = false;

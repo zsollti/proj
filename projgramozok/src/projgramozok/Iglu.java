@@ -1,6 +1,8 @@
 package projgramozok;
 
-//Az iglu osztály megvalósítása
+/**Iglu menedék, az eszkimó tudja létrehozni. Véd a hóvihartól és a medvétõl.
+ *Egy tábla menedéke, ami nem semmisül meg.
+ */
 public class Iglu extends Menedek{
 	
 	
@@ -8,7 +10,9 @@ public class Iglu extends Menedek{
 		super(t);
 	}
 	
-	//Iglut nem lehet megsemmisíteni, ezért ez a függvény üres.
+	/**Nem lehet megsemmisíteni, így ez üres.
+	 * 
+	 */
 	@Override
 	public void destroy() {
 		

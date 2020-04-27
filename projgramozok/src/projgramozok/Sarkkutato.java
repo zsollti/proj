@@ -2,7 +2,9 @@ package projgramozok;
 
 import java.util.Scanner;
 
-//A sarkkutató megvalóítása
+/**
+ *A sarkkutató osztály megvalóítása
+ */
 public class Sarkkutato extends Karakter{
 	
 	/**
@@ -13,8 +15,8 @@ public class Sarkkutato extends Karakter{
 		hopont = 4;
 	}
 
-	/**Sarkkutató képessége, lekérdezi egy szomszédos tábla karakterbíró képességét.
-	 *
+	/**
+	 *Sarkkutató képessége, lekérdezi egy szomszédos tábla karakterbíró képességét.
 	 */
 	@Override
 	public void kepesseg() {
@@ -62,13 +64,21 @@ public class Sarkkutato extends Karakter{
 		}
 		else Kiiro.Kiir("Az aktuális hõpont: " + hopont);
 	}
-
+	
+	/**
+	 *Set függvény a munka értékének beállítására. Max 4.
+	 *@param i-re állítja a munka pontját ha az kisebb mint 5.
+	 */
 	@Override
 	public void setMunka(int i) {
 		if (i > 4) i=4;
 		munka = i;
 	}
 
+	/**
+	 *Set függvény a hõpont értékének beállítására. Max 4.
+	 *@param i-re állítja a hõpontját ha az kisebb mint 5.
+	 */
 	@Override
 	public void setHopont(int i) {
 		if (i > 4) i=4;

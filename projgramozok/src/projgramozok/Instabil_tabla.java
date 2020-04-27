@@ -2,24 +2,39 @@ package projgramozok;
 
 import java.util.Random;
 
-//Instabil táblák egvalósítása.
+
+
+/**
+ *Instabil táblák megvalósítása.
+ */
 public class Instabil_tabla extends Tabla{
 	
 	private int birokepesseg;
 	
-	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
-	//Ha többen vannak rajta mint amennyit elbír akkor a tábla átfordul.
+	/**
+	 * Paraméter nélküli konstruktor.
+	 * Random bíróképességet állít be magának.(6 és 1 között)
+	 */
 	public Instabil_tabla() {
 		super();
 		birokepesseg = new Random().nextInt(5) +1;
 	}
 	
+	/**
+	 * Paraméteres konstruktor.
+	 * @param ho: A táblán elhelyezkedõ hó ennyisége.
+	 * @param fordult: A tábla átfordult állapota.
+	 * @param bir: A tábla bíróképessége.
+	 */
 	public Instabil_tabla(int ho, boolean fordult, int bir) {
 		super(ho, fordult);
 		birokepesseg = bir;
 	}
 	
-	//A paraméterként kapott szereplõt a sjátjaihoz adja.
+	/**
+	 * A paraméterként kapott szereplõt a sajátjaihoz adja.
+	 * @param k: A szereplõ aki rálép a táblára.
+	 */
 	@Override
 	public void ralep(Szereplo k)
 	{
@@ -36,15 +51,20 @@ public class Instabil_tabla extends Tabla{
 		szereplok.get(0).utkozik(k);
 	}
 	
-	//Eltávolítja a paraméterként kapott karaktert a sajátjai közül.
-		public void lelep(Szereplo k) {
-			this.szereplok.remove(k);
-			if(szereplok.size() == 0) {
-				atfordul = false;
-			}
+	/**
+	 * Eltávolítja a paraméterként kapott szereplõt a sajátjai közül.
+	 * @param k: A szereplõ aki lelép a tábláról.
+	 */
+	public void lelep(Szereplo k) {
+		this.szereplok.remove(k);
+		if(szereplok.size() == 0) {
+			atfordul = false;
 		}
+	}
 	
-	//Megadja a tábla karakter bíró képességét.
+	/**
+	 * Megadja a tábla karakterbíró képességét.
+	 */
 	@Override
 	public int getbirokepesseg()
 	{

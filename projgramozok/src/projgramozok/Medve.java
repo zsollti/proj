@@ -2,14 +2,19 @@ package projgramozok;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ *A medve osztály megvalósítása
+ */
 public class Medve extends Szereplo{
 
-	private Random random = new Random(); //csak hogy ne kelljen miding újra létrehozni
+	private Random random = new Random(); 
 	
+	/**
+	 * @param t A kezdõtábla
+	 */
 	public Medve(Tabla t) {
 		super(t);
 	}
@@ -24,7 +29,9 @@ public class Medve extends Szereplo{
 		//üres
 	}
 	
-	public void addTargy(Targy t) {}
+	public void addTargy(Targy t) {
+		//üres
+	}
 	
 	/**ha elkap valakit, az meghal
 	 *@param sz a karakter, akit elkapott
@@ -38,6 +45,10 @@ public class Medve extends Szereplo{
 		}
 	}
 	
+	/**
+	 * Adott táblára lépteti a medvét.
+	 * @param t A tábla, amire lépni fog
+	 */
 	@Override
 	public void lep(Tabla t) {
 		Tabla regi = tabla;
@@ -50,8 +61,8 @@ public class Medve extends Szereplo{
 		if(t.menedek == null) utkozik(t.szereplok.get(0));
 	}
 	
-	/**Kiválaszt egy random táblát, majd arra lép.
-	 *
+	/**
+	 * Kiválaszt egy random táblát, majd arra lép.
 	 */
 	@Override
 	public void korkezd(Scanner sc) {
@@ -73,7 +84,6 @@ public class Medve extends Szereplo{
 
 	@Override
 	public HashMap<String, ArrayList<Targy>> getInventory() {
-		// üres
 		return null;
 	}
 }

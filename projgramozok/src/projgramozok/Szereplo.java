@@ -1,37 +1,83 @@
 package projgramozok;
 
-import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ *Absztrakt osztály, a szerepõk megvalósítására. (Medve, Eszkimó, Sarkkutató)
+ */
+
 public abstract class Szereplo {
+	
 	protected Tabla tabla;
 	
+	/**
+	 * @param t A kezdõtábla
+	 */
 	public Szereplo(Tabla t) {
 		this.tabla = t;
 		t.szereplok.add(this);
 	}
+	
+	/**
+	 *Absztrakt függvény.
+	 *@param i-vel növeli a szereplõ hõpontját.
+	 */
 	public abstract void addhopont(int i);
+	
+	/**
+	 *Absztrakt függvény.
+	 *A szereplõ vízbe esik.
+	 */
 	public abstract void beleesik();
+	
+	/**
+	 *Absztrakt függvény.
+	 *Egy szerplõ olyan táblára lép ahol már áll másik.
+	 */
 	public abstract void utkozik(Szereplo sz);
-	public abstract void addTargy(Targy t); //karakterbe?
-	public abstract void setMunka(int i); //karakterbe?
-	public abstract void setHopont(int i); //karakterbe?
+	
+	/**
+	 *Absztrakt függvény.
+	 *Tárgyat ad a szereplõnek.
+	 *@param t a Tárgy amit a szereplõnek ad.
+	 */
+	public abstract void addTargy(Targy t); 
+	
+	/**
+	 *Absztrakt függvény.
+	 **Set függvény a munka értékének beállítására. Max 4.
+	 *@param i-re állítja a munka pontját.
+	 */
+	public abstract void setMunka(int i); 
+	
+	/**
+	 *Absztrakt függvény.
+	 *Set függvény a hõpont értékének beállítására. Max 5.
+	 *@param i-re állítja a hõpontját.
+	 */
+	public abstract void setHopont(int i);
+	
+	/**
+	 *Absztrakt függvény.
+	 *A szereplõ tárgyainak listájával tér vissza
+	 */
 	public abstract HashMap<String, ArrayList<Targy>> getInventory();
 	
-	/**Adott táblára lépteti a karaktert.
+	/**
+	 * Adott táblára lépteti a szereplõt.
 	 * @param t A tábla, amire lépni fog
 	 */
 	public abstract void lep(Tabla t);
 		
-	/**Elkezdi a szereplõ körét.
-	 * 
+	/**
+	 * Elkezdi a szereplõ körét.
 	 */
 	public abstract void korkezd(Scanner sc);
 	
-	/**A szereplõ befejezi a körét.
-	 * 
+	/**
+	 * A szereplõ befejezi a körét.
 	 */
 	public void endTurn()
 	{
@@ -39,7 +85,8 @@ public abstract class Szereplo {
 		Kiiro.Kiir("Kör átadása");
 	}
 		
-	/**Beállítja a szereplõ tábláját
+	/**
+	 * Beállítja a szereplõ tábláját
 	 * @param erre a szerplõ új táblája
 	 */
 	public void setTabla(Tabla erre) {

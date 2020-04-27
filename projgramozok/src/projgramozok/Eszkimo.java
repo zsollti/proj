@@ -1,7 +1,8 @@
 package projgramozok;
 
-
-//Az eszkimók megvalósítása
+/**
+ *Az eszkimó osztály megvalósítása
+ */
 public class Eszkimo extends Karakter{
 
 	/**
@@ -12,8 +13,8 @@ public class Eszkimo extends Karakter{
 		hopont = 5;
 	}
 	
-	/**Eszkimó képesség, iglut épít a táblára amin áll.
-	 *
+	/**
+	 *Eszkimó képesség, iglut épít a táblára amin áll.
 	 */
 	@Override
 	public void kepesseg() {
@@ -37,13 +38,21 @@ public class Eszkimo extends Karakter{
 		}
 		else Kiiro.Kiir("Az aktuális hõpont: " + hopont);
 	}
-
+	
+	/**
+	 *Set függvény a munka értékének beállítására. Max 4.
+	 *@param i-re állítja a munka pontját ha az kisebb mint 5.
+	 */
 	@Override
 	public void setMunka(int i) {
 		if (i > 4) i=4;
 		munka = i;
 	}
 
+	/**
+	 *Set függvény a hõpont értékének beállítására. Max 5.
+	 *@param i-re állítja a hõpontját ha az kisebb mint 5.
+	 */
 	@Override
 	public void setHopont(int i) {
 		if (i>5) i = 5;

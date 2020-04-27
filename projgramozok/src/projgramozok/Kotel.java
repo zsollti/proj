@@ -14,7 +14,7 @@ public class Kotel extends Targy{
 		Kiiro.Kiir(getName());
 		Kiiro.Kiir("Melyik szomszéból szeretnéd kihúzni õket?");
 		for(Tabla t : k.tabla.szomszed) {
-			Kiiro.Kiir(k.getTabla().szomszed.indexOf(t));
+			Kiiro.Kiir(k.getTabla().szomszed.indexOf(t)); 
 		}
 		int n;
 		if (Palya.sc != null) {

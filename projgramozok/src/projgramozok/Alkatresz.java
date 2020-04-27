@@ -7,7 +7,7 @@ public class Alkatresz extends Targy{
 
 	private static int db = 0;
 	
-	/**Alkatrész használata. Megnyeri a játékot, ha mindeki egy helyen van és mind a 3 alkatrést náluk van.
+	/**Alkatrész használata. Megnyeri a játékot, ha mindeki egy helyen van és mind a 3 alkatrész nálunk van.
 	 *
 	 */
 	@Override

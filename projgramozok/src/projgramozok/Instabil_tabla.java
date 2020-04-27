@@ -19,6 +19,7 @@ public class Instabil_tabla extends Tabla{
 		birokepesseg = bir;
 	}
 	
+	//A paraméterként kapott szereplõt a sjátjaihoz adja.
 	@Override
 	public void ralep(Szereplo k)
 	{

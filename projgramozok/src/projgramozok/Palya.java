@@ -10,13 +10,16 @@ import java.util.Random;
 import java.util.Scanner;
  
 public class Palya {
-	static boolean gover = false;
-	private static int jatekosok;
-	static List<Tabla> tablak = new ArrayList<Tabla>();
-	static List<Szereplo> szereplok = new ArrayList<Szereplo>();
-	static Scanner sc = null;
-	static boolean random = true;
+	static boolean gover = false;   //vége van-e már a játéknak
+	private static int jatekosok;	//a játékosok száma
+	static List<Tabla> tablak = new ArrayList<Tabla>();		//a pályán lévõ táblák
+	static List<Szereplo> szereplok = new ArrayList<Szereplo>();		//a pályán lévõ szereplõk
+	static Scanner sc = null;			//errõl a szkennerrõl várja a bemeneteket, lehet fájl vagy standard bemenet
+	static boolean random = true;		//randomság be van-e kapcsolva, true: be van kapcsolva
 	
+	/**Új pálya létrehozása esetén visszaállítja a statikus
+	 * változókat kezdõállapotba.
+	 */
 	private void reset() {
 		gover = false;
 		tablak = new ArrayList<Tabla>();
@@ -25,36 +28,41 @@ public class Palya {
 		sc = null;
 	}
 	
-	//A Pálya osztály konstruktora
 	
+	/**A pálya konstruktora, amely új játékot kezd a paraméterként kapott pályán
+	 * @param jatekosszam a játékosok száma, amennyit létrehoz az új pályán
+	 * @param p a fájl neve, amelyben a pálya található
+	 */
 	public Palya(int jatekosszam, String p) { 
 		reset();
 		jatekosok = jatekosszam;
-		//táblák és hó
 		BufferedReader br = null;
 		try {
 			String s = "Tesztek/"+p;
 			br = new BufferedReader(new FileReader(s));
 			String line;
 			line = br.readLine();
-			for(int i = 0; i < line.length(); i++) {
-				if(line.charAt(i) == 't') {
-					tablak.add(new Tabla());
+			
+			for(int i = 0; i < line.length(); i++) {		//A fájl elsõ sorában vannak felsorolva a táblák típusai
+				if(line.charAt(i) == 't') {					//ezek alapján tölti fel a tablak-at
+					tablak.add(new Tabla());				
 				} else if(line.charAt(i) == 'i') {
 					tablak.add(new Instabil_tabla());
 				} else if(line.charAt(i) == 'l') {
 					tablak.add(new Lyuk());
 				}
 			}
+			
 			int row = 0;
-			while ((line = br.readLine()) != null) {
-				for(int i = 0; i < line.length(); i++) {
+			while ((line = br.readLine()) != null) {			//A szomszédossági mátrix alapján beállítja
+				for(int i = 0; i < line.length(); i++) {		//az összes tábla szomszédjait
 					if(line.charAt(i) == '1') {
 						tablak.get(row).szomszed.add(tablak.get(i));
 					}
 				}
 				row ++;
 			}
+			
 			br.close();
 		} catch (FileNotFoundException e) {
 			Kiiro.Kiir("Nem létezik a fájl.");
@@ -68,26 +76,29 @@ public class Palya {
 					e.printStackTrace();
 				}
 		}
-		sc = new Scanner(System.in);
+		
+		sc = new Scanner(System.in);						
 		szereplok = new ArrayList<Szereplo>();
-		for(int i = 0; i < jatekosok; i++) {
-			Kiiro.Kiir("Eszkimó(1) vagy sarkkutató(2) akarsz lenni?");
-			int ered = sc.nextInt();
+		
+		for(int i = 0; i < jatekosok; i++) {							//A standard bemenetrõl bekéri az összes játékostól, hogy
+			Kiiro.Kiir("Eszkimó(1) vagy sarkkutató(2) akarsz lenni?");	//milyen típusú karakter szeretne lenni, majd ezek alapján
+			int ered = sc.nextInt();									//felveszi a megfelelõ karaktereket
 			while(ered != 1 && ered != 2) {
 				ered = sc.nextInt();
 			}
-			if(ered == 1) szereplok.add(new Eszkimo(tablak.get(0)));
+			if(ered == 1) szereplok.add(new Eszkimo(tablak.get(0)));		//Az összes karakter ugyanarról a pályáról indul
 			else if(ered == 2) szereplok.add(new Sarkkutato(tablak.get(0)));
 		}
+		
 		int r = 0;
 		while(r == 0) {
 			r = new Random().nextInt(tablak.size());
 		}
-		szereplok.add(new Medve(tablak.get(r)));
-		//tárgyak
+		szereplok.add(new Medve(tablak.get(r)));				//A medvét pedig egy másik random táblára helyezi
 		List<Targy> targyak = new ArrayList<Targy>();
-		for(int i = 0; i < 3; i++) {
-			targyak.add(new Alkatresz());
+		
+		for(int i = 0; i < 3; i++) {					//Mindegy tárgyból hoz létre legalább egyet, hogy
+			targyak.add(new Alkatresz());				//mindenféle tárgyat tudjanak használni
 		}
 		targyak.add(new Buvarruha());
 		targyak.add(new Torekeny_aso());
@@ -97,8 +108,9 @@ public class Palya {
 		for(int i = 0; i < 3; i++) {
 			targyak.add(new Elelem());
 		}
-		for(int i = 0; i < targyak.size(); i++) {
-			r = new Random().nextInt(tablak.size());
+		
+		for(int i = 0; i < targyak.size(); i++) {			//A tárgyakat elhelyezi a táblákon úgy, hogy lyukba nem tesz és
+			r = new Random().nextInt(tablak.size());		//minden táblán maximum 1 tárgy lehet
 			while(tablak.get(r).getbirokepesseg() == 0 || tablak.get(r).targy != null) {
 				r = new Random().nextInt(tablak.size());
 			}
@@ -106,6 +118,10 @@ public class Palya {
 		}
 	}
 	
+	/**Az adott fájlból teljesen felépít egy pályát karakterekkel táblákkal,
+	 * hóval minden tulajdonsággal együtt
+	 * @param filename a fájl neve, amelyikben a pálya található
+	 */
 	public Palya(String filename) {
 		reset();
 		jatekosok = 0;
@@ -122,14 +138,14 @@ public class Palya {
 			while ((line = br.readLine()) != null && line.charAt(0) != 'p') {
 				
 				String[] dolgok = line.split(",");
-				String[] tul = dolgok[1].split(" ");
+				String[] tablatulajdonsag = dolgok[1].split(" ");
 				
-				for(int k = 1; k < tul.length; k++) {
-					if(k == 1) {
-						ho = Integer.parseInt(tul[k]);
+				for(int k = 1; k < tablatulajdonsag.length; k++) {				//Elõször kiolvassa a fájlból a táblák adatait, hogy
+					if(k == 1) {												//létrehozásukkor ezeket rögtön be tudja állítani
+						ho = Integer.parseInt(tablatulajdonsag[k]);
 					}
 					else if(k == 2) {
-						if(Integer.parseInt(tul[k]) == 0)fordult = false;
+						if(Integer.parseInt(tablatulajdonsag[k]) == 0)fordult = false;
 						else fordult = true;
 					}
 				}
@@ -138,8 +154,8 @@ public class Palya {
 									
 					switch(i) {
 					
-						case 0:
-							if(dolgok[i].charAt(0) == 't') {
+						case 0:												//Itt veszi fel a megfelelõ típusú táblákat
+							if(dolgok[i].charAt(0) == 't') {				//a megfelelõ tulajdonságokkal
 								tablak.add(new Tabla(ho, fordult));
 							}
 							else if(dolgok[i].charAt(0) == 'i') {
@@ -151,15 +167,15 @@ public class Palya {
 							}
 							break;
 							
-						case 1:
-								if(tul[0].charAt(0) == 'i') {
+						case 1:																//A soron következõ táblára elhelyezi a 
+								if(tablatulajdonsag[0].charAt(0) == 'i') {					//megfelelõ menedéket
 									tablak.get(row).setMenedek(new Iglu(tablak.get(row)));
 								}
-								else if(tul[0].charAt(0) == 's') {
+								else if(tablatulajdonsag[0].charAt(0) == 's') {
 									tablak.get(row).setMenedek(new Felallitott_sator(tablak.get(row)));
 								}
 								
-								switch(tul[3]) {
+								switch(tablatulajdonsag[3]) {							//A táblába elhelyezi az ott található tárgyat
 								
 									case "alkatresz":
 										tablak.get(row).targy = new Alkatresz();
@@ -194,13 +210,13 @@ public class Palya {
 						        	}
 						break;
 						
-						case 2:
+						case 2:											
 							String[] k = dolgok[2].split(";");
 							for(int a = 0; a < k.length; a++) {
 								
 								String[] karaktertul = k[a].split(" ");
-								for(int b = 0; b < karaktertul.length; b++) {
-									if(b == 0) {
+								for(int b = 0; b < karaktertul.length; b++) { 			//Az összes a soron következõ táblán lévõ megfelelõ típusú
+									if(b == 0) {										//karaktelt elhelyezi a táblán, és jegyzi a játékosok számát
 										if(karaktertul[b].charAt(0) == 'e') {
 											szereplok.add(new Eszkimo(tablak.get(row)));
 											jatekosok++;
@@ -214,15 +230,15 @@ public class Palya {
 											break;
 										}
 									}
-									else if(b == 1) {
+									else if(b == 1) {										//A feltett karakterek hõpontjait és munkáját is beállítja
 										szereplok.get(szereplok.size() - 1).setHopont(Integer.parseInt(karaktertul[b].substring(0)));
 									}
 									else if(b == 2) {
 										szereplok.get(szereplok.size() - 1).setMunka(Integer.parseInt(karaktertul[b].substring(0)));
 									}
 									else{
-										switch(karaktertul[b]) {
-										
+										switch(karaktertul[b]) {						//Minden karakter esetében felveszi a rárgyai közé a 
+																						//megfelelõ típusú tárgyakat, ha vannak neki
 										case "alkatresz":
 											szereplok.get(a).addTargy(new Alkatresz());
 											break;
@@ -260,9 +276,9 @@ public class Palya {
 				row++;
 					
 		}
-			row = 0;
-			while ((line = br.readLine()) != null) {
-				for(int i = 0; i < line.length(); i++) {
+			row = 0;									
+			while ((line = br.readLine()) != null) {			//Miután létrehozta a táblákat rajta a karakterekkel, a táblák
+				for(int i = 0; i < line.length(); i++) {		//közötti kapcsolatokat is felépíti a szomszédossági mátrix alapján
 					if(line.charAt(i) == '1') {
 						tablak.get(row).szomszed.add(tablak.get(i));
 					}
@@ -271,7 +287,7 @@ public class Palya {
 			}
 			br.close();
 			
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {					
 			Kiiro.Kiir("Nem létezik a fájl.");
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -297,6 +313,10 @@ public class Palya {
 		
 	}
 	
+	/**A játék végekor hívódik, ha össze próbálják szerelni a rakéta alkatrészeit
+	 * vagy valaki meghalt, mert vízbe fulladt, megfagyott vagy találkozott a medvével
+	 * @param k a karakter, aki meghalt, ha null azt jelenti, hogy megnyerték
+	 */
 	public static void gameover(Szereplo k){
 		if(k == null) Kiiro.Kiir("Victory!!!!!");
 		else {
@@ -307,11 +327,16 @@ public class Palya {
 	}
 	
 	
+	/**Ez a függvény fut a játék során folyamatosan, az egyes
+	 * körök elején vagy hív hóvihart vagy nem, majd
+	 * sorba hívogatja a szereplõk korkezd-jét, amíg vége nincs a játéknak valamilyen okból
+	 * @param sc a scanner, amirõl várja a bemenetet
+	 */
 	public void start(Scanner sc) {
 		Palya.sc = sc;
 		int i = 0;
-		Kiiro.Kiir("random: hóvihar és medve randomságának kikapcsolása");
-		String s = sc.nextLine();
+		Kiiro.Kiir("random: hóvihar és medve randomságának kikapcsolása");		//A játék kezdetekor tájékoztatja a játékost, hogy
+		String s = sc.nextLine();												//milyen cselekvéseket végezhet a játék során
 		if(s.equals("random")) random = false;
 		Kiiro.Kiir("Valaszd ki a kivant cselekvest.\n");
 		Kiiro.Kiir("lep [tábla indexe/ szama]");
@@ -321,6 +346,7 @@ public class Palya {
 		Kiiro.Kiir("hoasas - kezzel");
 		Kiiro.Kiir("endTurn - kor befejezese");
 		Kiiro.Kiir("kilep - jatek befejezese");
+		
 		while(!gover) {
 			int r = new Random().nextInt(3);
 			if(!random) r = 1;
@@ -331,6 +357,7 @@ public class Palya {
 			for(Tabla t : tablak) {
 				t.setMenedek(null);
 			}
+			
 			while(i < szereplok.size()) {
 				szereplok.get(i).korkezd(sc);
 				if(gover) break;
@@ -341,6 +368,10 @@ public class Palya {
 		Kiiro.Kiir("Jatek vege.");
 	}
 
+	/**Minden kör elején hívódhat, a randomságtól függõen
+	 * vagy random táblákra vagy mindig a páratlan sorszámúkra
+	 * tesz plusz egy réteg havat
+	 */
 	public void hovihar(){
 		if(random) {
 			for(Tabla t: tablak) {
@@ -355,15 +386,16 @@ public class Palya {
 		}
 	}
 	
+	/**Ha megvan mindhárom rakéta alkatrész és össze próbálják szerelni,
+	 * akkor ellenõrzi, hogy minden karakter ugyanazon a táblán van-e
+	 * @param k a karakter, aki a függvény hívja, így csak az õ tábláját kell ellenõrizni
+	 * @return true:ugyanazon a táblán vannak, false:nem
+	 */
 	public static boolean vizsgal(Karakter k){
 		 if(k.getTabla().getSzereplok().size() == jatekosok) {
 			 return true;
 		 }
 		 return false;
-	}
-	
-	public static Tabla gettabla(int i){
-		return tablak.get(i);
 	}
 	
 }

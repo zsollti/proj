@@ -58,7 +58,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 				case "lep":	//szomszédos táblára való lépés
 					if(ss.length == 2) {
 						int i = Integer.parseInt(ss[1]);
-						lep(Palya.gettabla(i));
+						lep(Palya.tablak.get(i));
 					} else Kiiro.Kiir("Nem megfelelo bemenet");
 					break;
 				case "targykias":	//tárgy kiásása a táblából

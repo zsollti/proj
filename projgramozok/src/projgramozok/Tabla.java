@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-//A táblákat megvalósító osztály.
+
+/**A táblákat megvalósító osztály.
+ *
+ */
 public class Tabla {
 	protected Menedek menedek;
 	protected int homennyiseg;
@@ -13,7 +16,9 @@ public class Tabla {
 	protected Targy targy;
 	protected List<Tabla> szomszed;
 	
-	//Konstruktor
+	/**Konstruktor. Létrehoz egy alapértékekkel rendelkezõ táblát.
+	 * 
+	 */
 	public Tabla() {
 		szereplok = new ArrayList<Szereplo>();
 		Random n = new Random();
@@ -24,6 +29,10 @@ public class Tabla {
 		szomszed = new ArrayList<Tabla>();
 	}
 	
+	/**Konstruktor. Paraméterek alapján hoz létre táblát.
+	 * @param ho A táblán lévõ kezdõ hómennyiség
+	 * @param atfordult A tábla át van-e fordulba kezdetben
+	 */
 	public Tabla(int ho, boolean atfordult) {
 		szereplok = new ArrayList<Szereplo>();
 		homennyiseg = ho;
@@ -33,12 +42,17 @@ public class Tabla {
 		szomszed = new ArrayList<Tabla>();
 	}
 	
-	//A tábla karaktereivel tér vissza.
+	/**Visszadja a tábla szereplõit.
+	 * @return a táblán álló szereplõk
+	 */
 	public List<Szereplo> getSzereplok(){
 		return szereplok;
 	}
 	
-	//A két tábla szomszédja-e egymásnak
+	/**Szomszédságot vizsgál két tábla között.
+	 * @param sz a vizsgálandó tábla
+	 * @return igaz, ha szomszéd
+	 */
 	public boolean szomszede(Tabla sz){
 		for(Tabla szo: szomszed) {
 			if(szo.equals(sz)) return true;
@@ -46,7 +60,9 @@ public class Tabla {
 		return false;
 	}
 	
-	//Iglut helyez a táblára
+	/**Menedéket helyez a táblára.
+	 * @param m a felállítandó menedék
+	 */
 	public void setMenedek(Menedek m) {
 		if(menedek != null) {
 			menedek.destroy();
@@ -58,21 +74,25 @@ public class Tabla {
 
 	}
 	
-	//Paraméterként kapott karaktert eltárolja a sajátjai közt.
-	//Ezen a táblán az összes karakter elfér.
+	/**Valaki rálép a táblára. Ezen a táblán az összes karakter elfér.
+	 * @param k eltárolja a sajátjai közt.
+	 */
 	public void ralep(Szereplo k){
 		this.szereplok.add(k);
 		szereplok.get(0).utkozik(k);
 		k.setTabla(this);
 	}
 	
-	//Eltávolítja a paraméterként kapott karaktert a sajátjai közül.
+	/**Valaki lelép a tábláról
+	 * @param k Eltávolítja a sajátjai közül.
+	 */
 	public void lelep(Szereplo k) {
 		this.szereplok.remove(k);
 	}
 	
-	//A táblán levõ hó mennyiségét változtatja.
-	//Max 5 min 0 lehet rajta.
+	/**A táblán levõ hó mennyiségét változtatja. Maximum 5 minimum 0 lehet rajta.
+	 * @param i ennyivel változik a hómennyiség. Elõjeles.
+	 */
 	public void addhomennyiseg(int i){
 		Kiiro.Kiir("A régi hómennyiség: " + this.homennyiseg);
 		homennyiseg += i;
@@ -87,7 +107,9 @@ public class Tabla {
 
 	}
 	
-	//A paraméterként kapott karakternek adja a befagyott tárgyját.
+	/**A táblába fagyott tárgyat valaki kiássa.
+	 * @param k neki adja a befagyott tárgyat.
+	 */
 	public void targykias(Karakter k){
 		if(targy != null && homennyiseg == 0) {
 			Kiiro.Kiir("A targy kiasasa megtortent. " + targy.getName());
@@ -98,12 +120,16 @@ public class Tabla {
 		else Kiiro.Kiir("Nincs is itt tárgy.");
 	}
 	
-	//Megadja a tábla karakterbíró képességét (Tábla esetén mindig minden karaktert elbír).
+	/**Visszaadja a tábla bíróképességét. Ez a tábla mindig mindenkit elbír.
+	 * @return a tábla karakterbíró képessége
+	 */
 	public int getbirokepesseg() {
 		return -1;
 	}
 	
-	//Megadja, a tábla átfordult állapotát.
+	/**Visszaadja a tábla átfordult állapotát.
+	 * @return igaz, ha átfordult
+	 */
 	public boolean getatfordult(){
 		return atfordul;
 	}

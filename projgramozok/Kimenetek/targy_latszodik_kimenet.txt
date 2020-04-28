@@ -1,10 +1,10 @@
-A menedék felépült
-A menedék felépült
-A menedék felépült
-random: hóvihar és medve randomságának kikapcsolása
+A menedÃ©k felÃ©pÃ¼lt
+A menedÃ©k felÃ©pÃ¼lt
+A menedÃ©k felÃ©pÃ¼lt
+random: hÃ³vihar Ã©s medve randomsÃ¡gÃ¡nak kikapcsolÃ¡sa
 Valaszd ki a kivant cselekvest.
 
-lep [tábla indexe/ szama]
+lep [tÃ¡bla indexe/ szama]
 targykias
 targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel
 kepesseg
@@ -12,33 +12,28 @@ hoasas - kezzel
 endTurn - kor befejezese
 kilep - jatek befejezese
 hovihar
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A soron levõ játékos: 1
-Nem látszik a hótól a tábla.
-A soron levõ játékos: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A soron levÅ‘ jÃ¡tÃ©kos: 1
+Nem lÃ¡tszik a hÃ³tÃ³l a tÃ¡bla.
+A soron levÅ‘ jÃ¡tÃ©kos: 1
 Jatek vege.
-Válaszd ki a futtatni kívánt cselekvést.
-
-jatekBetolt [fajlnév]: Mentett játék betöltése
-jatekBetolt: Új játék kezdése
-testBeolvas [fájlnnév]: Teszteset beolvasása fájlból és futtatása
-kilep: Kilépés
+VÃ¡laszd ki a futtatni kÃ­vÃ¡nt cselekvÃ©st.

@@ -8,12 +8,37 @@ import java.util.Random;
 /**A táblákat megvalósító osztály.
  *
  */
+
 public class Tabla {
+	
+	/**
+	 *A táblára épített menedék
+	 */
 	protected Menedek menedek;
+	
+	/**
+	 *A táblára rakódott hó mennyisége
+	 */
 	protected int homennyiseg;
+	
+	/**
+	 *A tábla átfordult állapota
+	 */
 	protected boolean atfordul;
+	
+	/**
+	 *A táblá elhelyezkedõ szereplõk
+	 */
 	protected List<Szereplo> szereplok;
+	
+	/**
+	 *A táblába fagyott tárgy
+	 */
 	protected Targy targy;
+	
+	/**
+	 *Az adott tábla szomszédai
+	 */
 	protected List<Tabla> szomszed;
 	
 	/**Konstruktor. Létrehoz egy alapértékekkel rendelkezõ táblát.

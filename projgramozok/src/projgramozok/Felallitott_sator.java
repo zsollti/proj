@@ -5,7 +5,10 @@ package projgramozok;
  */
 public class Felallitott_sator extends Menedek{
 
-	
+	/**
+	 *Konstruktor
+	 *@param t A tábla ahova felállítjuk a sátort
+	 */
 	public Felallitott_sator(Tabla t) {
 		super(t);
 	}

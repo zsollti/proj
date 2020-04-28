@@ -46,6 +46,10 @@ public class Kotel extends Targy{
 		k.munkavegzes();
 		
 	}
+	
+	/**
+	 *Visszatér az osztály nevével
+	 */
 	public  String getName() {
 		return "Kotel";
 	}

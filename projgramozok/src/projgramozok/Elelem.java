@@ -18,6 +18,9 @@ public class Elelem extends Targy{
 		k.munkavegzes();
 		k.targyak.get(getName()).remove(this);
 	}
+	/**
+	 *Visszatér az osztály nevével.
+	 */
 	public  String getName() {
 		return "Elelem";
 	}

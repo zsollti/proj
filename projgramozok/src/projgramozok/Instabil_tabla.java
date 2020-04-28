@@ -9,6 +9,9 @@ import java.util.Random;
  */
 public class Instabil_tabla extends Tabla{
 	
+	/**
+	 *A tábla karakterbíró képességét tárolja.
+	 */
 	private int birokepesseg;
 	
 	/**

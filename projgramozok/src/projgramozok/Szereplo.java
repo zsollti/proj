@@ -10,9 +10,13 @@ import java.util.Scanner;
 
 public abstract class Szereplo {
 	
+	/**
+	 *A tábla amin a szereplõ elhelyezkedik.
+	 */
 	protected Tabla tabla;
 	
 	/**
+	 * Konstruktor
 	 * @param t A kezdõtábla
 	 */
 	public Szereplo(Tabla t) {

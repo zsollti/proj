@@ -17,6 +17,10 @@ public class Buvarruha extends Targy{
 		}
 		else Kiiro.Kiir("Nem vagy vizben, nem tudod hasznalni");
 	}
+	
+	/**
+	 *Visszatér az osztály nevével.
+	 */
 	public  String getName() {
 		return "Buvarruha";
 	}

@@ -4,6 +4,9 @@ package projgramozok;
  * 
  */
 public class Kiiro {
+	/**
+	 *Statikus változó, true esetén a konzolra írja a paraméterként kapott adatokat.
+	 */
 	private static boolean Konzolra = true;
 	
 	/**Kiírja a beállítot helyekre a szöveget.

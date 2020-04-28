@@ -10,12 +10,35 @@ import java.util.Random;
 import java.util.Scanner;
  
 public class Palya {
-	static boolean gover = false;   //vége van-e már a játéknak
-	private static int jatekosok;	//a játékosok száma
-	static List<Tabla> tablak = new ArrayList<Tabla>();		//a pályán lévõ táblák
-	static List<Szereplo> szereplok = new ArrayList<Szereplo>();		//a pályán lévõ szereplõk
-	static Scanner sc = null;			//errõl a szkennerrõl várja a bemeneteket, lehet fájl vagy standard bemenet
-	static boolean random = true;		//randomság be van-e kapcsolva, true: be van kapcsolva
+	/**
+	 *vége van-e már a játéknak
+	 */
+	static boolean gover = false;
+	
+	/**
+	 *a játékosok száma
+	 */
+	private static int jatekosok;	
+	
+	/**
+	 * a pályán lévõ táblák
+	 */
+	static List<Tabla> tablak = new ArrayList<Tabla>();		
+	
+	/**
+	 * a pályán lévõ szereplõk
+	 */
+	static List<Szereplo> szereplok = new ArrayList<Szereplo>();		
+	
+	/**
+	 * errõl a szkennerrõl várja a bemeneteket, lehet fájl vagy standard bemenet
+	 */
+	static Scanner sc = null;
+	
+	/**
+	 * randomság be van-e kapcsolva, true: be van kapcsolva
+	 */
+	static boolean random = true;		
 	
 	/**Új pálya létrehozása esetén visszaállítja a statikus
 	 * változókat kezdõállapotba

@@ -5,7 +5,10 @@ package projgramozok;
  */
 public class Iglu extends Menedek{
 	
-	
+	/**
+	 *Konstruktor
+	 *@param t A tábla ahova felálítjuk az iglut
+	 */
 	public Iglu (Tabla t) {
 		super(t);
 	}

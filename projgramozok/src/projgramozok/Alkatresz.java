@@ -3,11 +3,14 @@ package projgramozok;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**Alkatrész osztály, a játék megnyeréséhez kell, összesen három darab objektum van belõle
- *
+/**
+ *Alkatrész osztály, a játék megnyeréséhez kell, összesen három darab objektum van belõle
  */
 public class Alkatresz extends Targy{
 
+	/**
+	 *Statikus változó, ahol a karakterek által megtalált alkatrészeket számoljuk.
+	 */
 	private static int db = 0;
 	
 	/**Alkatrész használata. Megnyeri a játékot, ha mindenki egy helyen van és mind a 3 alkatrész náluk van.
@@ -35,6 +38,9 @@ public class Alkatresz extends Targy{
 		} else Kiiro.Kiir("Nincs mindenki egyutt");
 	}
 
+	/**
+	 *Visszatér az alkatrész nevével.
+	 */
 	public  String getName() {
 		return "Alkatresz";
 	}

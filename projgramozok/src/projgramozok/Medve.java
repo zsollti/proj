@@ -8,8 +8,12 @@ import java.util.Scanner;
 /**
  *A medve osztály megvalósítása
  */
+
 public class Medve extends Szereplo{
 
+	/**
+	 *A medve randomizált lépkedését segíti.
+	 */
 	private Random random = new Random(); 
 	
 	/**
@@ -19,16 +23,25 @@ public class Medve extends Szereplo{
 		super(t);
 	}
 
+	/**
+	 *Üres metódus.
+	 */
 	@Override
 	public void addhopont(int i) {
 		//üres	
 	}
 
+	/**
+	 *Üres metódus.
+	 */
 	@Override
 	public void beleesik() {
 		//üres
 	}
 	
+	/**
+	 *Üres metódus.
+	 */
 	public void addTargy(Targy t) {
 		//üres
 	}
@@ -72,16 +85,25 @@ public class Medve extends Szereplo{
 		if(!Palya.gover) endTurn();
 	}
 
+	/**
+	 *Üres metódus.
+	 */
 	@Override
 	public void setMunka(int i) {
 		//üres
 	}
 
+	/**
+	 *Üres metódus.
+	 */
 	@Override
 	public void setHopont(int i) {
 		//üres
 	}
 
+	/**
+	 *Üres metódus.
+	 */
 	@Override
 	public HashMap<String, ArrayList<Targy>> getInventory() {
 		return null;

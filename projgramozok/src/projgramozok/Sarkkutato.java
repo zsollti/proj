@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Sarkkutato extends Karakter{
 	
 	/**
+	 * Konstruktor
 	 * @param t a kezdõtábla
 	 */
 	public Sarkkutato(Tabla t) {

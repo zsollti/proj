@@ -6,9 +6,17 @@ package projgramozok;
  */
 public class Lyuk extends Tabla{
 	
+	/**
+	 *Konstruktor
+	 */
 	public Lyuk() {
 	}
 	
+	/**
+	 *Paraméteres konstruktor
+	 *@param ho A táblán lévõ kezdõ hómennyiség
+	 *@param atfordult A tábla át van-e fordulba kezdetben
+	 */
 	public Lyuk(int ho, boolean atfordult) {
 		super(ho, true);
 	}

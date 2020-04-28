@@ -16,6 +16,10 @@ public class Sator extends Targy{
 		k.targyak.get(getName()).remove(this);
 		Kiiro.Kiir(getName() + " felépítve");
 	}
+	
+	/**
+	 *Visszatér az osztály nevével.
+	 */
 	public  String getName() {
 		return "Sator";
 	}

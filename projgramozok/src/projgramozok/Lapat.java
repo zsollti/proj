@@ -16,6 +16,10 @@ public class Lapat extends Targy{
 		k.getTabla().addhomennyiseg(-2);
 		k.munkavegzes();
 	}
+	
+	/**
+	 *Visszatér az osztály nevével
+	 */
 	public  String getName() {
 		return "Lapat";
 	}

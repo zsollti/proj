@@ -11,9 +11,19 @@ import java.util.HashMap;
  */
 public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 		
+	/**
+	 *A karakter hõpontjait tárolja
+	 */
 	protected int hopont;
+	
+	/**
+	 *A karakter munka pontjait tárolja
+	 */
 	protected int munka;
 	
+	/**
+	 *A karakter tárgyait tárolja
+	 */
 	protected HashMap<String, ArrayList<Targy>> targyak;
 	
 	/**

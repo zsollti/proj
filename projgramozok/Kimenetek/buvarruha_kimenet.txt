@@ -1,0 +1,45 @@
+A menedék felépült
+A menedék felépült
+A menedék felépült
+random: hóvihar és medve randomságának kikapcsolása
+Valaszd ki a kivant cselekvest.
+
+lep [tábla indexe/ szama]
+targykias
+targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel
+kepesseg
+hoasas - kezzel
+endTurn - kor befejezese
+kilep - jatek befejezese
+hovihar
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A soron levõ játékos: 1
+1. jatekos lep 0-rõl 1-re
+Lyukra leptel!
+Beleesett a vizbe.
+1. jatekos lep 1-rõl 0-re
+Buvarruha hasznalva:
+Nem végezhetsz több munkát
+Kör átadása
+A soron levõ játékos: 2
+Jatek vege.
+Válaszd ki a futtatni kívánt cselekvést.

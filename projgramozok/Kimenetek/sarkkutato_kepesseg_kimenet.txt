@@ -1,0 +1,61 @@
+A menedék felépült
+A menedék felépült
+A menedék felépült
+random: hóvihar és medve randomságának kikapcsolása
+Valaszd ki a kivant cselekvest.
+
+lep [tábla indexe/ szama]
+targykias
+targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel
+kepesseg
+hoasas - kezzel
+endTurn - kor befejezese
+kilep - jatek befejezese
+hovihar
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A soron levõ játékos: 1
+Nem végezhetsz több munkát
+Kör átadása
+A soron levõ játékos: 2
+Melyik szomszédos tábla bíróképességét szeretnéd megnézni?
+1
+3
+4
+14
+A szomszédos tábla bíróképessége:0
+A soron levõ játékos: 2
+Melyik szomszédos tábla bíróképességét szeretnéd megnézni?
+1
+3
+4
+14
+A szomszédos tábla bíróképessége:1
+A soron levõ játékos: 2
+Melyik szomszédos tábla bíróképességét szeretnéd megnézni?
+1
+3
+4
+14
+A szomszédos tábla stabil
+A soron levõ játékos: 2
+Jatek vege.
+Válaszd ki a futtatni kívánt cselekvést.

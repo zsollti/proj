@@ -1,0 +1,39 @@
+random: hóvihar és medve randomságának kikapcsolása
+Valaszd ki a kivant cselekvest.
+
+lep [tábla indexe/ szama]
+targykias
+targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel
+kepesseg
+hoasas - kezzel
+endTurn - kor befejezese
+kilep - jatek befejezese
+hovihar
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+A régi hõpont: 4
+Az aktuális hõpont: 3
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+A régi hõpont: 5
+Az aktuális hõpont: 4
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A soron levõ játékos: 1
+1. jatekos lep 5-rõl 8-re
+A soron levõ játékos: 1
+1. jatekos lep 8-rõl 9-re
+Atfordult!
+Beleesett a vizbe.
+Beleesett a vizbe.
+Nem végezhetsz több munkát
+Kör átadása
+A soron levõ játékos: 2
+Jatek vege.
+Válaszd ki a futtatni kívánt cselekvést.

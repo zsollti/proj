@@ -1,0 +1,75 @@
+A menedék felépült
+A menedék felépült
+A menedék felépült
+random: hóvihar és medve randomságának kikapcsolása
+Valaszd ki a kivant cselekvest.
+
+lep [tábla indexe/ szama]
+targykias
+targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel
+kepesseg
+hoasas - kezzel
+endTurn - kor befejezese
+kilep - jatek befejezese
+hovihar
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A soron levõ játékos: 1
+1. jatekos lep 0-rõl 14-re
+A soron levõ játékos: 1
+Nem végezhetsz több munkát
+Kör átadása
+A soron levõ játékos: 2
+2. jatekos lep 0-rõl 14-re
+A soron levõ játékos: 2
+Nem végezhetsz több munkát
+Kör átadása
+A soron levõ játékos: 3
+3. jatekos lep 0-rõl 3-re
+A soron levõ játékos: 3
+Nem végezhetsz több munkát
+Kör átadása
+hovihar
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+A régi hõpont: 1
+A 3. játékos meghalt
+Megfagyott.
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+Jatek vege.
+Válaszd ki a futtatni kívánt cselekvést.

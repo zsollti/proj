@@ -1,0 +1,49 @@
+A menedék felépült
+A menedék felépült
+A menedék felépült
+random: hóvihar és medve randomságának kikapcsolása
+Valaszd ki a kivant cselekvest.
+
+lep [tábla indexe/ szama]
+targykias
+targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel
+kepesseg
+hoasas - kezzel
+endTurn - kor befejezese
+kilep - jatek befejezese
+hovihar
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A soron levõ játékos: 1
+Valaszd ki a kivant targyat [targy neve] vagy válassz másik tevékenységet - vissza.
+
+Kotel
+Lapat
+Sator
+Elelem
+Torekeny aso
+Alkatresz
+Buvarruha
+A menedék felépült
+Sator felépítve
+A soron levõ játékos: 1
+Jatek vege.
+Válaszd ki a futtatni kívánt cselekvést.

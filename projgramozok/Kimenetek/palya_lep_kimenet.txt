@@ -1,0 +1,67 @@
+random: hóvihar és medve randomságának kikapcsolása
+Valaszd ki a kivant cselekvest.
+
+lep [tábla indexe/ szama]
+targykias
+targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel
+kepesseg
+hoasas - kezzel
+endTurn - kor befejezese
+kilep - jatek befejezese
+hovihar
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+A régi hõpont: 4
+Az aktuális hõpont: 3
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+A régi hõpont: 5
+Az aktuális hõpont: 4
+Az új hómennyiség: 1
+A régi hómennyiség: 0
+Az új hómennyiség: 1
+A soron levõ játékos: 1
+1. jatekos lep 5-rõl 2-re
+A soron levõ játékos: 1
+Nem végezhetsz több munkát
+Kör átadása
+A soron levõ játékos: 2
+2. jatekos lep 8-rõl 5-re
+A soron levõ játékos: 2
+2. jatekos lep 5-rõl 2-re
+A soron levõ játékos: 2
+2. jatekos lep 2-rõl 0-re
+A soron levõ játékos: 2
+Nem végezhetsz több munkát
+Kör átadása
+A soron levõ játékos: 3
+3. jatekos lep 9-rõl 7-re
+A soron levõ játékos: 3
+3. jatekos lep 7-rõl 2-re
+A soron levõ játékos: 3
+Nem végezhetsz több munkát
+Kör átadása
+medve lep 12-rõl 3-re
+Lyukra leptel!
+Kör átadása
+hovihar
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A régi hómennyiség: 1
+Az új hómennyiség: 2
+A soron levõ játékos: 1
+Jatek vege.
+Válaszd ki a futtatni kívánt cselekvést.

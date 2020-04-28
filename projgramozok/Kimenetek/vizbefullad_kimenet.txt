@@ -1,10 +1,10 @@
-A menedék felépült
-A menedék felépült
-A menedék felépült
-random: hóvihar és medve randomságának kikapcsolása
+A menedÃ©k felÃ©pÃ¼lt
+A menedÃ©k felÃ©pÃ¼lt
+A menedÃ©k felÃ©pÃ¼lt
+random: hÃ³vihar Ã©s medve randomsÃ¡gÃ¡nak kikapcsolÃ¡sa
 Valaszd ki a kivant cselekvest.
 
-lep [tábla indexe/ szama]
+lep [tÃ¡bla indexe/ szama]
 targykias
 targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel
 kepesseg
@@ -12,72 +12,67 @@ hoasas - kezzel
 endTurn - kor befejezese
 kilep - jatek befejezese
 hovihar
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A régi hómennyiség: 0
-Az új hómennyiség: 1
-A soron levõ játékos: 1
-Nem végezhetsz több munkát
-Kör átadása
-A soron levõ játékos: 2
-2. jatekos lep 0-rõl 1-re
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A rÃ©gi hÃ³mennyisÃ©g: 0
+Az Ãºj hÃ³mennyisÃ©g: 1
+A soron levÅ‘ jÃ¡tÃ©kos: 1
+Nem vÃ©gezhetsz tÃ¶bb munkÃ¡t
+KÃ¶r Ã¡tadÃ¡sa
+A soron levÅ‘ jÃ¡tÃ©kos: 2
+2. jatekos lep 0-rÅ‘l 1-re
 Lyukra leptel!
 Beleesett a vizbe.
-Nem végezhetsz több munkát
-Kör átadása
-A soron levõ játékos: 3
-Nem végezhetsz több munkát
-Kör átadása
+Nem vÃ©gezhetsz tÃ¶bb munkÃ¡t
+KÃ¶r Ã¡tadÃ¡sa
+A soron levÅ‘ jÃ¡tÃ©kos: 3
+Nem vÃ©gezhetsz tÃ¶bb munkÃ¡t
+KÃ¶r Ã¡tadÃ¡sa
 hovihar
-A régi hómennyiség: 1
-A régi hõpont: 4
-Az aktuális hõpont: 3
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A régi hómennyiség: 1
-Az új hómennyiség: 2
-A soron levõ játékos: 1
-1. jatekos lep 0-rõl 14-re
-A soron levõ játékos: 1
-Nem végezhetsz több munkát
-Kör átadása
-A 2. játékos meghalt
+A rÃ©gi hÃ³mennyisÃ©g: 1
+A rÃ©gi hÅ‘pont: 4
+Az aktuÃ¡lis hÅ‘pont: 3
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A rÃ©gi hÃ³mennyisÃ©g: 1
+Az Ãºj hÃ³mennyisÃ©g: 2
+A soron levÅ‘ jÃ¡tÃ©kos: 1
+1. jatekos lep 0-rÅ‘l 14-re
+A soron levÅ‘ jÃ¡tÃ©kos: 1
+Nem vÃ©gezhetsz tÃ¶bb munkÃ¡t
+KÃ¶r Ã¡tadÃ¡sa
+A 2. jÃ¡tÃ©kos meghalt
 Vizbe fulladt.
 Jatek vege.
-Válaszd ki a futtatni kívánt cselekvést.
-
-jatekBetolt [fajlnév]: Mentett játék betöltése
-jatekBetolt: Új játék kezdése
-testBeolvas [fájlnnév]: Teszteset beolvasása fájlból és futtatása
-kilep: Kilépés
+VÃ¡laszd ki a futtatni kÃ­vÃ¡nt cselekvÃ©st.

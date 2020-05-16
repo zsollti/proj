@@ -108,6 +108,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 						break;
 					}
 					tabla.addhomennyiseg(-1);
+					munkavegzes();
 					break;
 				case "endTurn":		//Kör átadása
 					munka = 0;

@@ -117,9 +117,9 @@ public class Vezerlo extends JFrame {
         		palya = new Palya(jatekosszam, "uj.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
         		nezet = new Nezet();
         		
-        		for(int i = 0; i < palya.tablak.size(); i++) {
+        		for(int i = 0; i < Palya.tablak.size(); i++) {
         			
-        			nezet.addObjektum(palya.tablak.get(i));
+        			nezet.addObjektum(Palya.tablak.get(i));
         		}
         		
         		jatek();
@@ -131,7 +131,7 @@ public class Vezerlo extends JFrame {
 	 *
 	 */
 	public void jatek () {
-		palya.vezerlo = this;
+		Palya.vezerlo = this;
 		this.remove(buttonPanel);
 		buttonPanel.removeAll();
 		

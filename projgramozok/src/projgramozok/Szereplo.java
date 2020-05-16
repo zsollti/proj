@@ -100,7 +100,6 @@ public abstract class Szereplo implements Rajzolhato {
 	/**
 	 *Kirajzolja az objektumot
 	 */
-	public void rajzol() {
-		
-	}
+	public abstract void rajzol();
+	
 }

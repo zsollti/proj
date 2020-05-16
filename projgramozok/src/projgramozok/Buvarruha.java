@@ -24,4 +24,12 @@ public class Buvarruha extends Targy{
 	public  String getName() {
 		return "Buvarruha";
 	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

@@ -20,5 +20,13 @@ public class Felallitott_sator extends Menedek{
 	public void destroy() {
 		tabla.menedek = null;
 	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 
 }

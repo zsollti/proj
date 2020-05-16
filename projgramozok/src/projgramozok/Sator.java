@@ -23,4 +23,12 @@ public class Sator extends Targy{
 	public  String getName() {
 		return "Sator";
 	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

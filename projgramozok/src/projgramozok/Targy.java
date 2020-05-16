@@ -18,8 +18,6 @@ public abstract class Targy implements Rajzolhato{
 	/**
 	 *Kirajzolja az objektumot
 	 */
-	public void rajzol() {
-		
-		
-	}
+	public abstract void rajzol();
+
 }

@@ -59,4 +59,12 @@ public class Eszkimo extends Karakter{
 		hopont = i;
 	}
 	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
+	
 }

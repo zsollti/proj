@@ -45,4 +45,12 @@ public class Alkatresz extends Targy{
 		return "Alkatresz";
 	}
 	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
+	
 }

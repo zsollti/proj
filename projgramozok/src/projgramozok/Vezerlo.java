@@ -220,7 +220,7 @@ public class Vezerlo extends JFrame {
 	 *
 	 */
 	public void frissit() {
-		
+		nezet.mindentRajzol();
 	}
 	
 	

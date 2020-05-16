@@ -24,4 +24,12 @@ public class Elelem extends Targy{
 	public  String getName() {
 		return "Elelem";
 	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

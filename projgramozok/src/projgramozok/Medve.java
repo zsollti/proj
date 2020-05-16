@@ -109,4 +109,11 @@ public class Medve extends Szereplo{
 		return null;
 	}
 	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

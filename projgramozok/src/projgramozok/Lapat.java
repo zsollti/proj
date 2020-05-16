@@ -23,4 +23,11 @@ public class Lapat extends Targy{
 	public  String getName() {
 		return "Lapat";
 	}
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

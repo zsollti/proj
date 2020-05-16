@@ -20,4 +20,12 @@ public class Iglu extends Menedek{
 	public void destroy() {
 		
 	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

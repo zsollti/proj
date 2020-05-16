@@ -73,4 +73,12 @@ public class Instabil_tabla extends Tabla{
 	{
 		return birokepesseg;
 	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

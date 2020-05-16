@@ -53,4 +53,12 @@ public class Kotel extends Targy{
 	public  String getName() {
 		return "Kotel";
 	}
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
+	
 }

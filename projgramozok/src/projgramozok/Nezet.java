@@ -27,7 +27,9 @@ public class Nezet extends JPanel{
 	 *Újrarajzolja az objektumokat
 	 */
 	public void mindentRajzol() {
-		
+		for(Rajzolhato o : objektumok) {
+			o.rajzol();
+		}
 	}
 	
 	/**

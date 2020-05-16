@@ -40,4 +40,12 @@ public class Lyuk extends Tabla{
 	public int getbirokepesseg(){
 		return 0;
 	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

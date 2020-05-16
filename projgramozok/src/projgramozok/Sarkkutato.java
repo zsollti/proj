@@ -86,5 +86,13 @@ public class Sarkkutato extends Karakter{
 		hopont = i;
 	}
 	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
+	
 	
 }

@@ -21,7 +21,6 @@ public abstract class Menedek implements Rajzolhato{
 	 */
 	public abstract void destroy();
 	
-	public void rajzol() {
-		
-	}
+	public abstract void rajzol();
+
 }

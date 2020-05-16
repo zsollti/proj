@@ -37,4 +37,11 @@ public class Torekeny_aso extends Lapat{
 	public  String getName() {
 		return "Torekeny aso";
 	}
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	@Override
+	public void rajzol() {
+		
+	}
 }

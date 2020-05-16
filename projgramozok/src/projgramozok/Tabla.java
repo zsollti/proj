@@ -41,9 +41,11 @@ public class Tabla implements Rajzolhato{
 	 */
 	protected List<Tabla> szomszed;
 	
+	protected int x, y;
+	
 	/**Konstruktor. Létrehoz egy alapértékekkel rendelkezõ táblát.
 	 * 
-	 */
+	 */	
 	public Tabla() {
 		szereplok = new ArrayList<Szereplo>();
 		Random n = new Random();
@@ -163,6 +165,12 @@ public class Tabla implements Rajzolhato{
 	 *Kirajzolja az objektumot
 	 */
 	public void rajzol() {
+		//önmagát
 		
+		for(Szereplo sz: szereplok) {
+			sz.rajzol();
+		}
+		if(menedek != null)menedek.rajzol();
+		if(targy != null && homennyiseg == 0)targy.rajzol();
 	}
 }

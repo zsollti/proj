@@ -114,8 +114,13 @@ public class Vezerlo extends JFrame {
         		if(Integer.parseInt(textfield.getText())>=3 && Integer.parseInt(textfield.getText())<=6)
         			jatekosszam = Integer.parseInt(textfield.getText());
         		
-        		palya = new Palya("palya.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
+        		palya = new Palya(jatekosszam, "uj.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
         		nezet = new Nezet();
+        		
+        		for(int i = 0; i < palya.tablak.size(); i++) {
+        			
+        			nezet.addObjektum(palya.tablak.get(i));
+        		}
         		
         		jatek();
             }
@@ -126,6 +131,7 @@ public class Vezerlo extends JFrame {
 	 *
 	 */
 	public void jatek () {
+		palya.vezerlo = this;
 		this.remove(buttonPanel);
 		buttonPanel.removeAll();
 		

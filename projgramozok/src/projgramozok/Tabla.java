@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 
 /**A táblákat megvalósító osztály.
@@ -181,9 +182,12 @@ public class Tabla implements Rajzolhato{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		BufferedImage bi = new BufferedImage(150, 150, BufferedImage.TYPE_INT_ARGB);
+		BufferedImage bi = new BufferedImage(108, 107, BufferedImage.TYPE_INT_ARGB);
 		Graphics g = bi.getGraphics();
-		g.drawImage(kep, 200, 100, null);
+		g.drawImage(kep,0, 0, null);
+		ImageIcon icon = new ImageIcon(bi);
+		Vezerlo.nezet.label.setIcon(icon);
+		//Vezerlo.nezet.getGraphics().drawString("valaki egyszer az mondta...", 100, 50);
 		
 		for(Szereplo sz: szereplok) {
 			sz.rajzol();

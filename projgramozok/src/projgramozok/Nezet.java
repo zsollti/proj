@@ -3,15 +3,20 @@ package projgramozok;
 
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Nezet extends JPanel{
 	
+	protected JLabel label = new JLabel();
+	
 	/**
 	 *A Rajzolhato interfésszel rendelkezõ objektumok
 	 */
-	private List<Rajzolhato> objektumok;
+	private ArrayList<Rajzolhato> objektumok = new ArrayList<Rajzolhato>();
 	
 	
 	/**
@@ -20,6 +25,7 @@ public class Nezet extends JPanel{
 	public Nezet() {
 		super();
 		this.setBackground(Color.blue);
+		add(label);
 		this.setVisible(true);
 	}
 	

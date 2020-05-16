@@ -3,6 +3,7 @@ package projgramozok;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -118,7 +119,7 @@ public class Vezerlo extends JFrame {
         		nezet = new Nezet();
         		
         		for(int i = 0; i < Palya.tablak.size(); i++) {
-        			
+        			if (nezet ==null) System.out.println("asdsadas");
         			nezet.addObjektum(Palya.tablak.get(i));
         		}
         		
@@ -156,7 +157,6 @@ public class Vezerlo extends JFrame {
 		
 		//A nézet framehez adása
 		this.add(nezet, BorderLayout.CENTER);
-		
 		this.revalidate();
 		this.repaint();
 		
@@ -220,6 +220,7 @@ public class Vezerlo extends JFrame {
         		System.exit(0);
             }
         });
+		//palya.start(new Scanner(System.in));
 	}
 	
 	/**

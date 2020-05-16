@@ -3,11 +3,15 @@ package projgramozok;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -56,6 +60,16 @@ public class Vezerlo extends JFrame {
 	 */
 	private JButton bEves;
 	
+	private JButton bLapat;
+	
+	private JButton bTaso;
+	
+	private JButton bKorvege;
+	
+	private JButton bAlkatresz;
+	
+	private JButton bTargykias;
+	
 	/**
 	 *Játék bezárása gomb
 	 */
@@ -75,6 +89,8 @@ public class Vezerlo extends JFrame {
 	 *Játékosszám. (Default értéke 3)
 	 */
 	private int jatekosszam = 3;
+	
+	private Szereplo aktualis;
 	
 	/**
 	 *Konstruktor
@@ -112,14 +128,19 @@ public class Vezerlo extends JFrame {
         bInditas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+            	try {
         		if(Integer.parseInt(textfield.getText())>=3 && Integer.parseInt(textfield.getText())<=6)
         			jatekosszam = Integer.parseInt(textfield.getText());
+            	}catch(NumberFormatException n) {
+            		n.printStackTrace();
+            	}catch(InputMismatchException i) {
+            		i.printStackTrace();
+            	}
         		
         		palya = new Palya(jatekosszam, "uj.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
         		nezet = new Nezet();
         		
         		for(int i = 0; i < Palya.tablak.size(); i++) {
-        			if (nezet ==null) System.out.println("asdsadas");
         			nezet.addObjektum(Palya.tablak.get(i));
         		}
         		
@@ -142,15 +163,26 @@ public class Vezerlo extends JFrame {
 		bKepesseg = new JButton("Képesség");
 		bKotel = new JButton("Kötél");
 		bSator = new JButton("Sátor");
+		bLapat = new JButton("Lapát");
+		bTaso = new JButton("Törékeny ásó");
+		bKorvege = new JButton("Kör átadása");
+		bAlkatresz = new JButton("Alkatrész");
 		bBezaras = new JButton("Bezárás");
+		bTargykias = new JButton("Tárgy kiásása");
 		
 		//Gombok panelhez adása
 		buttonPanel.add(bAsas);
-		buttonPanel.add(bEves);
 		buttonPanel.add(bKepesseg);
+		buttonPanel.add(bKorvege);
+		buttonPanel.add(bEves);
 		buttonPanel.add(bKotel);
 		buttonPanel.add(bSator);
+		buttonPanel.add(bLapat);
+		buttonPanel.add(bTaso);
+		buttonPanel.add(bAlkatresz);
+		buttonPanel.add(bTargykias);
 		buttonPanel.add(bBezaras);
+		
 		
 		//A gombokat tartalmazo panel framehez adása
 		this.add(buttonPanel, BorderLayout.NORTH);
@@ -166,7 +198,7 @@ public class Vezerlo extends JFrame {
 		bAsas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-        		
+        		((Karakter)aktualis).tevekenyseg("hoasas");
             }
         });
 		
@@ -176,7 +208,8 @@ public class Vezerlo extends JFrame {
 		bEves.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-        		
+        		((Karakter)aktualis).tevekenyseg("targyhasznal Elelem");
+        		gombBeallit();
             }
         });
 		
@@ -186,7 +219,7 @@ public class Vezerlo extends JFrame {
 		bKepesseg.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-        		
+        		((Karakter)aktualis).tevekenyseg("kepesseg");
             }
         });
 		
@@ -196,7 +229,7 @@ public class Vezerlo extends JFrame {
 		bKotel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-        		
+            	((Karakter)aktualis).tevekenyseg("targyhasznal Kotel");
             }
         });
 		
@@ -206,7 +239,37 @@ public class Vezerlo extends JFrame {
 		bSator.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-        		
+            	((Karakter)aktualis).tevekenyseg("targyhasznal Sator");
+            	gombBeallit();
+            }
+        });
+		
+		bLapat.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	((Karakter)aktualis).tevekenyseg("targyhasznal Lapat");
+            }
+        });
+		
+		bTaso.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	((Karakter)aktualis).tevekenyseg("targyhasznal Torekeny_aso");
+            	gombBeallit();
+            }
+        });
+		
+		bKorvege.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	((Karakter)aktualis).tevekenyseg("endTurn");
+            }
+        });
+		
+		bTargykias.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	((Karakter)aktualis).tevekenyseg("targykias");
             }
         });
 		
@@ -220,9 +283,67 @@ public class Vezerlo extends JFrame {
         		System.exit(0);
             }
         });
-		//palya.start(new Scanner(System.in));
+		aktualis = Palya.szereplok.get(jatekosszam);
+		players();
+		frissit();
 	}
 	
+	public void players() {
+		int index = Palya.szereplok.indexOf(aktualis)+1;
+		
+		if(index == Palya.jatekosok + 1) {
+			int r = new Random().nextInt(3);
+			if(r == 1) {
+				palya.hovihar();
+			}
+			for(Tabla t : palya.tablak) {
+				t.setMenedek(null);
+			}
+			index = 0;
+		}
+		
+		aktualis = Palya.szereplok.get(index);
+		gombBeallit();
+		
+		aktualis.korkezd();
+	}
+	
+	public void gombBeallit() {
+		bEves.setVisible(false);
+		bLapat.setVisible(false);
+		bKotel.setVisible(false);
+		bTaso.setVisible(false);
+		bSator.setVisible(false);
+		bAlkatresz.setVisible(false);
+		
+		Set<String> targyak = aktualis.getInventory().keySet();
+		for(String s: targyak) {
+			switch(s) {
+				case "Elelem": bEves.setVisible(true);
+				case "Lapat": bLapat.setVisible(true);
+				case "Kotel": bKotel.setVisible(true);
+				case "Torekeny_aso": bTaso.setVisible(true);
+				case "Sator": bSator.setVisible(true);
+				case "Alkatresz": bAlkatresz.setVisible(true);
+			}
+		}
+	}
+	
+	public void vege(String szoveg) {
+		JFrame felugro = new JFrame("Vége");
+		JLabel label = new JLabel(szoveg);
+		JButton gomb = new JButton("bezár");
+		gomb.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	System.exit(0);
+            }
+        });
+		felugro.add(label);
+		felugro.add(gomb);
+		felugro.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		felugro.setVisible(true);
+	}
 	/**
 	 *
 	 */

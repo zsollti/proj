@@ -78,7 +78,7 @@ public class Medve extends Szereplo{
 	 * Kiválaszt egy random táblát, majd arra lép.
 	 */
 	@Override
-	public void korkezd(Scanner sc) {
+	public void korkezd() {
 		int i = random.nextInt(tabla.szomszed.size());
 		if(!Palya.random) i = 0;
 		lep(tabla.szomszed.get(i));

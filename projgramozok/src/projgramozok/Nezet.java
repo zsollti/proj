@@ -24,7 +24,7 @@ public class Nezet extends JPanel{
 	 */
 	public Nezet() {
 		super();
-		this.setBackground(Color.blue);
+		//this.setBackground(Color.blue);
 		add(label);
 		this.setVisible(true);
 	}

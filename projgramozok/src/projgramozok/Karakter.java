@@ -54,7 +54,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	 * @param sc használatban lévõ scanner
 	 */
 	@Override
-	public void korkezd(Scanner sc) {
+	public void korkezd() {
 		if(tabla.getatfordult()) {	//Ha a karakter vízben kedi a körét megvullad
 			Palya.gameover(this);
 			Kiiro.Kiir("Vizbe fulladt.");
@@ -63,7 +63,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 		munka = 4;	//Minden játékos 4 "munkával" kezdi a körét
 			int ij = (Palya.szereplok.indexOf(this) + 1);
 			
-		while(munka > 0 && !Palya.gover) {	//Addig megy a játékos köre, míg el nem fogy a munkája vagy  a köre közben valami miatt az vagy a játék véget nem ér
+	/*	while(munka > 0 && !Palya.gover) {	//Addig megy a játékos köre, míg el nem fogy a munkája vagy  a köre közben valami miatt az vagy a játék véget nem ér
 			Kiiro.Kiir("A soron levõ játékos: " + ij);
 			String s = sc.nextLine();
 			String[] ss = s.split(" ");
@@ -124,7 +124,51 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 		}
 		if(Palya.gover) return;		//Ha véget ért a játék return
 		Kiiro.Kiir("Nem végezhetsz több munkát");
-		endTurn();
+		endTurn();*/
+			return;
+	}
+	
+	public void tevekenyseg(String tevekenyseg) {
+		String[] ss = tevekenyseg.split(" ");
+		switch(ss[0]) {
+			case "lep":	//szomszédos táblára való lépés
+				if(ss.length == 2) {
+					int i = Integer.parseInt(ss[1]);
+					lep(Palya.tablak.get(i));
+				} else Kiiro.Kiir("Nem megfelelo bemenet");
+				break;
+			case "targykias":	//tárgy kiásása a táblából
+				tabla.targykias(this);
+				break;
+			case "targyhasznal":	//tárgyaid listázása és ha a játékos szeretné használata
+				if(targyak.get(ss[1]).get(0) != null) {
+					targyak.get(ss[1]).get(0).hasznal(this);
+				}
+				break;				
+			case "kepesseg":	//Karakter képességének használata
+				kepesseg();
+				break;
+			case "hoasas":		//Hó eltakarítása a tábláról kézzel
+				if(tabla.homennyiseg == 0) {
+					Kiiro.Kiir("Nincs hó!");
+					break;
+				}
+				tabla.addhomennyiseg(-1);
+				munkavegzes();
+				break;
+			case "endTurn":		//Kör átadása
+				munka = 0;
+				break;
+			case "kilep":		//Kilépés a játékból
+				Palya.gover = true;
+				munka = 0;
+				break;
+			default:
+				Kiiro.Kiir("Rossz bemenet. Adjon meg újat");
+				break;
+		}
+		
+		if(munka == 0)endTurn();
 	}
 	
 	/**

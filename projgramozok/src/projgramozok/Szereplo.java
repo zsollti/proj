@@ -78,7 +78,7 @@ public abstract class Szereplo implements Rajzolhato {
 	/**
 	 * Elkezdi a szereplõ körét.
 	 */
-	public abstract void korkezd(Scanner sc);
+	public abstract void korkezd();
 	
 	/**
 	 * A szereplõ befejezi a körét.
@@ -86,6 +86,7 @@ public abstract class Szereplo implements Rajzolhato {
 	public void endTurn()
 	{
 		this.setMunka(0);
+		Palya.vezerlo.players();
 		Kiiro.Kiir("Kör átadása");
 	}
 		

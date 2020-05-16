@@ -18,7 +18,7 @@ public class Palya {
 	/**
 	 *a játékosok száma
 	 */
-	private static int jatekosok;	
+	static int jatekosok;	
 	
 	/**
 	 * a pályán lévõ táblák
@@ -342,12 +342,16 @@ public class Palya {
 	 * @param k a karakter, aki meghalt, ha null azt jelenti, hogy megnyerték
 	 */
 	public static void gameover(Szereplo k){
-		if(k == null) Kiiro.Kiir("Victory!!!!!");
+		if(k == null) { 
+			Kiiro.Kiir("Victory!!!!!");
+			vezerlo.vege("Victory!!");
+			}
 		else {
 			int i = szereplok.indexOf(k) + 1;
 			Kiiro.Kiir("A " + i + ". játékos meghalt");
+			vezerlo.vege("A \" + i + \". játékos meghalt");
 		}
-		gover = true;
+		//gover = true;
 	}
 	
 	
@@ -383,7 +387,7 @@ public class Palya {
 			}
 			
 			while(i < szereplok.size()) {
-				szereplok.get(i).korkezd(sc);
+				szereplok.get(i).korkezd();
 				if(gover) break;
 				i++;
 			}

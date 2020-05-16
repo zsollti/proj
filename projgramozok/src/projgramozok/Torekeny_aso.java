@@ -8,7 +8,7 @@ public class Torekeny_aso extends Lapat{
 	/**
 	 *Itt tartjuk számon, hogy hányszor lehet még használni az ásót.
 	 */
-	private int hasznalat;
+	int hasznalat;
 	
 	/**
 	 *Konstruktor
@@ -35,7 +35,7 @@ public class Torekeny_aso extends Lapat{
 	 *Visszatér az osztály nevével.
 	 */
 	public  String getName() {
-		return "Torekeny aso";
+		return "Torekeny_aso";
 	}
 	/**
 	 *Kirajzolja az objektumot

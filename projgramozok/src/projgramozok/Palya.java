@@ -59,7 +59,6 @@ public class Palya {
 	 */
 	public Palya(int jatekosszam, String p) { 
 		reset();
-		System.out.println("aaaaaa");
 		jatekosok = jatekosszam;
 		BufferedReader br = null;
 		try {

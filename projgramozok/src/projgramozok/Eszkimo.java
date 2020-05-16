@@ -58,5 +58,5 @@ public class Eszkimo extends Karakter{
 		if (i>5) i = 5;
 		hopont = i;
 	}
-
+	
 }

@@ -44,4 +44,5 @@ public class Alkatresz extends Targy{
 	public  String getName() {
 		return "Alkatresz";
 	}
+	
 }

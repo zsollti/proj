@@ -85,5 +85,6 @@ public class Sarkkutato extends Karakter{
 		if (i > 4) i=4;
 		hopont = i;
 	}
-
+	
+	
 }

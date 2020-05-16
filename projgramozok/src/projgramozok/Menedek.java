@@ -2,7 +2,7 @@ package projgramozok;
 /**Absztrakt menedék õsosztály. A táblán lehet egy darab.
  *
  */
-public abstract class Menedek {
+public abstract class Menedek implements Rajzolhato{
 	/**
 	 *A tábla amelyen a menedék elhelyezkedik.
 	 */
@@ -21,4 +21,7 @@ public abstract class Menedek {
 	 */
 	public abstract void destroy();
 	
+	public void rajzol() {
+		
+	}
 }

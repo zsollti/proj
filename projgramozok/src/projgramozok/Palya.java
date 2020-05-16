@@ -40,6 +40,7 @@ public class Palya {
 	 */
 	static boolean random = true;		
 	
+	static Vezerlo vezerlo;
 	/**Új pálya létrehozása esetén visszaállítja a statikus
 	 * változókat kezdõállapotba
 	 */
@@ -58,6 +59,7 @@ public class Palya {
 	 */
 	public Palya(int jatekosszam, String p) { 
 		reset();
+		System.out.println("aaaaaa");
 		jatekosok = jatekosszam;
 		BufferedReader br = null;
 		try {

@@ -9,7 +9,7 @@ import java.util.Random;
  *
  */
 
-public class Tabla {
+public class Tabla implements Rajzolhato{
 	
 	/**
 	 *A táblára épített menedék
@@ -157,5 +157,12 @@ public class Tabla {
 	 */
 	public boolean getatfordult(){
 		return atfordul;
+	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	public void rajzol() {
+		
 	}
 }

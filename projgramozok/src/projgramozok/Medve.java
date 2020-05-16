@@ -108,4 +108,5 @@ public class Medve extends Szereplo{
 	public HashMap<String, ArrayList<Targy>> getInventory() {
 		return null;
 	}
+	
 }

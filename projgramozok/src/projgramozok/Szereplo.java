@@ -8,7 +8,7 @@ import java.util.Scanner;
  *Absztrakt osztály, a szerepõk megvalósítására. (Medve, Eszkimó, Sarkkutató)
  */
 
-public abstract class Szereplo {
+public abstract class Szereplo implements Rajzolhato {
 	
 	/**
 	 *A tábla amin a szereplõ elhelyezkedik.
@@ -95,5 +95,12 @@ public abstract class Szereplo {
 	 */
 	public void setTabla(Tabla erre) {
 		this.tabla = erre;
+	}
+	
+	/**
+	 *Kirajzolja az objektumot
+	 */
+	public void rajzol() {
+		
 	}
 }

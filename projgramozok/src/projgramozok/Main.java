@@ -5,16 +5,23 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Palya p;
+		new Vezerlo();
 		
-		String s = "";
+		
+		
+		
+		//Palya p;
+		
+		//String s = "";
 		/**
 		 * Két beolvasó scanner, az egyik a konzolos, a másik fájlból történõ beolvasáshoz
 		 */
+		/*
 		Scanner sc = new Scanner(System.in);
 		Scanner fr = null;
 
@@ -68,6 +75,6 @@ public class Main {
 				break;
 				
 			}
-		}
+		}*/
 	}
 }

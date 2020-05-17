@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 public class Main {
 
 	public static void main(String[] args) {
-		JFrame valaszt = new JFrame("Játék indítása");
+		JFrame valaszt = new JFrame("Játék indítása"); 
 		valaszt.setMinimumSize(new Dimension(800, 150));
 		valaszt.setLocation(300, 300);
 		valaszt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

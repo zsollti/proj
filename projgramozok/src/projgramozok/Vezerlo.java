@@ -83,7 +83,7 @@ public class Vezerlo extends JFrame {
 	 */
 	private JLabel label;
 	
-	static JLabel info;
+	static JLabel info = new JLabel();
 	/**
 	 *Játékosszám. (Default értéke 3)
 	 */
@@ -410,6 +410,8 @@ public class Vezerlo extends JFrame {
 	
 	public void vege(String szoveg) {
 		JFrame felugro = new JFrame("Vége");
+		felugro.setSize(200, 150);
+		felugro.setLocation(350, 350);
 		JLabel label = new JLabel(szoveg);
 		JButton gomb = new JButton("bezár");
 		gomb.addActionListener(new ActionListener() {
@@ -418,8 +420,8 @@ public class Vezerlo extends JFrame {
             	System.exit(0);
             }
         });
-		felugro.add(label);
-		felugro.add(gomb);
+		felugro.add(label, BorderLayout.NORTH);
+		felugro.add(gomb, BorderLayout.CENTER);
 		felugro.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		felugro.setVisible(true);
 	}

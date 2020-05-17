@@ -178,14 +178,14 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	@Override
 	public void lep(Tabla t) {
 		if(tabla.szomszede(t)) {  //csak ha szomszédosak, akkor léphet át a másik táblára
+			munkavegzes();
 			Tabla regi = tabla;
 			tabla.lelep(this);
 			int jat = Palya.szereplok.indexOf(this) + 1;
 			Kiiro.Kiir(jat + ". jatekos lep " + 
 					Palya.tablak.indexOf(regi) + "-rõl " +
 					Palya.tablak.indexOf(t) + "-re");
-			t.ralep(this);
-			munkavegzes();
+			t.ralep(this);			
 		}
 		else Kiiro.Kiir("A tábla nem szomszédos!");
 	}

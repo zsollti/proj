@@ -10,6 +10,7 @@ public class Lyuk extends Tabla{
 	 *Konstruktor
 	 */
 	public Lyuk() {
+		
 	}
 	
 	/**
@@ -47,5 +48,9 @@ public class Lyuk extends Tabla{
 	@Override
 	public void rajzol(int xpos, int ypos) {
 		Kepek.rajzol("lyuk", x, y);
+	}
+	
+	public boolean getatfordult() {
+		return true;
 	}
 }

@@ -94,7 +94,7 @@ public class Sarkkutato extends Karakter{
 		xpos = xpos + Palya.szereplok.indexOf(this)%3 * 40;
 		ypos = ypos + Palya.szereplok.indexOf(this)/3 * 40;
 		if(aktualis)
-			Kepek.rajzol("aktualsi_sarkkutato", xpos, ypos);
+			Kepek.rajzol("aktualis_sarkkutato", xpos, ypos);
 		else Kepek.rajzol("sarkkutato", xpos, ypos);
 	}
 	

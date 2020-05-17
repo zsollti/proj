@@ -14,6 +14,9 @@ import javax.swing.JPanel;
 
 public class Nezet extends JPanel{
 	
+	/**
+	 *Label, amivel kirajzoljuk a képeket 
+	 */
 	protected JLabel label = new JLabel();
 	
 	/**
@@ -21,6 +24,9 @@ public class Nezet extends JPanel{
 	 */
 	private ArrayList<Rajzolhato> objektumok = new ArrayList<Rajzolhato>();
 	
+	/**
+	 *Ide rajzolunk
+	 */
 	protected BufferedImage bi = new BufferedImage(1205, 700, BufferedImage.TYPE_INT_ARGB);
 	
 	
@@ -29,7 +35,6 @@ public class Nezet extends JPanel{
 	 */
 	public Nezet() {
 		super();
-		//this.setBackground(Color.blue);
 		label.setLocation(0, 0);
 		add(label);
 		this.setVisible(true);

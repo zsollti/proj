@@ -12,9 +12,14 @@ import javax.swing.ImageIcon;
 
 public class Kepek {
 	
+	/**
+	 *Hasmap, mely képeket társít a megnevezésekhez
+	 */
 	private static HashMap<String, Image> kepek = new HashMap<String, Image>();
 	
-	
+	/**
+	 *Feltölti a hashmapet a megfelelõ képekkel és megnevezésekkel
+	 */
 	public static void create(){
 		String[] fileok = {"aktualis_eszkimo","aktualis_sarkkutato","alkatresz","atfordult_tabla",
 							"buvarruha","elelem","eszkimo","felallitott_sator","iglu","kotel","lapat",
@@ -37,13 +42,15 @@ public class Kepek {
 		
 	}
 	
-	public static Image getImage(String s) {
-		return kepek.get(s);
-	}
-	
+	/**
+	 * Kirajzolja a képet a paraméterként kapott koordinátákra
+	 *@param s A kirajzolandó kép megnevezése
+	 *@param x 'X' Koordináta
+	 *@param y 'Y' Koordináta
+	 */
 	public static void rajzol(String s, int x, int y) {
 		Graphics g = Vezerlo.nezet.bi.getGraphics();
-		g.drawImage(Kepek.getImage(s), x, y, null);
+		g.drawImage(Kepek.kepek.get(s), x, y, null);
 		ImageIcon icon = new ImageIcon(Vezerlo.nezet.bi);
 		Vezerlo.nezet.label.setIcon(icon);
 	}

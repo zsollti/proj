@@ -197,6 +197,9 @@ public class Vezerlo extends JFrame {
         });
 	}
 	
+	/**
+	 *Konstruktor
+	 */
 	public Vezerlo(String fname) {
 		//A jFrame beállítása.
 		super("Játék");
@@ -489,6 +492,7 @@ public class Vezerlo extends JFrame {
 	/**
 	 *Játék vége után felugró ablak.
 	 *Kiírja, hogy melyik játékos halt meg.
+	 *@param szoveg A kíírandó szöveg
 	 */
 	public void vege(String szoveg) {
 		JFrame felugro = new JFrame("Vége");

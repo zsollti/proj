@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -90,6 +91,9 @@ public class Vezerlo extends JFrame {
 	 */
 	private int jatekosszam = 3;
 	
+ 	JComboBox<Object> cbJatekosszam;
+	
+	
 	private Szereplo aktualis;
 	
 	private void TablaPosBeallit() {
@@ -123,11 +127,13 @@ public class Vezerlo extends JFrame {
         textfield = new JTextField(16);
         textfield.setText(Integer.toString(jatekosszam));
         buttonPanel = new JPanel();
+    	Object[] jatekos = {"3", "4","5","6"};
+    	cbJatekosszam = new JComboBox<Object>(jatekos);
        
         //Objektumok hozzáadása a panelhez illetve framehez
         buttonPanel.add(label);
-        buttonPanel.add(textfield);
         buttonPanel.add(bInditas);
+        buttonPanel.add(cbJatekosszam);
         this.add(buttonPanel, BorderLayout.NORTH);
         this.setVisible(true); 
         
@@ -137,17 +143,12 @@ public class Vezerlo extends JFrame {
     	 *Inicializálja a pályát és a nézetet
     	 *Elindítja a játékot
     	 */
+        
+   
         bInditas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	try {
-        		if(Integer.parseInt(textfield.getText())>=3 && Integer.parseInt(textfield.getText())<=6)
-        			jatekosszam = Integer.parseInt(textfield.getText());
-            	}catch(NumberFormatException n) {
-            		n.printStackTrace();
-            	}catch(InputMismatchException i) {
-            		i.printStackTrace();
-            	}
+			    jatekosszam = Integer.parseInt(((String)cbJatekosszam.getSelectedItem()));
         		
         		palya = new Palya(jatekosszam, "uj.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
         		nezet = new Nezet();

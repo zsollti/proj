@@ -157,8 +157,7 @@ public class Vezerlo extends JFrame {
             	jatekosszam = sarkkutatoszam + eszkimoszam;
             	if(jatekosszam < 3 || jatekosszam > 6)
             		info.setText("Nem jó a játékosszám :( Próbáld újra!");
-			   
-				    
+			   				    
             	else {
             		palya = new Palya(sarkkutatoszam, eszkimoszam, "uj.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
             		nezet = new Nezet();

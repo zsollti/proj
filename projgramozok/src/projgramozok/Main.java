@@ -20,10 +20,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		JFrame valaszt = new JFrame("Játék indítása");
-		valaszt.setMinimumSize(new Dimension(400, 150));
+		valaszt.setMinimumSize(new Dimension(800, 150));
 		valaszt.setLocation(300, 300);
 		valaszt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JLabel uzenet = new JLabel("Új játékot szeretnél vagy már egy létezõt betölteni?");
+		JLabel leiras = new JLabel("Útmutató: A játékosok képességét a megfelelõ táblára történõ jobb kattintással lehet használni.");
 		JButton buj = new JButton("Új");
 		JButton  bbetolt = new JButton("Betöltés");
 		JPanel gombok = new JPanel();
@@ -35,6 +36,7 @@ public class Main {
 		felso.add(fnev);
 		gombok.add(buj);
 		gombok.add(bbetolt);
+		valaszt.add(leiras, BorderLayout.WEST);
 		valaszt.add(uzenet, BorderLayout.NORTH);
 		valaszt.add(felso, BorderLayout.CENTER);
 		valaszt.add(gombok, BorderLayout.SOUTH);

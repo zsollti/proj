@@ -72,6 +72,7 @@ public class Vezerlo extends JFrame {
 	private JButton bTargykias;
 	
 	private JLabel buvarruha;
+	static JLabel hopont;
 	
 	/**
 	 *Játék bezárása gomb
@@ -215,8 +216,10 @@ public class Vezerlo extends JFrame {
 		bTargykias = new JButton("Tárgy kiásása");
 		
 		buvarruha = new JLabel("| Búvárruha");
+		hopont = new JLabel("Hõpont: ");
 		
 		//Gombok panelhez adása
+		buttonPanel.add(hopont);
 		buttonPanel.add(bAsas);
 		buttonPanel.add(bKorvege);
 		buttonPanel.add(bEves);

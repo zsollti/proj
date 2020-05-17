@@ -68,6 +68,8 @@ public class Sarkkutato extends Karakter{
 			Kiiro.Kiir("Megfagyott.");
 		}
 		else Kiiro.Kiir("Az aktuális hõpont: " + hopont);
+		Vezerlo.hopont.setText("Hõpont: " + hopont);
+
 	}
 	
 	/**

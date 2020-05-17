@@ -63,6 +63,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 			Kiiro.Kiir("Vizbe fulladt.");
 			return;
 		}
+		Vezerlo.hopont.setText("Hõpont: " + hopont);
 		munka = 4;	//Minden játékos 4 "munkával" kezdi a körét
 			int ij = (Palya.szereplok.indexOf(this) + 1);
 			

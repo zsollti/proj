@@ -22,6 +22,7 @@ public class Main {
 		JFrame valaszt = new JFrame("Játék indítása");
 		valaszt.setMinimumSize(new Dimension(400, 150));
 		valaszt.setLocation(300, 300);
+		valaszt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JLabel uzenet = new JLabel("Új játékot szeretnél, vagy már egy létezõt betölteni?");
 		JButton buj = new JButton("Új");
 		JButton  bbetolt = new JButton("Betöltés");
@@ -43,8 +44,7 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
             	valaszt.dispose();
-        		new Vezerlo();
-        		
+        		new Vezerlo();     		
             }
         });
 		

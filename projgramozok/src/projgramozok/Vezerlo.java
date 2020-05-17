@@ -404,6 +404,7 @@ public class Vezerlo extends JFrame {
 		gombBeallit();
 		
 		aktualis.korkezd();
+		frissit();
 	}
 	
 	public void gombBeallit() {

@@ -214,7 +214,7 @@ public class Vezerlo extends JFrame {
 		bBezaras = new JButton("Bezárás");
 		bTargykias = new JButton("Tárgy kiásása");
 		
-		buvarruha = new JLabel("Búvárruha");
+		buvarruha = new JLabel("| Búvárruha");
 		
 		//Gombok panelhez adása
 		buttonPanel.add(bAsas);
@@ -228,6 +228,7 @@ public class Vezerlo extends JFrame {
 		buttonPanel.add(bTargykias);
 		buttonPanel.add(bBezaras);
 		buttonPanel.add(info);
+		buttonPanel.add(buvarruha);
 		
 		
 		//A gombokat tartalmazo panel framehez adása

@@ -125,7 +125,7 @@ public class Vezerlo extends JFrame {
 	private Szereplo aktualis;
 	
 	/**
-	 *
+	 *A táblák pozícióit kiszámolja
 	 */
 	private void TablaPosBeallit() {
 		int xcenter = Vezerlo.nezet.bi.getWidth()/2;

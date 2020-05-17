@@ -57,9 +57,9 @@ public class Palya {
 	 * @param jatekosszam a játékosok száma, amennyit létrehoz az új pályán
 	 * @param p a fájl neve, amelyben a pálya található.
 	 */
-	public Palya(int jatekosszam, String p) { 
+	public Palya(int sark, int eszk, String p) { 
 		reset();
-		jatekosok = jatekosszam;
+		jatekosok = sark + eszk;
 		BufferedReader br = null;
 		try {
 			String s = "Tesztek/"+p;
@@ -104,7 +104,7 @@ public class Palya {
 		sc = new Scanner(System.in);						
 		szereplok = new ArrayList<Szereplo>();
 		
-		for(int i = 0; i < jatekosok; i++) {							//A standard bemenetrõl bekéri az összes játékostól, hogy
+	/*	for(int i = 0; i < jatekosok; i++) {							//A standard bemenetrõl bekéri az összes játékostól, hogy
 			Kiiro.Kiir("Eszkimó(1) vagy sarkkutató(2) akarsz lenni?");	//milyen típusú karakter szeretne lenni, majd ezek alapján
 			int ered = sc.nextInt();									//felveszi a megfelelõ karaktereket
 			while(ered != 1 && ered != 2) {
@@ -112,7 +112,15 @@ public class Palya {
 			}
 			if(ered == 1) szereplok.add(new Eszkimo(tablak.get(0)));		//Az összes karakter ugyanarról a pályáról indul
 			else if(ered == 2) szereplok.add(new Sarkkutato(tablak.get(0)));
+		}*/
+		
+		for(int i = 0; i < sark; i++) {
+			szereplok.add(new Sarkkutato(tablak.get(0)));
 		}
+		for(int i = 0; i < eszk; i++) {
+			szereplok.add(new Eszkimo(tablak.get(0)));
+		}
+		
 		
 		int r = 0;
 		while(r == 0) {

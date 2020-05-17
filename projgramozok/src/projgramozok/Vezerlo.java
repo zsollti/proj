@@ -81,17 +81,14 @@ public class Vezerlo extends JFrame {
 	 */
 	private JLabel label;
 	
-	/**
-	 *Textfield, amibe a felhasználó beleírhatja, hogy hány játékossal szeretne játszani.
-	 */
-	private JTextField textfield;
-	
+	private JLabel info;
 	/**
 	 *Játékosszám. (Default értéke 3)
 	 */
 	private int jatekosszam = 3;
 	
- 	JComboBox<Object> cbJatekosszam;
+ 	JComboBox<Object> cbSarkkutato;
+ 	JComboBox<Object> cbEszkimo;
 	
 	
 	private Szereplo aktualis;
@@ -123,17 +120,20 @@ public class Vezerlo extends JFrame {
 		
 		//Gomb, label, textfield, panel inicializálása
 		bInditas = new JButton("Indítás"); 
-        label = new JLabel("Adja meg a játékosszámot. (Csak számot adjon meg!)");
-        textfield = new JTextField(16);
-        textfield.setText(Integer.toString(jatekosszam));
+        label = new JLabel("Válassza ki a sarkkutatók és az eszkimók számát! (Összesen legalább 3, legfeljebb 6 lehet.)");
         buttonPanel = new JPanel();
-    	Object[] jatekos = {"3", "4","5","6"};
-    	cbJatekosszam = new JComboBox<Object>(jatekos);
+    	Object[] jatekos = {"0", "1", "2", "3", "4","5","6"};
+    	cbSarkkutato = new JComboBox<Object>(jatekos);
+	    cbEszkimo = new JComboBox<Object>(jatekos);
+	    info = new JLabel("");
        
         //Objektumok hozzáadása a panelhez illetve framehez
         buttonPanel.add(label);
+        buttonPanel.add(cbSarkkutato);
+        buttonPanel.add(cbEszkimo);
         buttonPanel.add(bInditas);
-        buttonPanel.add(cbJatekosszam);
+        buttonPanel.add(info);
+
         this.add(buttonPanel, BorderLayout.NORTH);
         this.setVisible(true); 
         
@@ -144,24 +144,31 @@ public class Vezerlo extends JFrame {
     	 *Elindítja a játékot
     	 */
         
+        
    
         bInditas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-			    jatekosszam = Integer.parseInt(((String)cbJatekosszam.getSelectedItem()));
-        		
-        		palya = new Palya(jatekosszam, "uj.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
-        		nezet = new Nezet();
-        		
-        		TablaPosBeallit();
-        		
-        		jatek();
+            	
+            	int sarkkutatoszam = Integer.parseInt(((String)cbSarkkutato.getSelectedItem()));
+            	int eszkimoszam = Integer.parseInt(((String)cbEszkimo.getSelectedItem()));
+            	jatekosszam = sarkkutatoszam + eszkimoszam;
+            	if(jatekosszam < 3 || jatekosszam > 6)
+            		info.setText("Nem jó a játékosszám :( Próbáld újra!");
+			   
+				    
+            	else {
+            		palya = new Palya(sarkkutatoszam, eszkimoszam, "uj.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
+            		nezet = new Nezet();
+            		TablaPosBeallit();
+            		jatek();
+            	}
             }
         });
 	}
 	
 	public Vezerlo(String fname) {
-		//A jFrame beéllítása.
+		//A jFrame beállítása.
 		super("Játék");
 		this.setBounds(10, 10, 1205, 700);
 		this.setResizable(false);

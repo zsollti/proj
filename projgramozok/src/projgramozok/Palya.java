@@ -125,6 +125,8 @@ public class Palya {
 		int r = 0;
 		while(r == 0) {
 			r = new Random().nextInt(tablak.size());
+			if(tablak.get(0).szomszede(tablak.get(r)))
+				r = 0;
 		}
 		szereplok.add(new Medve(tablak.get(r)));				//A medvét pedig egy másik random táblára helyezi
 		List<Targy> targyak = new ArrayList<Targy>();

@@ -18,9 +18,12 @@ public class Eszkimo extends Karakter{
 	 */
 	@Override
 	public void kepesseg(Tabla t) {
-		t.setMenedek(new Iglu(this.tabla));
-		this.munkavegzes();
-		Kiiro.Kiir("Iglu felépítve");
+		if(t==this.tabla) {
+			t.setMenedek(new Iglu(this.tabla));
+			this.munkavegzes();
+			Kiiro.Kiir("Iglu felépítve");
+		}
+		
 	}
 
 	/**Az eszkimó hõpontját növeli max 5-ig, vagy csökkenti.

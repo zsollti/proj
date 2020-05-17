@@ -139,7 +139,6 @@ public class Tabla implements Rajzolhato{
 		if(homennyiseg > 5)homennyiseg = 5;
 		else if(homennyiseg < 0)homennyiseg = 0;
 		Kiiro.Kiir("Az új hómennyiség: " + this.homennyiseg);
-
 	}
 	
 	/**A táblába fagyott tárgyat valaki kiássa.

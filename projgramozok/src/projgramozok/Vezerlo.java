@@ -142,6 +142,8 @@ public class Vezerlo extends JFrame {
         		
         		for(int i = 0; i < Palya.tablak.size(); i++) {
         			nezet.addObjektum(Palya.tablak.get(i));
+        			Palya.tablak.get(i).y = i*5;
+        			Palya.tablak.get(i).x = i*5;
         		}
         		
         		jatek();
@@ -188,7 +190,7 @@ public class Vezerlo extends JFrame {
 		this.add(buttonPanel, BorderLayout.NORTH);
 		
 		//A nézet framehez adása
-		this.add(nezet, BorderLayout.CENTER);
+		this.add(nezet, BorderLayout.WEST);
 		this.revalidate();
 		this.repaint();
 		

@@ -182,12 +182,10 @@ public class Tabla implements Rajzolhato{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		BufferedImage bi = new BufferedImage(108, 107, BufferedImage.TYPE_INT_ARGB);
-		Graphics g = bi.getGraphics();
-		g.drawImage(kep,0, 0, null);
-		ImageIcon icon = new ImageIcon(bi);
+		Graphics g = Vezerlo.nezet.bi.getGraphics();
+		g.drawImage(kep,x, y, null);
+		ImageIcon icon = new ImageIcon(Vezerlo.nezet.bi);
 		Vezerlo.nezet.label.setIcon(icon);
-		//Vezerlo.nezet.getGraphics().drawString("valaki egyszer az mondta...", 100, 50);
 		
 		for(Szereplo sz: szereplok) {
 			sz.rajzol();

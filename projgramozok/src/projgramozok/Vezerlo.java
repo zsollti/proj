@@ -81,7 +81,7 @@ public class Vezerlo extends JFrame {
 	 */
 	private JLabel label;
 	
-	private JLabel info;
+	static JLabel info;
 	/**
 	 *Játékosszám. (Default értéke 3)
 	 */
@@ -220,6 +220,7 @@ public class Vezerlo extends JFrame {
 		buttonPanel.add(bAlkatresz);
 		buttonPanel.add(bTargykias);
 		buttonPanel.add(bBezaras);
+		buttonPanel.add(info);
 		
 		
 		//A gombokat tartalmazo panel framehez adása

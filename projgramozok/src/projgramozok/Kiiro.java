@@ -15,6 +15,7 @@ public class Kiiro {
 	public static void Kiir(String s) {
 		if(Konzolra) {
 			System.out.println(s);
+			Vezerlo.info.setText(s);
 		}
 	}
 	/**Szám kiírása

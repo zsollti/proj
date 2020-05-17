@@ -14,7 +14,7 @@ public class Kotel extends Targy{
 	 */
 	@Override
 	public void hasznal(Karakter k) {
-		Kiiro.Kiir(getName());
+		/*Kiiro.Kiir(getName());
 		Kiiro.Kiir("Melyik szomszédból szeretnéd kihúzni õket?");
 		for(Tabla t : k.tabla.szomszed) {				//Ezek a tábla szomszédai
 			Kiiro.Kiir(Palya.tablak.indexOf(t)); 
@@ -37,12 +37,20 @@ public class Kotel extends Targy{
 				n = sc.nextInt();
 			}
 			sc.close();
+		}*/
+		for (Tabla t : k.tabla.szomszed) {
+			if (t.getatfordult()) {
+				List<Szereplo> rajta = t.getSzereplok();
+				while(!rajta.isEmpty()) {						//Az összes vízben levõt kimenti
+					rajta.get(0).lep(k.getTabla());
+				}
+			}
 		}
-		Kiiro.Kiir(getName() + " hasznalva: ");
-		List<Szereplo> rajta = k.getTabla().szomszed.get(n).getSzereplok();
+		Kiiro.Kiir(getName() + " hasznalva");
+		/*List<Szereplo> rajta = k.getTabla().szomszed.get(n).getSzereplok();
 		while(!rajta.isEmpty()) {						//Az összes vízben levõt kimenti
 			rajta.get(0).lep(k.getTabla());
-		}
+		}*/
 		k.munkavegzes();
 		
 	}

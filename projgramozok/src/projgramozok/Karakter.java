@@ -175,6 +175,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 		if(munka <= 0) {
 			aktualis = false;
 			endTurn();
+			Kiiro.Kiir("Kör átadása");
 		}
 	}
 	

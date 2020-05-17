@@ -22,7 +22,7 @@ public class Main {
 		JFrame valaszt = new JFrame("Játék indítása");
 		valaszt.setMinimumSize(new Dimension(400, 150));
 		valaszt.setLocation(300, 300);
-		JLabel uzenet = new JLabel("Új játékot szeretnél, vagy már egy létezõt betölteni?");
+		JLabel uzenet = new JLabel("Új játékot szeretnél vagy már egy létezõt betölteni?");
 		JButton buj = new JButton("Új");
 		JButton  bbetolt = new JButton("Betöltés");
 		JPanel gombok = new JPanel();

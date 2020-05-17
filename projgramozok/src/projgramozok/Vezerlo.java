@@ -103,7 +103,8 @@ public class Vezerlo extends JFrame {
 		super("Játék");
 		this.setBounds(10, 10, 1205, 700);
 		this.setResizable(false);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Kepek.create();
 		
 		//Gomb, label, textfield, panel inicializálása
 		bInditas = new JButton("Indítás"); 

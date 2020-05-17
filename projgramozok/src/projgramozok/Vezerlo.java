@@ -3,6 +3,8 @@ package projgramozok;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
@@ -191,6 +193,7 @@ public class Vezerlo extends JFrame {
 	 *
 	 */
 	public void jatek () {
+		this.addMouseListener(new Eger());
 		Palya.vezerlo = this;
 		this.remove(buttonPanel);
 		buttonPanel.removeAll();
@@ -326,6 +329,47 @@ public class Vezerlo extends JFrame {
 		players();
 		frissit();
 	}
+	
+	public class Eger implements MouseListener{
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			int x = e.getX();
+			int y = e.getY();
+			for(Tabla t: Palya.tablak) {
+				if(t.x < x && t.x+100 > x && t.y < y && t.y+100 > y) {
+					((Karakter)aktualis).tevekenyseg("lep "+Palya.tablak.indexOf(t));
+				}
+			}
+			frissit();
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
 	
 	public void players() {
 		int index = Palya.szereplok.indexOf(aktualis)+1;

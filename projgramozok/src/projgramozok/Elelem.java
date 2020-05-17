@@ -17,6 +17,9 @@ public class Elelem extends Targy{
 		k.addhopont(1);
 		k.munkavegzes();
 		k.targyak.get(getName()).remove(this);
+		if (k.targyak.get(getName()).isEmpty()) {
+			k.targyak.remove(getName());
+		}
 	}
 	/**
 	 *Visszatér az osztály nevével.

@@ -14,6 +14,9 @@ public class Sator extends Targy{
 		k.getTabla().setMenedek(new Felallitott_sator(k.getTabla()));
 		k.munkavegzes();
 		k.targyak.get(getName()).remove(this);
+		if (k.targyak.get(getName()).isEmpty()) {
+			k.targyak.remove(getName());
+		}
 		Kiiro.Kiir(getName() + " felépítve");
 	}
 	

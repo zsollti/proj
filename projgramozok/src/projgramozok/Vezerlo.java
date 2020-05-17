@@ -241,6 +241,7 @@ public class Vezerlo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
         		((Karakter)aktualis).tevekenyseg("hoasas");
+        		frissit();
             }
         });
 		
@@ -262,6 +263,7 @@ public class Vezerlo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
         		((Karakter)aktualis).tevekenyseg("kepesseg");
+        		frissit();
             }
         });
 		
@@ -272,6 +274,7 @@ public class Vezerlo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	((Karakter)aktualis).tevekenyseg("targyhasznal Kotel");
+            	frissit();
             }
         });
 		
@@ -283,6 +286,7 @@ public class Vezerlo extends JFrame {
             public void actionPerformed(ActionEvent e) {
             	((Karakter)aktualis).tevekenyseg("targyhasznal Sator");
             	gombBeallit();
+            	frissit();
             }
         });
 		
@@ -290,6 +294,7 @@ public class Vezerlo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	((Karakter)aktualis).tevekenyseg("targyhasznal Lapat");
+            	frissit();
             }
         });
 		
@@ -298,6 +303,7 @@ public class Vezerlo extends JFrame {
             public void actionPerformed(ActionEvent e) {
             	((Karakter)aktualis).tevekenyseg("targyhasznal Torekeny_aso");
             	gombBeallit();
+            	frissit();
             }
         });
 		
@@ -312,6 +318,7 @@ public class Vezerlo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	((Karakter)aktualis).tevekenyseg("targykias");
+            	frissit();
             }
         });
 		

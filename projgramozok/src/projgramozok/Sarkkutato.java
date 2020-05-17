@@ -21,7 +21,7 @@ public class Sarkkutato extends Karakter{
 	 */
 	@Override
 	public void kepesseg() {
-		Kiiro.Kiir("Melyik szomszédos tábla bíróképességét szeretnéd megnézni?");
+		Kiiro.Kiir("Melyik tábla bíróképességét szeretnéd megnézni? Kattints rá!");
 		for(Tabla t : tabla.szomszed) {
 			Kiiro.Kiir(Palya.tablak.indexOf(t)); 
 		}

@@ -61,17 +61,39 @@ public class Vezerlo extends JFrame {
 	 */
 	private JButton bEves;
 	
+	/**
+	 *Lapát használata gomb gomb
+	 */
 	private JButton bLapat;
 	
+	/**
+	 *Törékeny ásó használata gomb
+	 */
 	private JButton bTaso;
 	
+	/**
+	 *Kör átadása gomb
+	 */
 	private JButton bKorvege;
 	
+	/**
+	 *Alkatrész használata gomb
+	 */
 	private JButton bAlkatresz;
 	
+	/**
+	 *Tárgy kiásása gomb
+	 */
 	private JButton bTargykias;
 	
+	/**
+	 *Búvárruha label
+	 */
 	private JLabel buvarruha;
+	
+	/**
+	 *Hõpont label
+	 */
 	static JLabel hopont;
 	
 	/**
@@ -84,7 +106,11 @@ public class Vezerlo extends JFrame {
 	 */
 	private JLabel label;
 	
+	/**
+	 *Információs label
+	 */
 	static JLabel info = new JLabel();
+	
 	/**
 	 *Játékosszám. (Default értéke 3)
 	 */
@@ -93,7 +119,9 @@ public class Vezerlo extends JFrame {
  	JComboBox<Object> cbSarkkutato;
  	JComboBox<Object> cbEszkimo;
 	
-	
+ 	/**
+	 *A soron következõ játékos
+	 */
 	private Szereplo aktualis;
 	
 	private void TablaPosBeallit() {

@@ -91,6 +91,8 @@ public class Sarkkutato extends Karakter{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
+		xpos = xpos + Palya.szereplok.indexOf(this)%3 * 40;
+		ypos = ypos + Palya.szereplok.indexOf(this)/3 * 40;
 		Kepek.rajzol("sarkkutato", xpos, ypos);
 	}
 	

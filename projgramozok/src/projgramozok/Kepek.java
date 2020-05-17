@@ -25,6 +25,7 @@ public class Kepek {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		i.getScaledInstance(30, 30, Image.SCALE_FAST);
 		kepek.put("alkatresz", i);
 		
 		i = null;
@@ -69,6 +70,7 @@ public class Kepek {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		i = i.getScaledInstance(33, 33, Image.SCALE_FAST);
 		kepek.put("eszkimo", i);
 
 		i = null;

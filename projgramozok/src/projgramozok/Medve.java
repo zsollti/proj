@@ -114,6 +114,7 @@ public class Medve extends Szereplo{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
+		ypos += 75;
 		Kepek.rajzol("medve", xpos, ypos);
 	}
 }

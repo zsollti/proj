@@ -50,7 +50,7 @@ public class Alkatresz extends Targy{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("alkatresz", xpos, ypos);
+		Kepek.rajzol("alkatresz", xpos+75, ypos+75);
 	}
 	
 }

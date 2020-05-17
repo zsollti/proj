@@ -335,7 +335,7 @@ public class Vezerlo extends JFrame {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			int x = e.getX();
-			int y = e.getY();
+			int y = e.getY() - 50;
 			for(Tabla t: Palya.tablak) {
 				if(t.x < x && t.x+100 > x && t.y < y && t.y+100 > y) {
 					((Karakter)aktualis).tevekenyseg("lep "+Palya.tablak.indexOf(t));

@@ -45,7 +45,7 @@ public class Lyuk extends Tabla{
 	 *Kirajzolja az objektumot
 	 */
 	@Override
-	public void rajzol() {
-		
+	public void rajzol(int xpos, int ypos) {
+		Kepek.rajzol("lyuk", x, y);
 	}
 }

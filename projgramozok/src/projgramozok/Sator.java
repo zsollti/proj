@@ -28,7 +28,7 @@ public class Sator extends Targy{
 	 *Kirajzolja az objektumot
 	 */
 	@Override
-	public void rajzol() {
-		
+	public void rajzol(int xpos, int ypos) {
+		Kepek.rajzol("sator", xpos, ypos);
 	}
 }

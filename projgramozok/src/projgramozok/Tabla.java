@@ -172,7 +172,7 @@ public class Tabla implements Rajzolhato{
 	/**
 	 *Kirajzolja az objektumot
 	 */
-	public void rajzol() {
+	public void rajzol(int xpos, int ypos) {
 		/*Graphics g = Vezerlo.nezet.bi.getGraphics();
 		g.drawImage(Kepek.getImage("tablahoval"), x, y, null);
 		ImageIcon icon = new ImageIcon(Vezerlo.nezet.bi);
@@ -180,9 +180,9 @@ public class Tabla implements Rajzolhato{
 		Kepek.rajzol("tablahoval", x, y);
 		
 		for(Szereplo sz: szereplok) {
-			sz.rajzol();
+			sz.rajzol(x, y);
 		}
-		if(menedek != null)menedek.rajzol();
-		if(targy != null && homennyiseg == 0)targy.rajzol();
+		if(menedek != null)menedek.rajzol(x, y);
+		if(targy != null && homennyiseg == 0)targy.rajzol(x, y);
 	}
 }

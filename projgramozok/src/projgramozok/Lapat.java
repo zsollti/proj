@@ -27,7 +27,7 @@ public class Lapat extends Targy{
 	 *Kirajzolja az objektumot
 	 */
 	@Override
-	public void rajzol() {
-		
+	public void rajzol(int xpos, int ypos) {
+		Kepek.rajzol("lapat", xpos, ypos);
 	}
 }

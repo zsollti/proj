@@ -183,10 +183,14 @@ public class Vezerlo extends JFrame {
 		        		
         		palya = new Palya(fname);
         		jatekosszam = Palya.jatekosok;
-        		nezet = new Nezet();
-        		
-        		TablaPosBeallit();      		
-        		jatek();
+        		if(jatekosszam == 0) {
+        			vege("A fájl nem található");
+        			}
+        		else{
+        			nezet = new Nezet();
+        			TablaPosBeallit();      		
+        			jatek();
+        		}
 	}
 	
 	

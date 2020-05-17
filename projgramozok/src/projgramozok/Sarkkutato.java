@@ -20,11 +20,12 @@ public class Sarkkutato extends Karakter{
 	 *Sarkkutató képessége, lekérdezi egy szomszédos tábla karakterbíró képességét.
 	 */
 	@Override
-	public void kepesseg() {
-		Kiiro.Kiir("Melyik tábla bíróképességét szeretnéd megnézni? Kattints rá!");
+	public void kepesseg(Tabla t) {
+		/*Kiiro.Kiir("Melyik tábla bíróképességét szeretnéd megnézni? Kattints rá!");
 		for(Tabla t : tabla.szomszed) {
 			Kiiro.Kiir(Palya.tablak.indexOf(t)); 
 		}
+		
 		int n;
 		if (Palya.sc != null) {
 			String nh = Palya.sc.nextLine();
@@ -44,7 +45,8 @@ public class Sarkkutato extends Karakter{
 			}
 			sc.close();
 		}
-		int birokepesseg = tabla.szomszed.get(n).getbirokepesseg();
+		*/
+		int birokepesseg = t.getbirokepesseg();
 		munkavegzes();
 		if (birokepesseg >= 0)Kiiro.Kiir("A szomszédos tábla bíróképessége:" + birokepesseg);
 		else Kiiro.Kiir("A szomszédos tábla stabil");

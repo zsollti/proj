@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 
 public class Vezerlo extends JFrame {
@@ -353,7 +354,11 @@ public class Vezerlo extends JFrame {
 			int y = e.getY() - 50;
 			for(Tabla t: Palya.tablak) {
 				if(t.x < x && t.x+100 > x && t.y < y && t.y+100 > y) {
-					((Karakter)aktualis).tevekenyseg("lep "+Palya.tablak.indexOf(t));
+					if (SwingUtilities.isRightMouseButton(e)) {
+						((Karakter)aktualis).tevekenyseg("kepesseg "+Palya.tablak.indexOf(t));
+					}
+					else
+						((Karakter)aktualis).tevekenyseg("lep "+Palya.tablak.indexOf(t));
 				}
 			}
 			frissit();
@@ -387,6 +392,7 @@ public class Vezerlo extends JFrame {
 	
 	
 	public void players() {
+		frissit();
 		int index = Palya.szereplok.indexOf(aktualis)+1;
 		
 		if(index == Palya.jatekosok + 1) {

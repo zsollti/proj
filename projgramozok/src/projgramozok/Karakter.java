@@ -31,7 +31,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	 *Absztrakt függvény, a karakterek képességéhez
 	 *Minden karakternek mások a képességei
 	 */
-	public abstract void kepesseg();
+	public abstract void kepesseg(Tabla t);
 	/**
 	 * Absztrakt függvény, a karakterek hõpontváltozásához
 	 * @param i a hozzáadandó hõpont
@@ -149,7 +149,8 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 				}
 				break;				
 			case "kepesseg":	//Karakter képességének használata
-				kepesseg();
+				int i = Integer.parseInt(ss[1]);
+				kepesseg(Palya.tablak.get(i));
 				break;
 			case "hoasas":		//Hó eltakarítása a tábláról kézzel
 				if(tabla.homennyiseg == 0) {

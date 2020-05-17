@@ -17,8 +17,8 @@ public class Eszkimo extends Karakter{
 	 *Eszkimó képesség, iglut épít a táblára amin áll.
 	 */
 	@Override
-	public void kepesseg() {
-		this.tabla.setMenedek(new Iglu(this.tabla));
+	public void kepesseg(Tabla t) {
+		t.setMenedek(new Iglu(this.tabla));
 		this.munkavegzes();
 		Kiiro.Kiir("Iglu felépítve");
 	}

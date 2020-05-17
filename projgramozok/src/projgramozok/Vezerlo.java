@@ -1,6 +1,7 @@
 package projgramozok;
 
 import java.awt.BorderLayout;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -33,6 +34,7 @@ public class Vezerlo extends JFrame {
 	static Nezet nezet;
 	
 	private JPanel buttonPanel;
+
 	
 	/**
 	 *Indítás gomb
@@ -53,11 +55,6 @@ public class Vezerlo extends JFrame {
 	 *Sátor felállítása gomb
 	 */
 	private JButton bSator;
-	
-	/**
-	 *Képesség használat gomb
-	 */
-	private JButton bKepesseg;
 	
 	/**
 	 *Evés gomb
@@ -190,6 +187,7 @@ public class Vezerlo extends JFrame {
         		jatek();
 	}
 	
+	
 	/**
 	 *
 	 */
@@ -202,7 +200,6 @@ public class Vezerlo extends JFrame {
 		//Gombok inicializálása
 		bAsas = new JButton("Ásás");
 		bEves = new JButton("Evés");
-		bKepesseg = new JButton("Képesség");
 		bKotel = new JButton("Kötél");
 		bSator = new JButton("Sátor");
 		bLapat = new JButton("Lapát");
@@ -214,7 +211,6 @@ public class Vezerlo extends JFrame {
 		
 		//Gombok panelhez adása
 		buttonPanel.add(bAsas);
-		buttonPanel.add(bKepesseg);
 		buttonPanel.add(bKorvege);
 		buttonPanel.add(bEves);
 		buttonPanel.add(bKotel);
@@ -231,7 +227,7 @@ public class Vezerlo extends JFrame {
 		this.add(buttonPanel, BorderLayout.NORTH);
 		
 		//A nézet framehez adása
-		this.add(nezet, BorderLayout.WEST);
+		this.add(nezet, BorderLayout.CENTER);
 		this.revalidate();
 		this.repaint();
 		
@@ -256,17 +252,7 @@ public class Vezerlo extends JFrame {
         		gombBeallit();
             }
         });
-		
-		/**
-		 *A képesség gomb eseménykezelõje
-		 */
-		bKepesseg.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-        		((Karakter)aktualis).tevekenyseg("kepesseg");
-        		frissit();
-            }
-        });
+	
 		
 		/**
 		 *A kötél gomb eseménykezelõje
@@ -419,12 +405,12 @@ public class Vezerlo extends JFrame {
 		Set<String> targyak = aktualis.getInventory().keySet();
 			for(String s: targyak) {
 				switch(s) {
-					case "Elelem": bEves.setVisible(true);
-					case "Lapat": bLapat.setVisible(true);
-					case "Kotel": bKotel.setVisible(true);
-					case "Torekeny_aso": bTaso.setVisible(true);
-					case "Sator": bSator.setVisible(true);
-					case "Alkatresz": bAlkatresz.setVisible(true);
+					case "Elelem": bEves.setVisible(true); break;
+					case "Lapat": bLapat.setVisible(true); break;
+					case "Kotel": bKotel.setVisible(true); break;
+					case "Torekeny_aso": bTaso.setVisible(true); break;
+					case "Sator": bSator.setVisible(true); break;
+					case "Alkatresz": bAlkatresz.setVisible(true); break;
 				}
 			}
 		}

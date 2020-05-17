@@ -18,7 +18,7 @@ public class Eszkimo extends Karakter{
 	 */
 	@Override
 	public void kepesseg(Tabla t) {
-		t.setMenedek(new Iglu(this.tabla));
+		this.tabla.setMenedek(new Iglu(this.tabla));
 		this.munkavegzes();
 		Kiiro.Kiir("Iglu felépítve");
 	}

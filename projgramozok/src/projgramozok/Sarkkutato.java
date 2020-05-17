@@ -46,10 +46,14 @@ public class Sarkkutato extends Karakter{
 			sc.close();
 		}
 		*/
-		int birokepesseg = t.getbirokepesseg();
-		munkavegzes();
-		if (birokepesseg >= 0)Kiiro.Kiir("A szomszédos tábla bíróképessége:" + birokepesseg);
-		else Kiiro.Kiir("A szomszédos tábla stabil");
+		if(this.tabla.szomszede(t)) {
+			int birokepesseg = t.getbirokepesseg();
+			munkavegzes();
+			if (birokepesseg >= 0)Kiiro.Kiir("A szomszédos tábla bíróképessége:" + birokepesseg);
+			else Kiiro.Kiir("A szomszédos tábla stabil");
+		}
+		else Kiiro.Kiir("A tábla nem szomszédos!");
+		
 	}
 
 	/**A sarkkutató hõpontját növeli max 4-ig, vagy csökkenti.

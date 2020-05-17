@@ -150,6 +150,7 @@ public class Tabla implements Rajzolhato{
 			Kiiro.Kiir("A targy kiasasa megtortent. " + targy.getName());
 			k.addTargy(targy);
 			targy = null;
+			k.munkavegzes();
 		}
 		else if(homennyiseg != 0) Kiiro.Kiir("Nem látszik a hótól a tábla.");
 		else Kiiro.Kiir("Nincs is itt tárgy.");

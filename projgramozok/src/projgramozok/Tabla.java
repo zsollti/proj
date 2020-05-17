@@ -177,7 +177,8 @@ public class Tabla implements Rajzolhato{
 		g.drawImage(Kepek.getImage("tablahoval"), x, y, null);
 		ImageIcon icon = new ImageIcon(Vezerlo.nezet.bi);
 		Vezerlo.nezet.label.setIcon(icon);*/
-		Kepek.rajzol("tablahoval", x, y);
+		if (homennyiseg == 0) Kepek.rajzol("tabla", x, y);
+		else Kepek.rajzol("tablahoval", x, y);
 		
 		for(Szereplo sz: szereplok) {
 			sz.rajzol(x, y);

@@ -199,7 +199,7 @@ public class Kepek {
 	
 	public static void rajzol(String s, int x, int y) {
 		Graphics g = Vezerlo.nezet.bi.getGraphics();
-		g.drawImage(Kepek.getImage("tablahoval"), x, y, null);
+		g.drawImage(Kepek.getImage(s), x, y, null);
 		ImageIcon icon = new ImageIcon(Vezerlo.nezet.bi);
 		Vezerlo.nezet.label.setIcon(icon);
 	}

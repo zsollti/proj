@@ -25,6 +25,7 @@ public class Lyuk extends Tabla{
 	 */
 	@Override
 	public void ralep(Szereplo k){
+		homennyiseg = 0;
 		szereplok.add(k);
 		k.setTabla(this);
 		Kiiro.Kiir("Lyukra leptel!");
@@ -46,7 +47,9 @@ public class Lyuk extends Tabla{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("lyuk", x, y);
+		if(homennyiseg == 0)Kepek.rajzol("lyuk", x, y);
+		else {Kepek.rajzol("tablahoval", x, y);}
+	
 	}
 	
 	public boolean getatfordult() {

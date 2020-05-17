@@ -85,6 +85,7 @@ public class Medve extends Szereplo{
 		lep(tabla.szomszed.get(i));
 		if(!Palya.gover) endTurn();
 	}
+	
 
 	/**
 	 *Üres metódus.

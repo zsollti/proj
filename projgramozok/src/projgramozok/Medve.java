@@ -21,6 +21,7 @@ public class Medve extends Szereplo{
 	 */
 	public Medve(Tabla t) {
 		super(t);
+		
 	}
 
 	/**

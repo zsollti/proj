@@ -26,6 +26,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	 */
 	protected HashMap<String, ArrayList<Targy>> targyak;
 	
+	protected boolean aktualis;
 	/**
 	 *Absztrakt függvény, a karakterek képességéhez
 	 *Minden karakternek mások a képességei
@@ -47,6 +48,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 		//this.targyak = new ArrayList<Targy>();
 		targyak = new HashMap<String, ArrayList<Targy>>();
 		this.munka = 4;
+		this.aktualis = false;
 	}
 	
 	/**
@@ -55,6 +57,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	 */
 	@Override
 	public void korkezd() {
+		aktualis = true;
 		if(tabla.getatfordult()) {	//Ha a karakter vízben kedi a körét megvullad
 			Palya.gameover(this);
 			Kiiro.Kiir("Vizbe fulladt.");
@@ -157,6 +160,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 				munkavegzes();
 				break;
 			case "endTurn":		//Kör átadása
+				aktualis = false;
 				munka = 0;
 				break;
 			case "kilep":		//Kilépés a játékból

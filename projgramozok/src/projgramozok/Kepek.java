@@ -16,183 +16,25 @@ public class Kepek {
 	
 	
 	public static void create(){
+		String[] fileok = {"aktualis_eszkimo","aktualis_sarkkutato","alkatresz","atfordult_tabla",
+							"buvarruha","elelem","eszkimo","felallitott_sator","iglu","kotel","lapat",
+							"lyuk","medve","sarkkutato","sator","tabla","tablahoval","torekeny_lapat"};
 		Image i = null;
 		File f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\alkatresz.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		i.getScaledInstance(30, 30, Image.SCALE_FAST);
-		kepek.put("alkatresz", i);
 		
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\atfordult_tabla.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		for(int j = 0; j < fileok.length; j++) {
+			i = null;
+			f = new File("");
+			f = new File(f.getAbsolutePath() + "\\Kepek\\" + fileok[j] + ".png");
+			try {
+				i = ImageIO.read(f);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			kepek.put(fileok[j], i);
 		}
-		kepek.put("atfordult_tabla", i);
 		
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\buvarruha.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("buvarruha", i);
-		
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\elelem.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("elelem", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\eszkimo.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		i = i.getScaledInstance(33, 33, Image.SCALE_FAST);
-		kepek.put("eszkimo", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\felallitott_sator.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("felallitott_sator", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\iglu.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("iglu", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\kotel.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("kotel", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\lapat.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("lapat", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\lyuk.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("lyuk", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\medve.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("medve", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\sarkkutato.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("sarkkutato", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\sator.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("sator", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\tabla.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("tabla", i);
-
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\tablahoval.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("tablahoval", i);
-		
-		i = null;
-		f = new File("");
-		f = new File(f.getAbsolutePath() + "\\Kepek\\torekeny_lapat.png");
-		try {
-			i = ImageIO.read(f);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		kepek.put("torekeny_lapat", i);
 	}
 	
 	public static Image getImage(String s) {

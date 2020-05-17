@@ -66,7 +66,9 @@ public class Eszkimo extends Karakter{
 	public void rajzol(int xpos, int ypos) {
 		xpos = xpos + Palya.szereplok.indexOf(this)%3 * 40;
 		ypos = ypos + Palya.szereplok.indexOf(this)/3 * 40;
-		Kepek.rajzol("eszkimo", xpos, ypos);
+		if(aktualis)
+			Kepek.rajzol("aktualsi_eszkimo", xpos, ypos);
+		else Kepek.rajzol("eszkimo", xpos, ypos);
 	}
 	
 }

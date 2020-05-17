@@ -48,8 +48,7 @@ public class Lyuk extends Tabla{
 	@Override
 	public void rajzol(int xpos, int ypos) {
 		if(homennyiseg == 0)Kepek.rajzol("lyuk", x, y);
-		else {Kepek.rajzol("tablahoval", x, y);}
-	
+		else {Kepek.rajzol("tablahoval", x, y);}	
 	}
 	
 	public boolean getatfordult() {

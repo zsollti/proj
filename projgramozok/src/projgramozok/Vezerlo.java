@@ -294,13 +294,7 @@ public class Vezerlo extends JFrame {
 		int index = Palya.szereplok.indexOf(aktualis)+1;
 		
 		if(index == Palya.jatekosok + 1) {
-			int r = new Random().nextInt(3);
-			if(r == 1) {
-				palya.hovihar();
-			}
-			for(Tabla t : palya.tablak) {
-				t.setMenedek(null);
-			}
+			palya.start();
 			index = 0;
 		}
 		
@@ -318,15 +312,17 @@ public class Vezerlo extends JFrame {
 		bSator.setVisible(false);
 		bAlkatresz.setVisible(false);
 		
+		if(aktualis.getInventory() != null) {
 		Set<String> targyak = aktualis.getInventory().keySet();
-		for(String s: targyak) {
-			switch(s) {
-				case "Elelem": bEves.setVisible(true);
-				case "Lapat": bLapat.setVisible(true);
-				case "Kotel": bKotel.setVisible(true);
-				case "Torekeny_aso": bTaso.setVisible(true);
-				case "Sator": bSator.setVisible(true);
-				case "Alkatresz": bAlkatresz.setVisible(true);
+			for(String s: targyak) {
+				switch(s) {
+					case "Elelem": bEves.setVisible(true);
+					case "Lapat": bLapat.setVisible(true);
+					case "Kotel": bKotel.setVisible(true);
+					case "Torekeny_aso": bTaso.setVisible(true);
+					case "Sator": bSator.setVisible(true);
+					case "Alkatresz": bAlkatresz.setVisible(true);
+				}
 			}
 		}
 	}

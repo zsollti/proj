@@ -360,10 +360,8 @@ public class Palya {
 	 * sorba hívogatja a szereplõk korkezd-jét, amíg vége nincs a játéknak valamilyen okból
 	 * @param sc a scanner, amirõl várja a bemenetet
 	 */
-	public void start(Scanner sc) {
-		Palya.sc = sc;
-		int i = 0;
-		Kiiro.Kiir("random: hóvihar és medve randomságának kikapcsolása");		//A játék kezdetekor tájékoztatja a játékost, hogy
+	public void start() {
+		/*Kiiro.Kiir("random: hóvihar és medve randomságának kikapcsolása");		//A játék kezdetekor tájékoztatja a játékost, hogy
 		String s = sc.nextLine();												//milyen cselekvéseket végezhet a játék során
 		if(s.equals("random")) random = false;
 		Kiiro.Kiir("Valaszd ki a kivant cselekvest.\n");
@@ -373,9 +371,8 @@ public class Palya {
 		Kiiro.Kiir("kepesseg");
 		Kiiro.Kiir("hoasas - kezzel");
 		Kiiro.Kiir("endTurn - kor befejezese");
-		Kiiro.Kiir("kilep - jatek befejezese");
+		Kiiro.Kiir("kilep - jatek befejezese");*/
 		
-		while(!gover) {
 			int r = new Random().nextInt(3);
 			if(!random) r = 1;
 			if(r == 1) {
@@ -386,14 +383,7 @@ public class Palya {
 				t.setMenedek(null);
 			}
 			
-			while(i < szereplok.size()) {
-				szereplok.get(i).korkezd();
-				if(gover) break;
-				i++;
-			}
-			i = 0;
-		}
-		Kiiro.Kiir("Jatek vege.");
+	//	Kiiro.Kiir("Jatek vege.");
 	}
 
 	/**Minden kör elején hívódhat, a randomságtól függõen

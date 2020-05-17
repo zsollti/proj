@@ -64,7 +64,9 @@ public class Eszkimo extends Karakter{
 	}
 	
 	/**
-	 *Kirajzolja az objektumot
+	 * Rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {

@@ -38,7 +38,9 @@ public class Torekeny_aso extends Lapat{
 		return "Torekeny_aso";
 	}
 	/**
-	 *Kirajzolja az objektumot
+	 * Rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {

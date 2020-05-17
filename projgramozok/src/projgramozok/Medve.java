@@ -3,7 +3,6 @@ package projgramozok;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  *A medve osztály megvalósítása
@@ -29,7 +28,6 @@ public class Medve extends Szereplo{
 	 */
 	@Override
 	public void addhopont(int i) {
-		//üres	
 	}
 
 	/**
@@ -37,14 +35,12 @@ public class Medve extends Szereplo{
 	 */
 	@Override
 	public void beleesik() {
-		//üres
 	}
 	
 	/**
 	 *Üres metódus.
 	 */
 	public void addTargy(Targy t) {
-		//üres
 	}
 	
 	/**ha elkap valakit, az meghal
@@ -92,7 +88,6 @@ public class Medve extends Szereplo{
 	 */
 	@Override
 	public void setMunka(int i) {
-		//üres
 	}
 
 	/**
@@ -100,11 +95,10 @@ public class Medve extends Szereplo{
 	 */
 	@Override
 	public void setHopont(int i) {
-		//üres
 	}
 
 	/**
-	 *Üres metódus.
+	 *Visszadja a medve tárgyait. Nincs neki.
 	 */
 	@Override
 	public HashMap<String, ArrayList<Targy>> getInventory() {
@@ -112,7 +106,9 @@ public class Medve extends Szereplo{
 	}
 	
 	/**
-	 *Kirajzolja az objektumot
+	 * Rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {

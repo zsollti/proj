@@ -1,7 +1,5 @@
 package projgramozok;
 
-import java.util.Scanner;
-
 /**
  *A sarkkutató osztály megvalóítása
  */
@@ -21,31 +19,7 @@ public class Sarkkutato extends Karakter{
 	 */
 	@Override
 	public void kepesseg(Tabla t) {
-		/*Kiiro.Kiir("Melyik tábla bíróképességét szeretnéd megnézni? Kattints rá!");
-		for(Tabla t : tabla.szomszed) {
-			Kiiro.Kiir(Palya.tablak.indexOf(t)); 
-		}
 		
-		int n;
-		if (Palya.sc != null) {
-			String nh = Palya.sc.nextLine();
-			n = Integer.parseInt(nh);
-			n = tabla.szomszed.indexOf(Palya.tablak.get(n));
-			while (n > tabla.szomszed.size() | n < 0) {
-				Kiiro.Kiir("Helytelen input!");
-				n = Palya.sc.nextInt();
-			}
-		}
-		else {
-			Scanner sc = new Scanner(System.in);
-			n = sc.nextInt();
-			while (n > tabla.szomszed.size() | n < 0) {
-				Kiiro.Kiir("Helytelen input!");
-				n = sc.nextInt();
-			}
-			sc.close();
-		}
-		*/
 		if(tabla.szomszede(t)) {
 			int birokepesseg = t.getbirokepesseg();
 			munkavegzes();
@@ -93,7 +67,9 @@ public class Sarkkutato extends Karakter{
 	}
 	
 	/**
-	 *Kirajzolja az objektumot
+	 * Rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {

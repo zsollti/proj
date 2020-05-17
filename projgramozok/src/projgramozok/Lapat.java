@@ -24,7 +24,9 @@ public class Lapat extends Targy{
 		return "Lapat";
 	}
 	/**
-	 *Kirajzolja az objektumot
+	 * Rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {

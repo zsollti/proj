@@ -16,7 +16,9 @@ public abstract class Targy implements Rajzolhato{
 	public abstract String getName();
 	
 	/**
-	 *Kirajzolja az objektumot
+	 * Absztrakt rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
 	 */
 	public abstract void rajzol(int xpos, int ypos);
 

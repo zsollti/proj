@@ -43,14 +43,19 @@ public class Lyuk extends Tabla{
 	}
 	
 	/**
-	 *Kirajzolja az objektumot
+	 * Rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
 		if(homennyiseg == 0)Kepek.rajzol("lyuk", x, y);
 		else {Kepek.rajzol("tablahoval", x, y);}	
 	}
-	
+	/**
+	 * Visszaadja, hogy átfordult-e a tábla
+	 * Mivel lyuk, ezért mindig igaz
+	 */
 	public boolean getatfordult() {
 		return true;
 	}

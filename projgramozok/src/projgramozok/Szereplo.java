@@ -2,7 +2,6 @@ package projgramozok;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 
 /**
  *Absztrakt osztály, a szerepõk megvalósítására. (Medve, Eszkimó, Sarkkutató)
@@ -87,7 +86,6 @@ public abstract class Szereplo implements Rajzolhato {
 	{
 		this.setMunka(0);
 		Palya.vezerlo.players();
-		//Kiiro.Kiir("Kör átadása");
 	}
 		
 	/**
@@ -99,7 +97,9 @@ public abstract class Szereplo implements Rajzolhato {
 	}
 	
 	/**
-	 *Kirajzolja az objektumot
+	 * Rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
 	 */
 	public abstract void rajzol(int xpos, int ypos);
 	

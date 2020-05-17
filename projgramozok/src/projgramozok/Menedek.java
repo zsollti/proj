@@ -17,10 +17,14 @@ public abstract class Menedek implements Rajzolhato{
 	}
 	
 	/**
-	 *Absztrakt függvény, a menedék megsemmisítéséhez.
+	 *Absztrakt függvény a menedék megsemmisítéséhez.
 	 */
 	public abstract void destroy();
-	
+	/**
+	 * Absztrakt rajzolófüggvény
+	 * @param xpos - az x pozíciója az objektumnak
+	 * @param ypos - az y pozíció
+	 */
 	public abstract void rajzol(int xpos, int ypos);
 
 }

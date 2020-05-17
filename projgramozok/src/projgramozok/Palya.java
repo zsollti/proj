@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
  
 public class Palya {
 	/**
@@ -30,16 +29,14 @@ public class Palya {
 	 */
 	static List<Szereplo> szereplok = new ArrayList<Szereplo>();		
 	
-	/**
-	 * errõl a szkennerrõl várja a bemeneteket, lehet fájl vagy standard bemenet
-	 */
-	static Scanner sc = null;
 	
 	/**
 	 * randomság be van-e kapcsolva, true: be van kapcsolva
 	 */
 	static boolean random = true;		
-	
+	/**
+	 * A pálya vezérlõje
+	 */
 	static Vezerlo vezerlo;
 	/**Új pálya létrehozása esetén visszaállítja a statikus
 	 * változókat kezdõállapotba
@@ -49,7 +46,6 @@ public class Palya {
 		tablak = new ArrayList<Tabla>();
 		szereplok = new ArrayList<Szereplo>();
 		random = true;
-		sc = null;
 	}
 	
 	
@@ -101,18 +97,8 @@ public class Palya {
 				}
 		}
 		
-		sc = new Scanner(System.in);						
 		szereplok = new ArrayList<Szereplo>();
 		
-	/*	for(int i = 0; i < jatekosok; i++) {							//A standard bemenetrõl bekéri az összes játékostól, hogy
-			Kiiro.Kiir("Eszkimó(1) vagy sarkkutató(2) akarsz lenni?");	//milyen típusú karakter szeretne lenni, majd ezek alapján
-			int ered = sc.nextInt();									//felveszi a megfelelõ karaktereket
-			while(ered != 1 && ered != 2) {
-				ered = sc.nextInt();
-			}
-			if(ered == 1) szereplok.add(new Eszkimo(tablak.get(0)));		//Az összes karakter ugyanarról a pályáról indul
-			else if(ered == 2) szereplok.add(new Sarkkutato(tablak.get(0)));
-		}*/
 		
 		for(int i = 0; i < sark; i++) {
 			szereplok.add(new Sarkkutato(tablak.get(0)));
@@ -361,7 +347,6 @@ public class Palya {
 			Kiiro.Kiir("A " + i + ". játékos meghalt");
 			vezerlo.vege("A " + i + ". játékos meghalt");
 		}
-		//gover = true;
 	}
 	
 	
@@ -371,18 +356,7 @@ public class Palya {
 	 * @param sc a scanner, amirõl várja a bemenetet
 	 */
 	public void start() {
-		/*Kiiro.Kiir("random: hóvihar és medve randomságának kikapcsolása");		//A játék kezdetekor tájékoztatja a játékost, hogy
-		String s = sc.nextLine();												//milyen cselekvéseket végezhet a játék során
-		if(s.equals("random")) random = false;
-		Kiiro.Kiir("Valaszd ki a kivant cselekvest.\n");
-		Kiiro.Kiir("lep [tábla indexe/ szama]");
-		Kiiro.Kiir("targykias");
-		Kiiro.Kiir("targyhasznal - nalad levo targyak kiirasa es onnan valasztas annak nevevel");
-		Kiiro.Kiir("kepesseg");
-		Kiiro.Kiir("hoasas - kezzel");
-		Kiiro.Kiir("endTurn - kor befejezese");
-		Kiiro.Kiir("kilep - jatek befejezese");*/
-		
+
 			int r = new Random().nextInt(3);
 			if(!random) r = 1;
 			if(r == 1) {
@@ -393,7 +367,6 @@ public class Palya {
 				t.setMenedek(null);
 			}
 			
-	//	Kiiro.Kiir("Jatek vege.");
 	}
 
 	/**Minden kör elején hívódhat, a randomságtól függõen

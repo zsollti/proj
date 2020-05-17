@@ -92,6 +92,17 @@ public class Vezerlo extends JFrame {
 	
 	private Szereplo aktualis;
 	
+	private void TablaPosBeallit() {
+		int xcenter = Vezerlo.nezet.bi.getWidth()/2;
+		int ycenter = Vezerlo.nezet.bi.getHeight()/2;
+		int dist = 150;
+		for(int i = 0; i < Palya.tablak.size(); i++) {
+			nezet.addObjektum(Palya.tablak.get(i));
+			Palya.tablak.get(i).y = ycenter - 2*dist + (i/4)*dist;
+			Palya.tablak.get(i).x = xcenter - 2*dist + (i%4)*dist;
+		}
+	}
+	
 	/**
 	 *Konstruktor
 	 *Létrehoz egy framet, lehetõséget ad a játékosszám megadására.
@@ -141,11 +152,7 @@ public class Vezerlo extends JFrame {
         		palya = new Palya(jatekosszam, "uj.txt");		//A pálya kétparaméteres konstruktorát kell majd meghívni, csak azon még változtatni kell
         		nezet = new Nezet();
         		
-        		for(int i = 0; i < Palya.tablak.size(); i++) {
-        			nezet.addObjektum(Palya.tablak.get(i));
-        			Palya.tablak.get(i).y = i*5;
-        			Palya.tablak.get(i).x = i*5;
-        		}
+        		TablaPosBeallit();
         		
         		jatek();
             }
@@ -168,11 +175,7 @@ public class Vezerlo extends JFrame {
         		jatekosszam = Palya.jatekosok;
         		nezet = new Nezet();
         		
-        		for(int i = 0; i < Palya.tablak.size(); i++) {
-        			nezet.addObjektum(Palya.tablak.get(i));
-        			Palya.tablak.get(i).y = i*5;
-        			Palya.tablak.get(i).x = i*5;
-        		}        		
+        		TablaPosBeallit();      		
         		jatek();
 	}
 	

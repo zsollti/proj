@@ -1,16 +1,62 @@
 package projgramozok;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 
 public class Main {
 
 	public static void main(String[] args) {
+		JFrame valaszt = new JFrame("Játék indítása");
+		valaszt.setMinimumSize(new Dimension(400, 150));
+		valaszt.setLocation(300, 300);
+		JLabel uzenet = new JLabel("Új játékot szeretnél, vagy már egy létezõt betölteni?");
+		JButton buj = new JButton("Új");
+		JButton  bbetolt = new JButton("Betöltés");
+		JPanel gombok = new JPanel();
+		JLabel fajlnev = new JLabel("betöltés esetén a fájl neve:");
+		JTextField fnev = new JTextField(20);
+		JPanel felso = new JPanel();
+		felso.add(fajlnev);
+		felso.add(fnev);
+		gombok.add(buj);
+		gombok.add(bbetolt);
+		valaszt.add(uzenet, BorderLayout.NORTH);
+		valaszt.add(felso, BorderLayout.CENTER);
+		valaszt.add(gombok, BorderLayout.SOUTH);
+		valaszt.setVisible(true);
 		
-		new Vezerlo();
+		buj.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	valaszt.dispose();
+        		new Vezerlo();
+        		
+            }
+        });
+		
+		bbetolt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {           	
+            	if(fnev.getText().length() != 0) {
+            		valaszt.dispose();
+            		new Vezerlo(fnev.getText());
+            	}
+            }
+        });
+		//new Vezerlo();
 		
 		
 		

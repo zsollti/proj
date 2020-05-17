@@ -103,8 +103,7 @@ public class Vezerlo extends JFrame {
 		super("Játék");
 		this.setBounds(10, 10, 1205, 700);
 		this.setResizable(false);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Kepek.create();
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
 		//Gomb, label, textfield, panel inicializálása
 		bInditas = new JButton("Indítás"); 
@@ -144,7 +143,7 @@ public class Vezerlo extends JFrame {
         		for(int i = 0; i < Palya.tablak.size(); i++) {
         			nezet.addObjektum(Palya.tablak.get(i));
         			Palya.tablak.get(i).y = i*5;
-        			Palya.tablak.get(i).x = i*5;
+        			Palya.tablak.get(i).x = i*10;
         		}
         		
         		jatek();
@@ -295,7 +294,13 @@ public class Vezerlo extends JFrame {
 		int index = Palya.szereplok.indexOf(aktualis)+1;
 		
 		if(index == Palya.jatekosok + 1) {
-			palya.start();
+			int r = new Random().nextInt(3);
+			if(r == 1) {
+				palya.hovihar();
+			}
+			for(Tabla t : palya.tablak) {
+				t.setMenedek(null);
+			}
 			index = 0;
 		}
 		
@@ -313,17 +318,15 @@ public class Vezerlo extends JFrame {
 		bSator.setVisible(false);
 		bAlkatresz.setVisible(false);
 		
-		if(aktualis.getInventory() != null) {
 		Set<String> targyak = aktualis.getInventory().keySet();
-			for(String s: targyak) {
-				switch(s) {
-					case "Elelem": bEves.setVisible(true);
-					case "Lapat": bLapat.setVisible(true);
-					case "Kotel": bKotel.setVisible(true);
-					case "Torekeny_aso": bTaso.setVisible(true);
-					case "Sator": bSator.setVisible(true);
-					case "Alkatresz": bAlkatresz.setVisible(true);
-				}
+		for(String s: targyak) {
+			switch(s) {
+				case "Elelem": bEves.setVisible(true);
+				case "Lapat": bLapat.setVisible(true);
+				case "Kotel": bKotel.setVisible(true);
+				case "Torekeny_aso": bTaso.setVisible(true);
+				case "Sator": bSator.setVisible(true);
+				case "Alkatresz": bAlkatresz.setVisible(true);
 			}
 		}
 	}

@@ -90,8 +90,8 @@ public class Sarkkutato extends Karakter{
 	 *Kirajzolja az objektumot
 	 */
 	@Override
-	public void rajzol() {
-		
+	public void rajzol(int xpos, int ypos) {
+		Kepek.rajzol("sarkkutato", xpos, ypos);
 	}
 	
 	

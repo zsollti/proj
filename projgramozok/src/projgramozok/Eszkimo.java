@@ -63,8 +63,8 @@ public class Eszkimo extends Karakter{
 	 *Kirajzolja az objektumot
 	 */
 	@Override
-	public void rajzol() {
-		
+	public void rajzol(int xpos, int ypos) {
+		Kepek.rajzol("eszkimo", xpos, ypos);
 	}
 	
 }

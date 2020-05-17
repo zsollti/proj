@@ -45,7 +45,7 @@ public class Nezet extends JPanel{
 		ImageIcon icon = new ImageIcon(Vezerlo.nezet.bi);
 		Vezerlo.nezet.label.setIcon(icon);
 		for(Rajzolhato o : objektumok) {
-			o.rajzol(0, 0);
+			o.rajzol();
 		}
 	}
 	

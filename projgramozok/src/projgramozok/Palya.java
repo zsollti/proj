@@ -357,7 +357,7 @@ public class Palya {
 		else {
 			int i = szereplok.indexOf(k) + 1;
 			Kiiro.Kiir("A " + i + ". játékos meghalt");
-			vezerlo.vege("A \" + i + \". játékos meghalt");
+			vezerlo.vege("A " + i + ". játékos meghalt");
 		}
 		//gover = true;
 	}

@@ -124,6 +124,9 @@ public class Vezerlo extends JFrame {
 	 */
 	private Szereplo aktualis;
 	
+	/**
+	 *
+	 */
 	private void TablaPosBeallit() {
 		int xcenter = Vezerlo.nezet.bi.getWidth()/2;
 		int ycenter = Vezerlo.nezet.bi.getHeight()/2;
@@ -174,9 +177,6 @@ public class Vezerlo extends JFrame {
     	 *Inicializálja a pályát és a nézetet
     	 *Elindítja a játékot
     	 */
-        
-        
-   
         bInditas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -223,7 +223,8 @@ public class Vezerlo extends JFrame {
 	
 	
 	/**
-	 *
+	 *Figyeli a felhasználói inputokat és ezek alapján
+	 *szól a pályának  változtatásról illetve a nézetnek ha szükséges.
 	 */
 	public void jatek () {
 		this.addMouseListener(new Eger());
@@ -261,11 +262,14 @@ public class Vezerlo extends JFrame {
 		buttonPanel.add(info);
 		buttonPanel.add(buvarruha);
 		
-		
-		//A gombokat tartalmazo panel framehez adása
+		/**
+		 *A gombokat tartalmazo panel framehez adása
+		 */
 		this.add(buttonPanel, BorderLayout.NORTH);
 		
-		//A nézet framehez adása
+		/**
+		 *A nézet framehez adása
+		 */
 		this.add(nezet, BorderLayout.CENTER);
 		this.revalidate();
 		this.repaint();
@@ -316,6 +320,9 @@ public class Vezerlo extends JFrame {
             }
         });
 		
+		/**
+		 *A lapát gomb eseménykezelõje
+		 */
 		bLapat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -324,6 +331,9 @@ public class Vezerlo extends JFrame {
             }
         });
 		
+		/**
+		 *A törékeny ásó gomb eseménykezelõje
+		 */
 		bTaso.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -333,6 +343,9 @@ public class Vezerlo extends JFrame {
             }
         });
 		
+		/**
+		 *A a körvége gomb eseménykezelõje
+		 */
 		bKorvege.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -340,6 +353,9 @@ public class Vezerlo extends JFrame {
             }
         });
 		
+		/**
+		 *A tárgykiás gomb eseménykezelõje
+		 */
 		bTargykias.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -349,6 +365,9 @@ public class Vezerlo extends JFrame {
             }
         });
 		
+		/**
+		 *Az alkatrész gomb eseménykezelõje
+		 */
 		bAlkatresz.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -371,6 +390,11 @@ public class Vezerlo extends JFrame {
 		frissit();
 	}
 	
+	/**
+	 *Az egér eseménykezelõje
+	 *Bal klikk lépés a táblára
+	 *Jobb klikk képesség használata
+	 */
 	public class Eger implements MouseListener{
 
 		@Override
@@ -415,7 +439,9 @@ public class Vezerlo extends JFrame {
 		
 	}
 	
-	
+	/**
+	 *A sátor gomb eseménykezelõje
+	 */
 	public void players() {
 		frissit();
 		int index = Palya.szereplok.indexOf(aktualis)+1;
@@ -432,6 +458,9 @@ public class Vezerlo extends JFrame {
 		frissit();
 	}
 	
+	/**
+	 *Az soron következõ karakter tárgyai alapján láthatóvá teszi a hozzájuk tartozó gombokat
+	 */
 	public void gombBeallit() {
 		bEves.setVisible(false);
 		bLapat.setVisible(false);
@@ -457,12 +486,21 @@ public class Vezerlo extends JFrame {
 		}
 	}
 	
+	/**
+	 *Játék vége után felugró ablak.
+	 *Kiírja, hogy melyik játékos halt meg.
+	 */
 	public void vege(String szoveg) {
 		JFrame felugro = new JFrame("Vége");
 		felugro.setSize(200, 150);
 		felugro.setLocation(350, 350);
 		JLabel label = new JLabel(szoveg);
 		JButton gomb = new JButton("bezár");
+		
+		/**
+		 *Bezárás gomb.
+		 *Kattintással bezárja az alkalmazást.
+		 */
 		gomb.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -476,8 +514,9 @@ public class Vezerlo extends JFrame {
 		this.setVisible(false);
 		
 	}
+	
 	/**
-	 *
+	 *Frissít a nézetet
 	 */
 	public void frissit() {
 		nezet.mindentRajzol();

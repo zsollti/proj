@@ -71,6 +71,8 @@ public class Vezerlo extends JFrame {
 	
 	private JButton bTargykias;
 	
+	private JLabel buvarruha;
+	
 	/**
 	 *Játék bezárása gomb
 	 */
@@ -208,6 +210,8 @@ public class Vezerlo extends JFrame {
 		bAlkatresz = new JButton("Alkatrész");
 		bBezaras = new JButton("Bezárás");
 		bTargykias = new JButton("Tárgy kiásása");
+		
+		buvarruha = new JLabel("Búvárruha");
 		
 		//Gombok panelhez adása
 		buttonPanel.add(bAsas);
@@ -400,6 +404,7 @@ public class Vezerlo extends JFrame {
 		bTaso.setVisible(false);
 		bSator.setVisible(false);
 		bAlkatresz.setVisible(false);
+		buvarruha.setVisible(false);
 		
 		if(aktualis.getInventory() != null) {
 		Set<String> targyak = aktualis.getInventory().keySet();
@@ -411,6 +416,7 @@ public class Vezerlo extends JFrame {
 					case "Torekeny_aso": bTaso.setVisible(true); break;
 					case "Sator": bSator.setVisible(true); break;
 					case "Alkatresz": bAlkatresz.setVisible(true); break;
+					case "Buvarruha": buvarruha.setVisible(true); break;
 				}
 			}
 		}

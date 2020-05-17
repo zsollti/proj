@@ -87,7 +87,7 @@ public abstract class Szereplo implements Rajzolhato {
 	{
 		this.setMunka(0);
 		Palya.vezerlo.players();
-		Kiiro.Kiir("Kör átadása");
+		//Kiiro.Kiir("Kör átadása");
 	}
 		
 	/**

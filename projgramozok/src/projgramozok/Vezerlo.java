@@ -152,6 +152,30 @@ public class Vezerlo extends JFrame {
         });
 	}
 	
+	public Vezerlo(String fname) {
+		//A jFrame beéllítása.
+		super("Játék");
+		this.setBounds(10, 10, 1205, 700);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		Kepek.create();
+		
+		buttonPanel = new JPanel();
+		this.add(buttonPanel, BorderLayout.NORTH);
+		this.setVisible(true); 
+		        		
+        		palya = new Palya(fname);
+        		jatekosszam = Palya.jatekosok;
+        		nezet = new Nezet();
+        		
+        		for(int i = 0; i < Palya.tablak.size(); i++) {
+        			nezet.addObjektum(Palya.tablak.get(i));
+        			Palya.tablak.get(i).y = i*5;
+        			Palya.tablak.get(i).x = i*5;
+        		}        		
+        		jatek();
+	}
+	
 	/**
 	 *
 	 */

@@ -56,10 +56,9 @@ public class Main {
             	}
             }
         });
-		//new Vezerlo();
 		
 		
-		
+	
 		
 		//Palya p;
 		

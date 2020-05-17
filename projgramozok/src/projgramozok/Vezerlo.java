@@ -318,7 +318,15 @@ public class Vezerlo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	((Karakter)aktualis).tevekenyseg("targykias");
+            	gombBeallit();
             	frissit();
+            }
+        });
+		
+		bAlkatresz.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	((Karakter)aktualis).tevekenyseg("targyhasznal Alkatresz");
             }
         });
 		
@@ -431,6 +439,7 @@ public class Vezerlo extends JFrame {
 		felugro.add(gomb, BorderLayout.CENTER);
 		felugro.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		felugro.setVisible(true);
+		this.setVisible(false);
 		
 	}
 	/**

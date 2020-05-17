@@ -47,6 +47,15 @@ public class Nezet extends JPanel{
 		for(Rajzolhato o : objektumok) {
 			o.rajzol(0, 0);
 		}
+		
+		g.setColor(Color.BLACK);
+		for(int i = 0; i < Palya.tablak.size(); i++) {
+			for(int j = i; j < Palya.tablak.size(); j++) {
+				if(Palya.tablak.get(i).szomszede(Palya.tablak.get(j))) {
+					g.drawLine(Palya.tablak.get(i).x+50, Palya.tablak.get(i).y+50, Palya.tablak.get(j).x+50, Palya.tablak.get(j).y+50);
+				}
+			}
+		}
 	}
 	
 	/**

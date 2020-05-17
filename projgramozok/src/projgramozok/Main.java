@@ -28,6 +28,7 @@ public class Main {
 		JPanel gombok = new JPanel();
 		JLabel fajlnev = new JLabel("betöltés esetén a fájl neve:");
 		JTextField fnev = new JTextField(20);
+		fnev.setText("palya.txt");
 		JPanel felso = new JPanel();
 		felso.add(fajlnev);
 		felso.add(fnev);

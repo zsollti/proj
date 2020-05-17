@@ -167,8 +167,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 				Kiiro.Kiir("Rossz bemenet. Adjon meg újat");
 				break;
 		}
-		
-		if(munka == 0)endTurn();
+		if(munka <= 0)endTurn();
 	}
 	
 	/**

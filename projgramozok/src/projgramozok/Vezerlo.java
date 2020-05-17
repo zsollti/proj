@@ -424,6 +424,7 @@ public class Vezerlo extends JFrame {
 		felugro.add(gomb, BorderLayout.CENTER);
 		felugro.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		felugro.setVisible(true);
+		
 	}
 	/**
 	 *

@@ -10,7 +10,6 @@ public class Lyuk extends Tabla{
 	 *Konstruktor
 	 */
 	public Lyuk() {
-		
 	}
 	
 	/**

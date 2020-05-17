@@ -26,7 +26,7 @@ public class Felallitott_sator extends Menedek{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("felallitott_sator", xpos, ypos);
+		Kepek.rajzol("felallitott_sator", xpos, ypos-25);
 	}
 
 }

@@ -30,6 +30,6 @@ public class Buvarruha extends Targy{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("buvarruha", xpos, ypos);
+		Kepek.rajzol("buvarruha", xpos+75, ypos+75);
 	}
 }

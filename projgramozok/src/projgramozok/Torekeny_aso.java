@@ -42,6 +42,6 @@ public class Torekeny_aso extends Lapat{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("torekeny_lapat", xpos, ypos);
+		Kepek.rajzol("torekeny_lapat", xpos+75, ypos+75);
 	}
 }

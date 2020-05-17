@@ -58,7 +58,7 @@ public class Kotel extends Targy{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("kotel", xpos, ypos);
+		Kepek.rajzol("kotel", xpos+75, ypos+75);
 	}
 	
 }

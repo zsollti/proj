@@ -26,6 +26,6 @@ public class Iglu extends Menedek{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("iglu", xpos, ypos);
+		Kepek.rajzol("iglu", xpos, ypos-25);
 	}
 }

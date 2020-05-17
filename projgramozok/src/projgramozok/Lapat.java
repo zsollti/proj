@@ -28,6 +28,6 @@ public class Lapat extends Targy{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("lapat", xpos, ypos);
+		Kepek.rajzol("lapat", xpos+75, ypos+75);
 	}
 }

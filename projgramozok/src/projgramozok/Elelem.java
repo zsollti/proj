@@ -30,6 +30,6 @@ public class Elelem extends Targy{
 	 */
 	@Override
 	public void rajzol(int xpos, int ypos) {
-		Kepek.rajzol("elelem", xpos, ypos);
+		Kepek.rajzol("elelem", xpos+75, ypos+75);
 	}
 }

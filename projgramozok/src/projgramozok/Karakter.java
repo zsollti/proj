@@ -28,6 +28,7 @@ public abstract class Karakter extends Szereplo{	//a Szereplo leszármazottja
 	/**
 	 *Absztrakt függvény, a karakterek képességéhez
 	 *Minden karakternek mások a képességei
+	 *@param t A tábla amin a képességet akarjuk használni
 	 */
 	public abstract void kepesseg(Tabla t);
 	/**

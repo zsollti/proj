@@ -15,7 +15,8 @@ public class Sarkkutato extends Karakter{
 	}
 
 	/**
-	 *Sarkkutató képessége, lekérdezi egy szomszédos tábla karakterbíró képességét.
+	 *Sarkkutató képessége, lekérdezi a paraméterként kapott tábla karakterbíró képességét, ha az a tábla szomszédja a sajátjának.
+	 *@param t A lekérdezendõ tábla
 	 */
 	@Override
 	public void kepesseg(Tabla t) {

@@ -14,7 +14,9 @@ public class Eszkimo extends Karakter{
 	}
 	
 	/**
-	 *Eszkimó képesség, iglut épít a táblára amin áll.
+	 *Eszkimó képesség, iglut épít a paraméterként kapott táblára,
+	 *ha az megegyezik azzal amin áll
+	 *@param t A tábla amin a képességet akarjuk használni 
 	 */
 	@Override
 	public void kepesseg(Tabla t) {
